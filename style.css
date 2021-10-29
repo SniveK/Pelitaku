@@ -1,0 +1,64 @@
+/* @import url(//fonts.googleapis.com/css?family=Inter); */
+body {
+    margin: 0;
+    padding: 0;
+}
+.background{
+    background-color: white;
+}
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.header{
+    width: 100%;
+    /* 40 px -> 2.5 em */
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    padding: 0;
+    background-color: #B4D1E1;
+}
+.footer{
+    width: 100%;
+    padding-bottom: 1rem;
+    
+    background-color: black;
+}
+.footer > *{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+}
+.footer p{
+    text-align: center;
+}
+.footer .flex-container{
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footer .flex-container > *{
+    margin-left: 3%;
+    text-align: left;
+    width: 30%;
+    box-sizing: border-box;
+}
+.footer .flex-container > h1{
+    font-weight: bold;
+}
+.footer table{
+    border: none;
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+}
+.footer table tr td:nth-child(5n+2){
+    text-align: left;
+}
+.footer table tr td:nth-child(5n+4){
+    text-align: center;
+}.footer table tr td:nth-child(5n+6){
+    text-align: right;
+}
