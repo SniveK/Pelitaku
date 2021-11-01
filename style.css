@@ -2,63 +2,113 @@
 body {
     margin: 0;
     padding: 0;
+	background-color: #f9f9f9;
+	font-family: 'Arial',sans-serif;
+	font-size: 14px;
+    line-height: 24px;
 }
+
 .background{
     background-color: white;
 }
 .flex-container{
     display: flex;
     flex-wrap: wrap;
+	justify-content: center;
 }
 .header{
-    width: 100%;
-    /* 40 px -> 2.5 em */
+    width: auto;
     height: 40px;
-    left: 0px;
-    top: 0px;
-    padding: 0;
     background-color: #B4D1E1;
+	padding-left:3rem;
+	padding-right:3rem;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
+.header p{
+	padding-left: 25px;
+	font-weight: bold;
+}
+
+.push {
+    margin-left: auto;
+}
+
+.maincontent{
+	height: auto;
+	justify-content: center;
+	padding-top:50px;
+}
+
+.searchbar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#lokasi{
+	width: 100px; 
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+#subjek{
+	width: 400px; 
+	height: 20px;
+}
+
+.tutorpilihan button{
+	width: 200px;
+	height: 264px;
+}
+
+.primary{
+	width: 160px;
+	height: 40px;
+	border-radius: 37px;
+	background-color: #fd6a02;
+	color: white;
+	border: none;
+	margin-bottom: 12px;
+}
+
+.primary2{
+	width: 160px;
+	height: 40px;
+	border-radius: 37px;
+	background-color: #fd6a02;
+	color: white;
+	border: none;
+	margin-bottom: 12px;
+	margin-right: 20px;
+}
+
+.secondary{
+	width: 160px;
+	height: 24px;
+	border-radius: 37px;
+	background-color: white;
+	color: #fd6a02;
+	border: 1px solid #fd6a02;
+}
+
 .footer{
     width: 100%;
-    padding-bottom: 1rem;
-    
-    background-color: black;
+    padding-bottom: 0.1rem;
+	background-color: black;
+	color: white;
 }
-.footer > *{
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: white;
-}
-.footer p{
-    text-align: center;
-}
-.footer .flex-container{
-    flex-direction: row;
-    justify-content: space-around;
-}
-.footer .flex-container > *{
-    margin-left: 3%;
-    text-align: left;
-    width: 30%;
-    box-sizing: border-box;
-}
-.footer .flex-container > h1{
-    font-weight: bold;
-}
-.footer table{
-    border: none;
-    width: 100%;
-    table-layout: fixed;
-    text-align: left;
-}
-.footer table tr td:nth-child(5n+2){
-    text-align: left;
-}
-.footer table tr td:nth-child(5n+4){
-    text-align: center;
-}.footer table tr td:nth-child(5n+6){
-    text-align: right;
+
+.footermenu{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: space-between;
+	width: 100%px;
+	height: 140px;
+	padding: 1.5rem 3rem 1.5rem 3rem;
 }
