@@ -3,8 +3,8 @@
 ### Kerjaan :)
 
 Frontend
-- [ ] Homepage
-- [ ] Group tutoring
+- [X] Homepage
+- [X] Group tutoring
 - [ ] Profile + edit profile
 - [ ] Inbox (chat)
 - [ ] Class list (yg udah di book)
@@ -17,7 +17,7 @@ Frontend
 - [ ] Tutor Schedule
 - [ ] Make class/group tutoring
 - [ ] Help desk
-- [ ] Sign in / Sign up
+- [X] Sign in / Sign up
 - [ ] Infographic (Tutor benefit)
 - [ ] About page
 
