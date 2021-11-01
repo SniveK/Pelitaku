@@ -1,9 +1,29 @@
 /* @import url(//fonts.googleapis.com/css?family=Inter); */
+@font-face {
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./fonts/Inter/Inter-Regular.woff2?v=3.19") format("woff2"),
+         url("./fonts/Inter/Inter-Regular.woff?v=3.19") format("woff");
+}
+@font-face {
+    font-family: 'Inter';
+    font-style:  bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url("./fonts/Inter/Inter-Bold.woff2?v=3.19") format("woff2"),
+        url("./fonts/Inter/Inter-Bold.woff?v=3.19") format("woff");
+}
+*{
+    font-family: 'Inter';
+    font-size: 14px;
+    line-height: 17px;
+}
 body {
     margin: 0;
     padding: 0;
 	background-color: #f9f9f9;
-	font-family: 'Arial',sans-serif;
 	font-size: 14px;
     line-height: 24px;
 }
@@ -47,18 +67,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-#lokasi{
-	width: 100px; 
-	height: 20px;
-	margin-left: 15px;
-	margin-right: 5px;
-}
-
-#subjek{
-	width: 400px; 
-	height: 20px;
 }
 
 .tutorpilihan button{
@@ -111,4 +119,27 @@ body {
 	width: 100%px;
 	height: 140px;
 	padding: 1.5rem 3rem 1.5rem 3rem;
+}
+
+input{
+    border: 1px solid #000000;border-radius: 7px;
+}
+
+.input-location{
+    width: 100px; 
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 5px;
+    padding-left: 20px;
+    background-image: url(./assets/icon_location.svg), url(./assets/icon_gps.svg);
+    background-position: left, right;
+    background-repeat: no-repeat, no-repeat;
+}
+.input-subject{
+    width: 400px; 
+	height: 20px;
+    padding-left: 20px;
+    background-image: url(./assets/icon_search.svg);
+    background-position:right;
+    background-repeat: no-repeat;
 }
