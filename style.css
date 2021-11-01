@@ -69,9 +69,12 @@ body {
 	align-items: center;
 }
 
-.tutorpilihan button{
-	width: 200px;
-	height: 264px;
+.tutorpilihan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	/* width: 200px;
+	height: 264px; */
 }
 
 .primary{
@@ -142,4 +145,10 @@ input{
     background-image: url(./assets/icon_search.svg);
     background-position:right;
     background-repeat: no-repeat;
+}
+
+.caption {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 600;
 }
