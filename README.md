@@ -25,3 +25,9 @@ Backend
 - [ ] Database
 - [ ] Logic
 - [ ] AAAAAAA
+
+Pertanyaan
+- Websitenya dinamis atau gk
+- Chat room fiturnya perlu jalan atau gk
+- Prov, kecamatan, kota, pilihan atau isi sendiri
+- Bagi tugas, jelasin kerjaan, cara kerjain
