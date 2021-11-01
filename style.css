@@ -14,9 +14,6 @@ body {
     width: 100%;
     /* 40 px -> 2.5 em */
     height: 40px;
-    left: 0px;
-    top: 0px;
-    padding: 0;
     background-color: #B4D1E1;
 }
 .footer{
