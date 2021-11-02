@@ -136,7 +136,7 @@ input{
 	margin-left: 15px;
 	margin-right: 5px;
     padding-left: 20px;
-    background-image: url(./assets/icon_location.svg), url(./assets/icon_gps.svg);
+    background-image: url(./assets/svg/icon_location.svg), url(./assets/svg/icon_gps.svg);
     background-position: left, right;
     background-repeat: no-repeat, no-repeat;
 }
