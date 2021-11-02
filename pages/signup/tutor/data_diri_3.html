@@ -13,7 +13,6 @@
             <object data="../../../assets/icon_pelitaku.svg" type="" width="28px"></object>
         </nav>
     </header>
-    
     <div class="flex-container-row flex-center margin-top-82">
         <div class="title">
             <h1>Buat Akun Pelitaku</h1>
@@ -22,21 +21,35 @@
 
     <div class="flex-container-row flex-center margin-bottom-82">
         <div class="flex-container-row">
-            <div class="roadmap">
-                <object data="./assets/svg/roadmap_signup_1.svg" type=""></object>
+            <div class=" roadmap">
+                <object data="./assets/svg/roadmap_signup_3.svg" type=""></object>
             </div>
             <form class="form flex-container-column max-width-600 min-width-550 row-gap-20">
-                <div class="flex-container-row name column-gap-20">
-                    <input class="width-248" type="text" placeholder="Nama Depan" id="tuteeFirstName">
-                    <input class="width-248" type="text" placeholder="Nama Belakang" id="tuteeLastName"> 
+                <div class="flex-container-row bank column-gap-20">
+                    <select class="width-175" name="Provinsi" id="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                    <input class="width-320" type="text" placeholder="Nomor Rekening" id="bankAccountNumber"> 
                 </div>
-                <div class="flex-container-row phone-number column-gap-20">
-                    <input class="width-50 country-code" type="text" value="+62" disabled>
-                    <input class="width-440" type="text" placeholder="Nomor Ponsel" id="tuteePhoneNumber">
+                <div class="flex-container-row major column-gap-20">
+                    <input class="width-175 country-code" type="text" placeholder="Fakultas"
+                    id="tutorFaculty">
+                    <input class="width-320" type="text" placeholder="Jurusan" id="tutorMajor">
                 </div>
-                <input class="email width-504" type="email" placeholder="E-mail" id="tuteeEmail">
-                <input class="password width-504" type="password" placeholder="Kata Sandi" id="tuteePassword">
-                <input class="password width-504" type="password" placeholder="Ulangi Kata Sandi" id="tuteeConfirmPassword">
+                <div class="flex-container-row gpa column-gap-20">
+                    <input class="width-72" type="text" placeholder="GPA">
+                    <input class="width-424" type="text" placeholder="Jurusan" id="parentPhoneNumber">
+                </div>
+                <div class="flex-container-column column-gap-20">
+                    <div class="flex-container-row mastered-course">
+                        <input class="email width-465" type="email" placeholder="E-mail" id="parentEmail">
+                        <div class="height-40 width-20"></div>
+                        <object data="./assets/svg/plus_icon.svg" type=""></object>
+                    </div>
+                </div>
                 <div class="buttons">
                     <input class="button continue" type="button" value="Selanjutnya">
                     <input class="button abort" type="button" value="Batal">
@@ -44,6 +57,7 @@
             </form>
         </div>
     </div>
+
     <footer class="flex-container-column flex-center footer">
         <div>
             <div class="footer-menu">
