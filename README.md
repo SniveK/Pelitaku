@@ -4,12 +4,12 @@
 
 Frontend
 - [X] Homepage
-- [X] Group tutoring
+- [X] Group tutoring (Detail, make class)
 - [ ] Profile + edit profile
 - [ ] Inbox (chat)
 - [ ] Class list (yg udah di book)
 - [ ] Class detail
-- [ ] Available class
+- [X] Available class
 - [ ] Available Tutor
 - [ ] Tutor detail (profile)
 - [ ] Tutor Review
