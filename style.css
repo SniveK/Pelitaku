@@ -57,6 +57,7 @@ body {
   margin-left: auto;
 }
 
+<<<<<<< HEAD
 .maincontent {
   height: auto;
   justify-content: center;
@@ -72,6 +73,28 @@ body {
 .tutorpilihan button {
   width: 200px;
   height: 264px;
+=======
+.maincontent{
+	height: auto;
+    flex-wrap: wrap;
+	justify-content: center;
+	padding-top:50px;
+}
+
+.searchbar{
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.tutorpilihan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	/* width: 200px;
+	height: 264px; */
+>>>>>>> 5838dc82a84480f234dab7be111386e21399cff3
 }
 
 .primary {
@@ -126,6 +149,7 @@ input {
   border-radius: 7px;
 }
 
+<<<<<<< HEAD
 .input-location {
   width: 100px;
   height: 20px;
@@ -144,3 +168,29 @@ input {
   background-position: right;
   background-repeat: no-repeat;
 }
+=======
+.input-location{
+    width: 100px; 
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 5px;
+    padding-left: 20px;
+    background-image: url(./assets/icon_location.svg), url(./assets/icon_gps.svg);
+    background-position: left, right;
+    background-repeat: no-repeat, no-repeat;
+}
+.input-subject{
+    width: 400px; 
+	height: 20px;
+    padding-left: 20px;
+    /* background-image: url(./assets/icon_search.svg);
+    background-position:right;
+    background-repeat: no-repeat; */
+}
+
+.caption {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 600;
+}
+>>>>>>> 5838dc82a84480f234dab7be111386e21399cff3

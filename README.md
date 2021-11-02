@@ -3,8 +3,8 @@
 ### Kerjaan :)
 
 Frontend
-- [ ] Homepage
-- [ ] Group tutoring
+- [X] Homepage
+- [X] Group tutoring
 - [ ] Profile + edit profile
 - [ ] Inbox (chat)
 - [ ] Class list (yg udah di book)
@@ -17,7 +17,7 @@ Frontend
 - [ ] Tutor Schedule
 - [ ] Make class/group tutoring
 - [ ] Help desk
-- [ ] Sign in / Sign up
+- [X] Sign in / Sign up
 - [ ] Infographic (Tutor benefit)
 - [ ] About page
 
@@ -25,3 +25,9 @@ Backend
 - [ ] Database
 - [ ] Logic
 - [ ] AAAAAAA
+
+Pertanyaan
+- Websitenya dinamis atau gk
+- Chat room fiturnya perlu jalan atau gk
+- Prov, kecamatan, kota, pilihan atau isi sendiri
+- Bagi tugas, jelasin kerjaan, cara kerjain
