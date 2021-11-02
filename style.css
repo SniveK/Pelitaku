@@ -1,62 +1,79 @@
 /* @import url(//fonts.googleapis.com/css?family=Inter); */
 @font-face {
-    font-family: 'Inter';
-    font-style:  normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("./fonts/Inter/Inter-Regular.woff2?v=3.19") format("woff2"),
-         url("./fonts/Inter/Inter-Regular.woff?v=3.19") format("woff");
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/Inter/Inter-Regular.woff2?v=3.19") format("woff2"),
+    url("./fonts/Inter/Inter-Regular.woff?v=3.19") format("woff");
 }
 @font-face {
-    font-family: 'Inter';
-    font-style:  bold;
-    font-weight: 700;
-    font-display: swap;
-    src: url("./fonts/Inter/Inter-Bold.woff2?v=3.19") format("woff2"),
-        url("./fonts/Inter/Inter-Bold.woff?v=3.19") format("woff");
+  font-family: "Inter";
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/Inter/Inter-Bold.woff2?v=3.19") format("woff2"),
+    url("./fonts/Inter/Inter-Bold.woff?v=3.19") format("woff");
 }
-*{
-    font-family: 'Inter';
-    font-size: 14px;
-    line-height: 17px;
+* {
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 17px;
 }
 body {
-    margin: 0;
-    padding: 0;
-	background-color: #f9f9f9;
-	font-size: 14px;
-    line-height: 24px;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  line-height: 24px;
 }
 
-.background{
-    background-color: white;
+.background {
+  background-color: white;
 }
-.flex-container{
-    display: flex;
-    flex-wrap: wrap;
-	justify-content: center;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.header{
-    width: auto;
-    height: 40px;
-    background-color: #B4D1E1;
-	padding-left:3rem;
-	padding-right:3rem;
-	
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.header {
+  width: auto;
+  height: 40px;
+  background-color: #b4d1e1;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header p{
-	padding-left: 25px;
-	font-weight: bold;
+.header p {
+  padding-left: 25px;
+  font-weight: bold;
 }
 
 .push {
-    margin-left: auto;
+  margin-left: auto;
 }
 
+<<<<<<< HEAD
+.maincontent {
+  height: auto;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorpilihan button {
+  width: 200px;
+  height: 264px;
+=======
 .maincontent{
 	height: auto;
     flex-wrap: wrap;
@@ -77,59 +94,81 @@ body {
     justify-content: center;
 	/* width: 200px;
 	height: 264px; */
+>>>>>>> 5838dc82a84480f234dab7be111386e21399cff3
 }
 
-.primary{
-	width: 160px;
-	height: 40px;
-	border-radius: 37px;
-	background-color: #fd6a02;
-	color: white;
-	border: none;
-	margin-bottom: 12px;
+.primary {
+  width: 160px;
+  height: 40px;
+  border-radius: 37px;
+  background-color: #fd6a02;
+  color: white;
+  border: none;
+  margin-bottom: 12px;
 }
 
-.primary2{
-	width: 160px;
-	height: 40px;
-	border-radius: 37px;
-	background-color: #fd6a02;
-	color: white;
-	border: none;
-	margin-bottom: 12px;
-	margin-right: 20px;
+.primary2 {
+  width: 160px;
+  height: 40px;
+  border-radius: 37px;
+  background-color: #fd6a02;
+  color: white;
+  border: none;
+  margin-bottom: 12px;
+  margin-right: 20px;
 }
 
-.secondary{
-	width: 160px;
-	height: 24px;
-	border-radius: 37px;
-	background-color: white;
-	color: #fd6a02;
-	border: 1px solid #fd6a02;
+.secondary {
+  width: 160px;
+  height: 24px;
+  border-radius: 37px;
+  background-color: white;
+  color: #fd6a02;
+  border: 1px solid #fd6a02;
 }
 
-.footer{
-    width: 100%;
-    padding-bottom: 0.1rem;
-	background-color: black;
-	color: white;
+.footer {
+  width: 100%;
+  padding-bottom: 0.1rem;
+  background-color: black;
+  color: white;
 }
 
-.footermenu{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-content: space-between;
-	width: 100%px;
-	height: 140px;
-	padding: 1.5rem 3rem 1.5rem 3rem;
+.footermenu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-between;
+  width: 100%px;
+  height: 140px;
+  padding: 1.5rem 3rem 1.5rem 3rem;
 }
 
-input{
-    border: 1px solid #000000;border-radius: 7px;
+input {
+  border: 1px solid #000000;
+  border-radius: 7px;
 }
 
+<<<<<<< HEAD
+.input-location {
+  width: 100px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+  padding-left: 20px;
+  background-image: url(./assets/icon_location.svg), url(./assets/icon_gps.svg);
+  background-position: left, right;
+  background-repeat: no-repeat, no-repeat;
+}
+.input-subject {
+  width: 400px;
+  height: 20px;
+  padding-left: 20px;
+  background-image: url(./assets/icon_search.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+=======
 .input-location{
     width: 100px; 
 	height: 20px;
@@ -154,3 +193,4 @@ input{
     line-height: 24px;
     font-weight: 600;
 }
+>>>>>>> 5838dc82a84480f234dab7be111386e21399cff3
