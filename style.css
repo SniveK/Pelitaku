@@ -19,6 +19,7 @@
   font-family: "Inter";
   font-size: 14px;
   line-height: 17px;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -27,7 +28,6 @@ body {
   font-size: 14px;
   line-height: 24px;
 }
-
 .background {
   background-color: white;
 }
@@ -52,33 +52,26 @@ body {
   padding-left: 25px;
   font-weight: bold;
 }
+.message-icon{
+	position: fixed; 
+	right: 25px; 
+	top: 50%;
+}
+.header-icon{
+	width: 18.19px;
+	height: 28.57px;
+}
 
 .push {
   margin-left: auto;
 }
 
-<<<<<<< HEAD
-.maincontent {
-  height: auto;
-  justify-content: center;
-  padding-top: 50px;
-}
-
-.searchbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tutorpilihan button {
-  width: 200px;
-  height: 264px;
-=======
 .maincontent{
 	height: auto;
     flex-wrap: wrap;
 	justify-content: center;
 	padding-top:50px;
+	margin: auto;
 }
 
 .searchbar{
@@ -87,14 +80,30 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.searchbar > div{
+	position: relative;
+}
+
+.search-icon{
+	position: absolute; 
+	top: 4px; 
+	right: 8px; 
+	width: 24px; 
+	height: 24px;
+}
+
 
 .tutorpilihan {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-	/* width: 200px;
-	height: 264px; */
->>>>>>> 5838dc82a84480f234dab7be111386e21399cff3
+}
+.tutorpilihan > div{
+	width: 200px; 
+	height:270px; 
+	position: relative; 
+	margin: 0; 
+	padding: 0%;
 }
 
 .primary {
@@ -149,48 +158,33 @@ input {
   border-radius: 7px;
 }
 
-<<<<<<< HEAD
 .input-location {
-  width: 100px;
-  height: 20px;
+  width: 168px;
+  height: 32px;
   margin-left: 15px;
   margin-right: 5px;
   padding-left: 20px;
-  background-image: url(./assets/icon_location.svg), url(./assets/icon_gps.svg);
-  background-position: left, right;
-  background-repeat: no-repeat, no-repeat;
+  background-image: url(./assets/svg/icon_location.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 14px 21px;
+  background-position-x: 2px;
+  background-position-y: 4px;
 }
 .input-subject {
-  width: 400px;
-  height: 20px;
+  width: 472px;
+  height: 32px;
   padding-left: 20px;
-  background-image: url(./assets/icon_search.svg);
+  /* background-image: url(./assets/svg/icon_search.svg);
   background-position: right;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
-=======
-.input-location{
-    width: 100px; 
-	height: 20px;
-	margin-left: 15px;
-	margin-right: 5px;
-    padding-left: 20px;
-    background-image: url(./assets/svg/icon_location.svg), url(./assets/svg/icon_gps.svg);
-    background-position: left, right;
-    background-repeat: no-repeat, no-repeat;
-}
-.input-subject{
-    width: 400px; 
-	height: 20px;
-    padding-left: 20px;
-    /* background-image: url(./assets/icon_search.svg);
-    background-position:right;
-    background-repeat: no-repeat; */
+.caption{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 27px;
+	text-align: center;
 }
 
-.caption {
-    font-size: 22px;
-    line-height: 24px;
-    font-weight: 600;
-}
->>>>>>> 5838dc82a84480f234dab7be111386e21399cff3
