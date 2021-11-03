@@ -68,10 +68,8 @@ body {
 
 .maincontent{
 	height: auto;
-    flex-wrap: wrap;
-	justify-content: center;
 	padding-top:50px;
-	margin: auto;
+  position: static;
 }
 
 .searchbar{
