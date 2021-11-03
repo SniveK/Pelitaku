@@ -1,0 +1,35 @@
+.filter{
+	align-self: center;
+}
+
+.special{
+
+}
+
+.search-result{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center; 
+	width: 95%;
+}
+.search-result > div{
+	background-color: #E5F3FB;
+	border-radius: 10px;
+	padding: 20px 15px 20px 15px;
+	margin: 10px;
+	text-align: left;
+	width: 240px;
+	height: 105px;
+}
+.search-nav{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: right;
+	right: 0%;
+	width: 90%;
+}
+.search-nav > a{
+	padding: 0px 10px 0px 10px; 
+	color: #FD6A02;
+} 
