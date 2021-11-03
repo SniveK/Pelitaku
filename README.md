@@ -31,3 +31,5 @@ Pertanyaan
 - Chat room fiturnya perlu jalan atau gk
 - Prov, kecamatan, kota, pilihan atau isi sendiri
 - Bagi tugas, jelasin kerjaan, cara kerjain
+- Cari tau fungsi utama
+- 
