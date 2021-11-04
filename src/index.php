@@ -20,7 +20,7 @@
         // phpinfo();
         // $connection = new PDO('mysql:host=mysql;dbname=demo;charset=utf8', 'root', 'root');
         // $connection = new mysqli_connect("localhost", "root", "root","demo");
-        $conn = mysqli_connect('172.19.0.2', 'general', 'general');
+        $conn = mysqli_connect('172.25.0.2', 'general', 'general');
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
