@@ -12,16 +12,34 @@
 		
     </head>
 	
-	<div class="header">
-		<object data="./assets/svg/icon_pelitaku.svg" type="" class="header-icon"></object>
-		<p class="push">pembelajaran</p>
-		<p>inbox</p>
-		<p>profil</p>
-	</div>
+	<?php include './assets/php/header.php'; ?>
 
     <body class="background" >
         <img src="./assets/png/icon_message.png" alt="Icon Pelitaku" class="message-icon">
-        
+        <?php
+        // phpinfo();
+        // $connection = new PDO('mysql:host=mysql;dbname=demo;charset=utf8', 'root', 'root');
+        // $connection = new mysqli_connect("localhost", "root", "root","demo");
+        $conn = mysqli_connect('172.19.0.2', 'general', 'general');
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        echo "Connected successfully";
+        // $query      = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'demo'");
+        // $tables     = $query->fetchAll(PDO::FETCH_COLUMN);
+
+        // if (empty($tables)) {
+        //     echo '<p class="center">There are no tables in database <code>demo</code>.</p>';
+        // } else {
+        //     echo '<p class="center">Database <code>demo</code> contains the following tables:</p>';
+        //     echo '<ul class="center">';
+        //     foreach ($tables as $table) {
+        //         echo "<li>{$table}</li>";
+        //     }
+        //     echo '</ul>';
+        // }
+        ?>
+
 		<div class="maincontent" align="center">
 			<div class="searchbar" >
                 <object data="./assets/svg/logo_pelitaku.svg" type="" width="204px" height = "67.14px"></object>
@@ -103,29 +121,7 @@
 			</br>
 			
 		</div>
-        <footer class="footer">
-			<div class="footermenu">
-				<div> 
-					<b>Tentang</b>
-					<p>Siapa kami? </p>
-					<p>Syarat dan Ketentuan</p>
-					<p>Kebijakan Privasi</p>
-				</div>
-				<div>
-					<b>Kelas</b>
-					<p>Mulai Kelas</p>
-					<p>Lihat subjek kami</p>
-				</div>
-				<div align="right"> 
-					<b>Menjadi tutor</b>
-					<p>Keuntungan menjadi tutor</p>
-					<p>Daftar menjadi tutor</p>
-					<p>Masuk</p>
-				</div>
-			</div>
-            <hr width="95%" align="center">
-            <p align="center">© Pelitaku, 2021</p>
-        </footer>
+        <?php include './assets/php/footer.php'; ?>
 		
         <script src="script.js" type="application/javascript"></script>
     </body>

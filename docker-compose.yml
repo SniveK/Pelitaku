@@ -16,7 +16,7 @@ services:
 
   # PHP Service
   php:
-    image: php:8.0-fpm
+    build: ./.docker/php
     working_dir: /var/www/php
     volumes:
       - ./src:/var/www/php
@@ -37,6 +37,8 @@ services:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
       retries: 10
+    ports:
+        - 3306:3306
 
   # PhpMyAdmin Service
   phpmyadmin:
@@ -53,3 +55,4 @@ services:
 volumes:
 
   mysqldata:
+
