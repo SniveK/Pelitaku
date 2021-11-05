@@ -6,7 +6,6 @@ Frontend
 - [X] Homepage
 - [X] Group tutoring (Detail, make class)
 - [ ] Profile + edit profile
-- [ ] Inbox (chat)
 - [ ] Class list (yg udah di book)
 - [ ] Class detail
 - [X] Available class
@@ -16,11 +15,13 @@ Frontend
 - [ ] Booking page + Choose date
 - [ ] Tutor Schedule
 - [ ] Make class/group tutoring
-- [ ] Help desk
 - [X] Sign in / Sign up
-- [ ] Infographic (Tutor benefit)
+- [X] Infographic (Tutor benefit)
+Tugas DP
 - [ ] About page
-
+- [ ] FAQ
+Optional
+- [ ] Inbox (chat)
 Backend
 - [ ] Database
 - [ ] Logic
