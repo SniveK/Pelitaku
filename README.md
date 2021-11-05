@@ -14,16 +14,16 @@ Frontend
 - [ ] Tutor Review
 - [ ] Booking page + Choose date
 - [ ] Tutor Schedule
-- [ ] Make class/group tutoring
 - [X] Sign in / Sign up
 - [X] Infographic (Tutor benefit)
 Tugas DP
 - [ ] About page
 - [ ] FAQ
 Optional
+- [ ] Make class/group tutoring
 - [ ] Inbox (chat)
-Backend
-- [ ] Database
+**Backend**
+- [ ] **Database**
 - [ ] Logic
 - [ ] AAAAAAA
 
