@@ -12,6 +12,10 @@ services:
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - php
+    networks:
+      pelitaku:
+        aliases:
+          - nginx-net
 
   # PHP Service
   php:
@@ -22,6 +26,10 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+    networks:
+      pelitaku:
+        aliases:
+          - php-net
 
   # MySQL Service
   mysql:
@@ -38,6 +46,10 @@ services:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
       retries: 10
+    networks:
+      pelitaku:
+        aliases:
+          - mysql-net
 
   # PhpMyAdmin Service
   phpmyadmin:
@@ -49,7 +61,12 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-# Volumes
-#volumes:
-#  mysqldata:
+    networks:
+      pelitaku:
+        aliases:
+          - phpmyadmin-net
+
+#NETWORK
+networks:
+  pelitaku:
 
