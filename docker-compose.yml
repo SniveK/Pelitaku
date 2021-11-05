@@ -1,8 +1,7 @@
-version: '3.8'
+version: "3.8"
 
 # Services
 services:
-
   # Nginx Service
   nginx:
     image: nginx:1.19
@@ -28,7 +27,7 @@ services:
   mysql:
     image: mysql:8
     ports:
-        - 3306:3306
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: demo
@@ -39,7 +38,6 @@ services:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
       retries: 10
-    
 
   # PhpMyAdmin Service
   phpmyadmin:
@@ -51,7 +49,6 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-
 # Volumes
 #volumes:
 #  mysqldata:
