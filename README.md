@@ -28,9 +28,9 @@ Optional
 - [ ] AAAAAAA
 
 Pertanyaan
-- Websitenya dinamis atau gk
-- Chat room fiturnya perlu jalan atau gk
+- Websitenya dinamis atau gk - Ngikutin marcel
+- Chat room fiturnya perlu jalan atau gk - GK
 - Prov, kecamatan, kota, pilihan atau isi sendiri
-- Bagi tugas, jelasin kerjaan, cara kerjain
-- Cari tau fungsi utama
+- Bagi tugas, jelasin kerjaan, cara kerjain - DP dpt 4 pages
+- Cari tau fungsi utama - booking class.
 - 
