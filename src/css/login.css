@@ -52,16 +52,13 @@ body {
 }
 
 /* sign-up tutee form */
-.title {
-  width: 1280px;
-  display: flex;
-  justify-content: start;
-}
 
-.title > h1 {
+/* .title > h1 {
   font-size: 22px;
-  line-height: 24px;
-  margin-left: 80px;
+} */
+
+.title {
+  font-size: 22px;
 }
 
 .flex-container-row {
@@ -279,6 +276,12 @@ body {
 
 .text-align-right {
   text-align: right;
+}
+
+/* border */
+.border-bottom {
+  background-color: #fd6a02;
+  border-bottom: 1px solid black;
 }
 
 .button {

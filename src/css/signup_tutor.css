@@ -87,6 +87,10 @@ body {
   align-items: center;
 }
 
+.flex-between {
+  justify-content: space-between;
+}
+
 .roadmap {
   margin-right: 200px;
 }
@@ -124,6 +128,10 @@ body {
   outline-color: gray;
 }
 
+.reason-text-area {
+  resize: none;
+}
+
 .address-text-area {
   padding-top: 7px;
   height: 105px;
@@ -152,7 +160,15 @@ body {
 }
 
 .margin-left-150 {
-  padding-left: 5%;
+  margin-left: 150px;
+}
+
+/* padding */
+.padding-top-30 {
+  padding-top: 30px;
+}
+.padding-bottom-30 {
+  padding-bottom: 30px;
 }
 /* width */
 .width-20 {
@@ -257,13 +273,16 @@ body {
   text-align: right;
 }
 
+.buttons {
+  margin-top: 80px;
+  gap: 40px;
+}
+
 .button {
   width: 160px;
   height: 40px;
-  border: 1px solid;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 37px;
-  box-sizing: border-box;
   transform: scale(1);
   transition: 0.3s;
 }
@@ -274,7 +293,6 @@ body {
 }
 
 .continue,
-.login,
 .signup {
   background: #fd6a02;
   color: white;
@@ -328,11 +346,7 @@ body {
 }
 
 .footer-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 1280px;
-  height: 140px;
   padding: 1.5rem 3rem 1.5rem 3rem;
 }
 
@@ -349,5 +363,5 @@ body {
 }
 
 .line {
-  width: 90%;
+  width: 95%;
 }
