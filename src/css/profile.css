@@ -37,8 +37,6 @@ body {
   width: 100%;
   height: 40px;
   background-color: #b4d1e1;
-  display: flex;
-  justify-content: center;
 }
 
 .nav {
@@ -95,7 +93,8 @@ body {
 
 .circle {
   border-radius: 50%;
-  background-color: #fd6a02;
+  background: url("../assets/png/contoh_tutor.png");
+  background-position: top;
 }
 
 .form {
@@ -391,4 +390,42 @@ body {
 
 .line {
   width: 95%;
+}
+
+/* profile page */
+/* profile image */
+.profile-image-container {
+  width: 1280px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  grid-template-rows: 50px 50px 200px;
+}
+
+.image-container {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.review-container {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: 5px;
+}
+
+.review-container > object {
+  width: 160px;
+}
+
+.image-container > div {
+  position: relative;
+  left: 47%;
+  top: 10%;
 }

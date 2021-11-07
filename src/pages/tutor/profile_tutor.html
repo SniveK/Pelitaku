@@ -8,24 +8,40 @@
     <link rel="stylesheet" href="../../css/profile.css">
 </head>
 <body class="flex-container-columns">
-    <header class="header">
+    <!-- <header class="header">
         <nav class="nav">
             <object data="../../assets/svg/icon_pelitaku.svg" type="" width="28px"></object>
+        </nav>
+    </header> -->
+    <header class="header flex-container-row flex-center">
+        <nav class="nav flex-container-row flex-between">
+			<object data="../../assets/svg/icon_pelitaku.svg" type="" width="28px" "></object>
+			<div class="flex-container-row column-gap-20">
+                <p>pembelajaran</p>
+                <p>jadwal</p>
+                <p>inbox</p>      
+                <p>profil</p>
+            </div>
         </nav>
     </header>
 
     <div class="flex-container-column flex-center margin-top-82">
         <div class="flex-container-row flex-center width-1280">
             <span class="title"><h1>Profil</h1></span>
-            <!-- <span class="title"><h1>Buat Akun Pelitaku</h1></span> -->
-            <input class="button abort" type="button" value="Sunting profil">
+            <input class="button abort" type="button" value="sunting profil">
         </div>
         <div class="width-1280"><hr></div>
     </div>
 
     <div class="flex-container-column flex-center margin-bottom-82">
-        <div class="flex-container-row circle width-192 height-192 margin-top-30 margin-bottom-30">
-            <img src="" alt="">
+        <div class="profile-image-container">
+            <div class="image-container">
+                <div class="circle width-192 height-192"></div>
+            </div>
+            <div class="review-container">
+                <object data="../../assets/svg/profile_tutor_starbar.svg" type=""></object>
+                <input class="button abort right" type="button" value="lihat review">
+            </div>
         </div>
         <div class="flex-container-row flex-center width-1280">
             <div class="flex-container-column flex-start width-30-percent row-gap-20">
