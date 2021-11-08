@@ -113,7 +113,10 @@ body {
 .mastered-course > input,
 .phone-number > input,
 .address-text-area,
-.reason-text-area {
+.reason-text-area,
+input,
+select,
+textarea {
   padding-left: 7px;
   height: 40px;
   border-radius: 7px;
@@ -126,7 +129,8 @@ body {
 .form > select:focus,
 .form > textarea:focus,
 .name > input:focus,
-.phone-number > input:focus {
+.phone-number > input:focus,
+input:focus {
   outline-color: gray;
 }
 
@@ -238,8 +242,16 @@ body {
   width: 100%;
 }
 
+.width-15-percent {
+  width: 15%;
+}
+
 .width-30-percent {
   width: 30%;
+}
+
+.width-40-percent {
+  width: 40%;
 }
 
 .width-50-percent {
