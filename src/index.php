@@ -1,58 +1,23 @@
+<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="id" >
 
     <head>
         <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=1280, initial-scale=1">
         <link rel="stylesheet" href="style.css">
 		
 		<title> Pelitaku </title>
 		<link rel="icon" href="logo.png">
-		
+
     </head>
-	
 	<?php include './assets/php/header.php'; ?>
+    <?php include './assets/php/searchbar.php'; ?>
 
     <body class="background" >
         <img src="./assets/png/icon_message.png" alt="Icon Pelitaku" class="message-icon">
-        <?php
-        // phpinfo();
-        // $connection = new PDO('mysql:host=mysql;dbname=demo;charset=utf8', 'root', 'root');
-        // $connection = new mysqli_connect("localhost", "root", "root","demo");
-        $conn = mysqli_connect('mysql-net', 'root', 'root');
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        echo "Connected successfully";
-        // $query      = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'demo'");
-        // $tables     = $query->fetchAll(PDO::FETCH_COLUMN);
-
-        // if (empty($tables)) {
-        //     echo '<p class="center">There are no tables in database <code>demo</code>.</p>';
-        // } else {
-        //     echo '<p class="center">Database <code>demo</code> contains the following tables:</p>';
-        //     echo '<ul class="center">';
-        //     foreach ($tables as $table) {
-        //         echo "<li>{$table}</li>";
-        //     }
-        //     echo '</ul>';
-        // }
-        ?>
-
 		<div class="maincontent" align="center">
-			<div class="searchbar" >
-                <object data="./assets/svg/logo_pelitaku.svg" type="" width="204px" height = "67.14px"></object>
-				<div>
-					<input type="text" placeholder="Cari lokasi" class="input-location" >
-                    <img src="./assets/png/icon_gps.png" alt="Icon GPS" class="search-icon">
-                </div>
-				<div>
-                    <input type="text" placeholder="Cari subjek...." class="input-subject">
-                    <img src="./assets/png/icon_search.png" alt="Icon magnifying glass" class="search-icon">
-                </div>
-			</div>
-			<div style="height: 20px;"></div>
 			<img src="./assets/png/banner1.png" alt="Banner Yuk Belajar Bareng" width="100%">
 			
 			<p class="caption"> Kami memiliki puluhan tutor yang siap membimbingmu dalam belajar. </p>
@@ -99,7 +64,7 @@
 			<p class="caption" style="padding-right: 40%;"> Mata kuliah tren: </p>
 			
 			<div>
-				<button class="primary2" > Desain </button>
+				<button class="primary2" style="width = 10vw"> Desain </button>
 				<button class="primary2"> Gambar Teknik </button>
 				<button class="primary2"> Studio Desain </button>
 				<button class="primary2"> Ergonomi </button>
