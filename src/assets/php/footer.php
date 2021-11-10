@@ -1,24 +1,26 @@
-<footer class="footer">
-    <div class="footermenu">
-        <div> 
-            <b>Tentang</b>
-            <p>Siapa kami? </p>
-            <p>Syarat dan Ketentuan</p>
-            <p>Kebijakan Privasi</p>
-            <p>FAQ</p>
-        </div>
-        <div>
-            <b>Kelas</b>
-            <p>Mulai Kelas</p>
-            <p>Lihat subjek kami</p>
-        </div>
-        <div align="right"> 
-            <b>Menjadi tutor</b>
-            <p>Keuntungan menjadi tutor</p>
-            <p>Daftar menjadi tutor</p>
-            <p>Masuk</p>
-        </div>
+<footer class="flex-container-column flex-center footer">
+    <div class="flex-container-row flex-between footer-menu">
+        <ul class="footer-menu__left">
+            <li><b>Tentang</b></li>
+            <li>Siapa kami? </li>
+            <li>Syarat dan Ketentuan</li>
+            <li>Kebijakan Privasi</li>
+            <li>FAQ</li>
+        </ul>
+        <ul class="footer-menu__center">
+            <li><b>Kelas</b></li>
+            <li>Mulai Kelas</li>
+            <li>Lihat subjek kami</li>
+        </ul>
+        <ul class="footer-menu__right">
+            <li><b>Menjadi tutor</b></li>
+            <li>Keuntungan menjadi tutor</li>
+            <li>Daftar menjadi tutor</li>
+            <li>Masuk</li>
+        </ul>
     </div>
-    <hr width="95%" align="center">
-    <p align="center">© Pelitaku, 2021</p>
+    <div class="width-1280">
+        <hr class="line">
+        <p align="center">© Pelitaku, 2021</p>
+    </div>
 </footer>
