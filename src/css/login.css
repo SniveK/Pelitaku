@@ -311,7 +311,18 @@ body {
 .login-border {
   border-radius: 15px;
   border: 1px solid #fd6a02;
-  background: white;
+  background-color: white;
+}
+
+.login-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .abort {

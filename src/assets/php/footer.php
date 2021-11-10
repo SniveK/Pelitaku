@@ -5,6 +5,7 @@
             <p>Siapa kami? </p>
             <p>Syarat dan Ketentuan</p>
             <p>Kebijakan Privasi</p>
+            <p>FAQ</p>
         </div>
         <div>
             <b>Kelas</b>
