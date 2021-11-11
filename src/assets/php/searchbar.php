@@ -5,7 +5,9 @@
         <img src="./assets/png/icon_gps.png" alt="Icon GPS" class="search-icon">
     </div>
     <div>
-        <input type="text" placeholder="Cari subjek...." class="input-subject">
-        <img src="./assets/png/icon_search.png" alt="Icon magnifying glass" class="search-icon">
+        <form action="">
+            <input type="text" placeholder="Cari subjek...." class="input-subject">
+            <input src="./assets/png/icon_search.png" alt="Icon magnifying glass" class="search-icon" type="submit">
+        </form>
     </div>
 </div>
