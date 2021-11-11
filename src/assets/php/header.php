@@ -1,4 +1,5 @@
 <?php
+$_SESSION['LAST_ACTIVITY'] = time(); 
 if (isset($_SESSION['is_tutor'])) {
 	if ($_SESSION['is_tutor']) {
 		echo "
@@ -35,3 +36,10 @@ if (isset($_SESSION['is_tutor'])) {
 	</nav>
 	</header>";
 }
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+	// request 30 minates ago
+	session_destroy();
+	session_unset();
+}
+$_SESSION['LAST_ACTIVITY'] = time(); 
+?>

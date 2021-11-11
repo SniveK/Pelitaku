@@ -23,16 +23,16 @@
             </div>
             <div class="form flex-container-column max-width-600 min-width-550 row-gap-20">
                 <div class="flex-container-row name column-gap-20">
-                    <input class="width-248" type="text" placeholder="Nama Depan" id="parentFirstName">
-                    <input class="width-248" type="text" placeholder="Nama Belakang" id="parentLastName">
+                    <input required class="width-248" type="text" placeholder="Nama Depan" id="parentFirstName">
+                    <input required class="width-248" type="text" placeholder="Nama Belakang" id="parentLastName">
                 </div>
                 <div class="flex-container-row phone-number column-gap-20">
-                    <input class="width-50 country-code" type="text" value="+62" disabled>
-                    <input class="width-440" type="text" placeholder="Nomor Ponsel" id="parentPhoneNumber">
+                    <input required class="width-50 country-code" type="text" value="+62" disabled>
+                    <input required class="width-440" type="text" placeholder="Nomor Ponsel" id="parentPhoneNumber">
                 </div>
-                <input class="email width-504" type="email" placeholder="E-mail" id="parentEmail">
+                <input required class="email width-504" type="email" placeholder="E-mail" id="parentEmail">
                 <div class="buttons">
-                    <input class="button continue" type="button" value="Selanjutnya">
+                    <input class="button continue" type="submit" value="Selanjutnya">
                     <input class="button abort" type="button" value="Batal">
                 </div>
             </div>

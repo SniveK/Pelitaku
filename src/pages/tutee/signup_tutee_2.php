@@ -36,10 +36,10 @@
                     <option value="audi">Audi</option>
                 </select>
 
-                <input class="width-504" type="text" placeholder="Kecamatan">
-                <textarea class="width-504 address-text-area" placeholder="Alamat" id="address"></textarea>
+                <input required class="width-504" type="text" placeholder="Kecamatan">
+                <textarea required class="width-504 address-text-area" placeholder="Alamat" id="address"></textarea>
                 <div class="buttons">
-                    <input class="button continue" type="button" value="Selanjutnya">
+                    <input class="button continue" type="submit" value="Selanjutnya">
                     <input class="button abort" type="button" value="Batal">
                 </div>
             </form>

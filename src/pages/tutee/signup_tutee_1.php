@@ -24,20 +24,20 @@
             <div class="roadmap">
                 <object data="../../assets/svg/signup_tutee_roadmap_1.svg" type=""></object>
             </div>
-            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20">
+            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20" >
                 <div class="flex-container-row name column-gap-20">
-                    <input class="width-248" type="text" placeholder="Nama Depan" id="tuteeFirstName">
-                    <input class="width-248" type="text" placeholder="Nama Belakang" id="tuteeLastName">
+                    <input required class="width-248" type="text" placeholder="Nama Depan" id="tuteeFirstName">
+                    <input required class="width-248" type="text" placeholder="Nama Belakang" id="tuteeLastName">
                 </div>
                 <div class="flex-container-row phone-number column-gap-20">
-                    <input class="width-50 country-code" type="text" value="+62" disabled>
-                    <input class="width-440" type="text" placeholder="Nomor Ponsel" id="tuteePhoneNumber">
+                    <input required class="width-50 country-code" type="text" value="+62" disabled>
+                    <input required class="width-440" type="text" placeholder="Nomor Ponsel" id="tuteePhoneNumber">
                 </div>
-                <input class="email width-504" type="email" placeholder="E-mail" id="tuteeEmail">
-                <input class="password width-504" type="password" placeholder="Kata Sandi" id="tuteePassword">
-                <input class="password width-504" type="password" placeholder="Ulangi Kata Sandi" id="tuteeConfirmPassword">
+                <input required class="email width-504" type="email" placeholder="E-mail" id="tuteeEmail">
+                <input required class="password width-504" type="password" placeholder="Kata Sandi" id="tuteePassword">
+                <input required class="password width-504" type="password" placeholder="Ulangi Kata Sandi" id="tuteeConfirmPassword">
                 <div class="buttons">
-                    <input class="button continue" type="button" value="Selanjutnya">
+                    <input class="button continue" type="submit" value="Selanjutnya">
                     <input class="button abort" type="button" value="Batal">
                 </div>
             </form>
