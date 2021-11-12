@@ -1,8 +1,11 @@
 <?php
-    // session_start(); 
-    // if(isset($_SESSION['id'])){
-    //     echo "<script type='text/javascript'>window.history.go(-1)</script>";
-    // }
+    // session_destroy();
+    if(isset($_SESSION['id'])){
+        echo "<script type='text/javascript'>window.history.go(-1)</script>";
+    }
+    if (!isset($_SESSION)) {
+        session_start(); 
+    }
     $passwordErr = $emailErr = $password = $email = $dbErr = "";
     error_reporting(E_ERROR | E_PARSE);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
