@@ -53,8 +53,8 @@ if (!isset($_SESSION)) {
                 <div class='circle width-192 height-192'></div>
             </div>
             <div class='review-container' style='position:relative'>
-                <div style='position: absolute;bottom: 35px; left: 110px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
-                <div style='position: absolute;bottom: 35px; left: 110px;  width:180px; overflow: hidden;'>
+                <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
+                <div style='position: absolute;bottom: 35px;  width:".($row["rating"]*180/5)."px; overflow: hidden;'>
                     <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
                 </div>
                 <input class='button abort right' type='button' value='lihat review'>
