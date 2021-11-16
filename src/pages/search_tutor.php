@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/profile.css">
     <title> Pelitaku </title>
     <link rel="icon" href="logo.png">
@@ -41,19 +40,21 @@
             </div>
         </div>
         <div class="flex-container-column row-gap-40 width-1280">
-            <div class="flex-container-row column-gap-20">
-                <h1 class="margin-left-150">
+
+            <div class="flex-container-row flex-center column-gap-20">
+                <h2>
                     Tutor Desain Produk 1 yang tersedia berdasarkan
-                </h1>
+                </h2>
                 <select class="search-filter" name="cars" id="cars">
                     <option value="terdekat">Terdekat</option>
                     <option value="penilaian">Penilaian</option>
                     <option value="tingkat">Tingkat</option>
                 </select>
             </div>
+
             <div class="flex-container-column column-gap-20 tutor-border">
                 <div class="margin-left-90">
-                    <h2>Special Pick</h2>
+                    <h4>Special Pick</h4>
                 </div>
                 <div class="flex-container-row flex-center tutor-images">
                     <div style=" width: 200px; height:270px; position: relative; margin: 0; padding: 0%;">
@@ -98,26 +99,106 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-container-row">
-                <div class="flex-container-column tutor-small-box" style="position: relative;">
-                    <div class="flex-container-row flex-between">
-                        <div class="image-container">
-                            <div class="circle width-45 height-45"></div>
-                        </div>
-                        <div><img src="../assets/png/starbar_grey.png" alt="grey stars"></div>
-                        <div style="z-index: 10;">
-                            <img src="../assets/png/starbar_yellow.png" alt="yellow stars" style="width: 81px; margin-left: 0px;">
+
+            <div class="tutor-boxes">
+                <div class=" flex-container-column tutor-small-box">
+                    <div class="flex-container-row flex-between position-relative">
+                        <div class="circle width-45 height-45"></div>
+                        <div class="position-relative">
+                            <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars"> </div>
+                            <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars"> </div>
                         </div>
                     </div>
-                    <hr class="line">
-                    <div>Desain Produk, 2018</div>
-                    <div>Calvin</div>
-                    <div>Cengkareng, Jakarta Barat</div>
+                    <hr class="width-full">
+                    <div class="flex-container-column flex-start row-gap-10">
+                        <div>Desain Produk, 2018</div>
+                        <div>Calvin</div>
+                        <div>Cengkareng, Jakarta Barat</div>
+                    </div>
+                </div>
+
+                <div class="flex-container-column tutor-small-box">
+                    <div class="flex-container-row flex-between position-relative">
+                        <div class="circle width-45 height-45"></div>
+                        <div class="position-relative">
+                            <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars"> </div>
+                            <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars"> </div>
+                        </div>
+                    </div>
+                    <hr class="width-full">
+                    <div class="flex-container-column flex-start row-gap-10">
+                        <div>Desain Produk, 2018</div>
+                        <div>Calvin</div>
+                        <div>Cengkareng, Jakarta Barat</div>
+                    </div>
+                </div>
+
+                <div class="flex-container-column tutor-small-box">
+                    <div class="flex-container-row flex-between position-relative">
+                        <div class="circle width-45 height-45"></div>
+                        <div class="position-relative">
+                            <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars"> </div>
+                            <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars"> </div>
+                        </div>
+                    </div>
+                    <hr class="width-full">
+                    <div class="flex-container-column flex-start row-gap-10">
+                        <div>Desain Produk, 2018</div>
+                        <div>Calvin</div>
+                        <div>Cengkareng, Jakarta Barat</div>
+                    </div>
                 </div>
             </div>
-            <div>
 
+
+            <div class="tutor-boxes">
+                <div class="flex-container-column tutor-small-box">
+                    <div class="flex-container-row flex-between position-relative">
+                        <div class="circle width-45 height-45"></div>
+                        <div class="position-relative">
+                            <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars"> </div>
+                            <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars"> </div>
+                        </div>
+                    </div>
+                    <hr class="width-full">
+                    <div class="flex-container-column flex-start row-gap-10">
+                        <div>Desain Produk, 2018</div>
+                        <div>Calvin</div>
+                        <div>Cengkareng, Jakarta Barat</div>
+                    </div>
+                </div>
+                <div class="flex-container-column tutor-small-box">
+                    <div class="flex-container-row flex-between position-relative">
+                        <div class="circle width-45 height-45"></div>
+                        <div class="position-relative">
+                            <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars"> </div>
+                            <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars"> </div>
+                        </div>
+                    </div>
+                    <hr class="width-full">
+                    <div class="flex-container-column flex-start row-gap-10">
+                        <div>Desain Produk, 2018</div>
+                        <div>Calvin</div>
+                        <div>Cengkareng, Jakarta Barat</div>
+                    </div>
+                </div>
+                <div class="flex-container-column tutor-small-box">
+                    <div class="flex-container-row flex-between position-relative">
+                        <div class="circle width-45 height-45"></div>
+                        <div class="position-relative">
+                            <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars"> </div>
+                            <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars"> </div>
+                        </div>
+                    </div>
+                    <hr class="width-full">
+                    <div class="flex-container-column flex-start row-gap-10">
+                        <div>Desain Produk, 2018</div>
+                        <div>Calvin</div>
+                        <div>Cengkareng, Jakarta Barat</div>
+                    </div>
+                </div>
             </div>
+
             <div class="search-nav" align="right">
                 <a href=""><img src="../assets/png/icon_left.png" alt=""></a>
                 <a href="">1</a>
