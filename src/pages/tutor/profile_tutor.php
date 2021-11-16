@@ -60,7 +60,7 @@ if (!isset($_SESSION)) {
             </div>
             <div class='review-container' style='position:relative'>
                 <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
-                <div style='position: absolute;bottom: 35px;  width:" . ($row["rating"] * 180 / 5) . "px; overflow: hidden;'>
+                <div style='position: absolute;bottom: 35px;  width:".($row["rating"]*36)."px; overflow: hidden;'>
                     <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
                 </div>
                 <input class='button abort right' type='button' value='lihat review'>
