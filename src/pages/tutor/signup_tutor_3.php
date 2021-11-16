@@ -49,7 +49,7 @@
                     <div class="flex-container-row mastered-course">
                         <input class="email width-465" type="email" placeholder="E-mail" id="parentEmail">
                         <div class="height-40 width-20"></div>
-                        <object data="./assets/svg/plus_icon.svg" type=""></object>
+                        <object data="../../assets/svg/signup_tutor_icon_plus.svg" type=""></object>
                     </div>
                 </div>
                 <div class="buttons">

@@ -13,10 +13,10 @@
     <link rel="icon" href="logo.png">
 
 </head>
-<?php include './assets/php/header.php'; ?>
-<?php include './assets/php/searchbar.php'; ?>
 
 <body class="background">
+    <?php include './assets/php/header.php'; ?>
+    <?php include './assets/php/searchbar.php'; ?>
     <img src="./assets/png/icon_message.png" alt="Icon Pelitaku" class="message-icon">
 
     <div class="maincontent" align="center">
@@ -61,7 +61,7 @@
         <p class="caption" style="padding-right: 40%;"> Mata kuliah tren: </p>
 
         <div>
-            <button class="primary2" style="width = 10vw"> Desain </button>
+            <button class="primary2" style="width:10vw"> Desain </button>
             <button class="primary2"> Gambar Teknik </button>
             <button class="primary2"> Studio Desain </button>
             <button class="primary2"> Ergonomi </button>

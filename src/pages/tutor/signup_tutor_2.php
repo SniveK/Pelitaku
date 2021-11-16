@@ -26,19 +26,17 @@
                 <object data="../../assets/svg/signup_tutee_roadmap_2.svg" type=""></object>
             </div>
             <form class="form flex-container-column flex-center max-width-600 min-width-550 row-gap-20">
-                <select class="width-504" name="Provinsi" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
+                <select class="width-504" name="provinsi" id="province">
                 </select>
-                <select class="width-504" name="Kota/Kabupaten">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
+                <select class="width-504" name="kota/kabupaten" id="city">
+
                 </select>
-                <input class="width-504" type="text" placeholder="Kecamatan">
+                <select class="width-504" name="kecamatan" id="district">
+
+                </select>
+                <select class="width-504" name="kelurahan" id="sub-district">
+
+                </select>
                 <textarea class="width-504 address-text-area" placeholder="Alamat" id="address"></textarea>
                 <div class="buttons">
                     <input class="button continue" type="button" value="Selanjutnya">
@@ -48,7 +46,7 @@
         </div>
     </div>
     <?php include '../../assets/php/footer.php' ?>
-
+    <script src="../../scripts/signup.js"></script>
 </body>
 
 </html>
