@@ -33,7 +33,7 @@
             <div class="title">
                 <h1>Registrasi</h1>
             </div>
-            <ol class="flex-container-column width-1280 margin-bottom-82 line-height-30 row-gap-20 font-size-18 text-align-justify">
+            <ol class="flex-container-column width-1280 line-height-30 row-gap-20 font-size-18 text-align-justify">
                 <li>
                     <b>
                         Bagaimana cari menjadi anggota?
@@ -98,7 +98,6 @@
             <div class="title">
                 <h1>Kelas</h1>
             </div>
-
             <ol class="flex-container-column row-gap-20 font-size-18 line-height-30">
                 <li>
                     <b>

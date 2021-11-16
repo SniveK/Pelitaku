@@ -185,6 +185,10 @@ body {
 .margin-left-150 {
   margin-left: 150px;
 }
+
+.margin-left-90 {
+  margin-left: 90px;
+}
 /* width */
 .width-20 {
   width: 20px;
@@ -192,6 +196,10 @@ body {
 
 .width-30 {
   width: 30px;
+}
+
+.width-45 {
+  width: 45px;
 }
 
 .width-50 {
@@ -255,6 +263,18 @@ body {
 }
 
 /* height */
+.height-32 {
+  height: 32px;
+}
+
+.height-45 {
+  height: 45px;
+}
+
+.height-300 {
+  height: 300px;
+}
+
 .height-300 {
   height: 300px;
 }
@@ -423,4 +443,31 @@ body {
 
 .line {
   width: 100%;
+}
+
+/* search-icon */
+.search-location {
+  background: url("../assets/png/icon_gps.png") left top no-repeat;
+  padding-left: 15px;
+}
+
+/* .input-location {
+  border: none;
+  outline: none;
+  font-size: 16px;
+} */
+
+.search-subject {
+  background: url("../assets/png/icon_search.png") left top no-repeat;
+  padding-left: 15px;
+}
+
+/* position relative */
+.position-relative {
+  position: relative;
+}
+
+/* border radius */
+.border-radius-50-percent {
+  border-radius: 50%;
 }

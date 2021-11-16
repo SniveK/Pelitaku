@@ -58,16 +58,17 @@ body {
   position: static;
 }
 
-.searchbar {
+/* .searchbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-}
-.searchbar > div {
+} */
+
+/* .searchbar > div {
   position: relative;
-}
+} */
 
 .search-icon {
   position: absolute;
@@ -164,6 +165,7 @@ input {
   background-position: right;
   background-repeat: no-repeat; */
 }
+
 .caption {
   font-family: Inter;
   font-style: normal;
@@ -172,7 +174,10 @@ input {
   line-height: 27px;
   text-align: center;
 }
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
   color: inherit;
 }

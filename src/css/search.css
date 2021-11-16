@@ -29,3 +29,44 @@
   padding: 0px 10px 0px 10px;
   color: #fd6a02;
 }
+
+.search-filter {
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  padding-left: 5px;
+  width: 199px;
+  height: 40px;
+  outline: none;
+  position: relative;
+  background: url("../assets/png/arrow_orange.png");
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-size: 19.05px 16.5px;
+  background-position-x: 174px;
+  background-position-y: 13px;
+}
+.search-filter > option {
+  border-radius: 5px;
+}
+
+select {
+  appearance: none;
+}
+
+.tutor-border {
+  background-color: #e5f3fb;
+  box-sizing: border-box;
+  margin: 0px 150px 0px 150px;
+  padding: 50px 0px 50px 0px;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tutor-small-box {
+  background: #e5f3fb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}

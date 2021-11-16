@@ -1,22 +1,22 @@
 <?php
 if (!isset($_SESSION)) {
-    session_start(); 
+    session_start();
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/login.css">
-    <!-- <link rel="stylesheet" href="../../css/signup_tutor.css">\ -->
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body class="flex-container-columns">
 
-    <?php include "../../assets/php/header.php";?>
+    <?php include "../../assets/php/header.php"; ?>
 
     <div class="flex-container-row flex-center margin-top-82">
         <div class="title">
@@ -30,7 +30,7 @@ if (!isset($_SESSION)) {
                 <object data="../../assets/svg/signup_tutor_roadmap_1.svg" type=""></object>
             </div>
 
-            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20" >
+            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20" id="signup_tutor_1">
                 <div class="flex-container-row name column-gap-20">
                     <input class="width-248" type="text" placeholder="Nama Depan" id="tuteeFirstName">
                     <input class="width-248" type="text" placeholder="Nama Belakang" id="tuteeLastName">
