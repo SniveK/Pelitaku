@@ -62,7 +62,7 @@
         <p class="caption" style="padding-right: 40%;"> Mata kuliah tren: </p>
 
         <div>
-            <button class="primary1" style="width:10vw"> Desain </button>
+            <button class="primary1"> Desain </button>
             <button class="primary1"> Gambar Teknik </button>
             <button class="primary1"> Studio Desain </button>
             <button class="primary1"> Ergonomi </button>

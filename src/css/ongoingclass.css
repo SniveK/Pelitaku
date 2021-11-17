@@ -1,0 +1,90 @@
+body {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.background {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maincontent {
+  width: 1024px;
+  height: auto;
+  padding-top: 50px;
+  position: static;
+}
+
+.maincontent hr{
+	margin-top:10px;
+	margin-bottom: 22px;
+	width: 1024px;
+}
+
+.maincontent p{
+	margin: 0;
+}
+
+.message-icon {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+}
+
+.primary {
+  width: 160px;
+  height: 40px;
+  border: 1px solid #fd6a02;
+  border-radius: 37px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  background-color: #fd6a02;
+  color: white;
+}
+
+.primarywhite {
+  width: 160px;
+  height: 40px;
+  border-radius: 37px;
+  background-color: white;
+  color: black;
+  border: 1px solid #fd6a02;
+}
+
+.ongoing {
+	display: flex;
+	flex-wrap: wrap;
+	
+	width: 1024px;
+	height: 152px;
+	padding: 32px;
+	margin-bottom: 25px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+	border-radius: 7px;
+}
+
+.history {
+	display: flex;
+	flex-wrap: wrap;
+	
+	width: 1024px;
+	height: 40px;
+	padding: 9px 19px 9px 19px;
+	margin-bottom: 20px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+	border-radius: 7px;
+}
+
+.judul {
+	font-size:22px;
+	font-weight:bold;
+	line-height:24px;
+}
