@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="css/main.css">
 
     <title> Pelitaku </title>
     <link rel="icon" href="logo.png">
@@ -17,6 +17,7 @@
 <body class="background">
     <?php include './assets/php/header.php'; ?>
     <?php include './assets/php/searchbar.php'; ?>
+	
     <img src="./assets/png/icon_message.png" alt="Icon Pelitaku" class="message-icon">
 
     <div class="maincontent" align="center">
@@ -61,17 +62,17 @@
         <p class="caption" style="padding-right: 40%;"> Mata kuliah tren: </p>
 
         <div>
-            <button class="primary2" style="width:10vw"> Desain </button>
-            <button class="primary2"> Gambar Teknik </button>
-            <button class="primary2"> Studio Desain </button>
+            <button class="primary1" style="width:10vw"> Desain </button>
+            <button class="primary1"> Gambar Teknik </button>
+            <button class="primary1"> Studio Desain </button>
+            <button class="primary1"> Ergonomi </button>
             <button class="primary2"> Ergonomi </button>
-            <button class="primary"> Ergonomi </button>
             </br>
-            <button class="primary2"> Sejarah </button>
-            <button class="primary2"> Presentasi Desain </button>
-            <button class="primary2"> Ekonomi </button>
+            <button class="primary1"> Sejarah </button>
+            <button class="primary1"> Presentasi Desain </button>
+            <button class="primary1"> Ekonomi </button>
+            <button class="primary1"> Ekonomi Mikro </button>
             <button class="primary2"> Ekonomi Mikro </button>
-            <button class="primary"> Ekonomi Mikro </button>
         </div>
 
         <button class="secondary"> lihat semua kelas </button>

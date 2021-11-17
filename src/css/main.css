@@ -1,0 +1,66 @@
+body {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.background {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-icon {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+}
+
+.maincontent {
+  width: 1024px;
+  height: auto;
+  padding-top: 50px;
+  position: static;
+}
+
+.primary1 {
+  width: 160px;
+  height: 40px;
+  border-radius: 37px;
+  background-color: #fd6a02;
+  color: white;
+  border: none;
+  margin-bottom: 12px;
+  margin-right: 20px;
+}
+
+.primary2 {
+  width: 160px;
+  height: 40px;
+  border-radius: 37px;
+  background-color: #fd6a02;
+  color: white;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.secondary {
+  width: 160px;
+  height: 24px;
+  border-radius: 37px;
+  background-color: white;
+  color: #fd6a02;
+  border: 1px solid #fd6a02;
+}
+
+.caption {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+}

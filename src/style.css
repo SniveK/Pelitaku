@@ -19,7 +19,7 @@
 * {
   font-family: "Inter";
   font-size: 14px;
-  line-height: 17px;
+  line-height: 24px;
   box-sizing: border-box;
 }
 
@@ -27,8 +27,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  font-size: 14px;
-  line-height: 24px;
 }
 
 /*////////////// HEADER STYLE //////////////*/
@@ -36,7 +34,7 @@ body {
 .push {
   margin-left: auto;
 }
-/* 
+
 .header {
   width: 100%;
   height: 40px;
@@ -44,7 +42,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .headercontent {
   width: 1280px;
@@ -113,13 +111,11 @@ a:visited:active {
   display: block;
 }
 
-.footermenu a:link,
-a:visited {
+.footermenu a:link, a:visited {
   cursor: pointer;
 }
 
-.footermenu a:link:active,
-a:visited:active {
+.footermenu a:link:active, a:visited:active {
   text-decoration: underline;
 }
 
@@ -220,68 +216,4 @@ input {
   left: 110px;
   width: 81px;
   overflow: hidden;
-}
-
-/*///////////// HOMEPAGE STYLE ///////////////*/
-
-.background {
-  width: 100%;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.message-icon {
-  position: fixed;
-  right: 25px;
-  top: 50%;
-}
-
-.maincontent {
-  width: 1024px;
-  height: auto;
-  padding-top: 50px;
-  position: static;
-}
-
-.primary {
-  width: 160px;
-  height: 40px;
-  border-radius: 37px;
-  background-color: #fd6a02;
-  color: white;
-  border: none;
-  margin-bottom: 12px;
-}
-
-.primary2 {
-  width: 160px;
-  height: 40px;
-  border-radius: 37px;
-  background-color: #fd6a02;
-  color: white;
-  border: none;
-  margin-bottom: 12px;
-  margin-right: 20px;
-}
-
-.secondary {
-  width: 160px;
-  height: 24px;
-  border-radius: 37px;
-  background-color: white;
-  color: #fd6a02;
-  border: 1px solid #fd6a02;
-}
-
-.caption {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 27px;
-  text-align: center;
 }
