@@ -1,9 +1,9 @@
 <?php
-if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
-    echo "<script type='text/javascript'>window.history.go(-1)</script>";
-}
 if (!isset($_SESSION)) {
-    session_start();
+    session_start(); 
+}
+if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
+    echo "<script type='text/javascript'>window.history.go(-1)</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ if (!isset($_SESSION)) {
             <span class="title">
                 <h1>Profil</h1>
             </span>
-            <input class="button abort" type="button" value="sunting profil">
+            <a href="./profile_edit_tutor.php"><input class="button abort" type="button" value="sunting profil"></a>
         </div>
         <div class="width-1280">
             <hr>
@@ -35,18 +35,23 @@ if (!isset($_SESSION)) {
 
     <?php
     include "../../assets/php/dbcon.php";
-    $sql = "SELECT * FROM users JOIN tutor on users.id=tutor.id WHERE users.id=" . $_SESSION["id"];
+    // var_dump($_SESSION);
+    $sql = "SELECT * FROM users JOIN tutor on users.id=tutor.id WHERE users.id=".$_SESSION["id"];
     $result = $conn->query($sql);
     if ($result !== false && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        echo "<div class='flex-container-column flex-center margin-bottom-82'>
+    } else {
+        echo "DB ERROR";
+    }
+    ?>
+    <div class='flex-container-column flex-center margin-bottom-82'>
         <div class='profile-image-container'>
             <div class='image-container'>
                 <div class='circle width-192 height-192'></div>
             </div>
             <div class='review-container' style='position:relative'>
                 <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
-                <div style='position: absolute;bottom: 35px;  width:".($row["rating"]*36)."px; overflow: hidden;'>
+                <div style='position: absolute;bottom: 35px;  width:"<?php echo $row["rating"]*36?>."px; overflow: hidden;'>
                     <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
                 </div>
                 <input class='button abort right' type='button' value='lihat review'>
@@ -56,59 +61,59 @@ if (!isset($_SESSION)) {
             <div class='flex-container-column flex-start width-30-percent row-gap-20'>
                 <div class='flex-container-column width-175'>
                     <div class='bold'>Email</div>
-                    <div>" . $row["email"] . "</div>
+                    <div><?php echo $row["email"] ?></div>
                 </div>
                 <div class='flex-container-row column-gap-40'>
                     <div class='flex-container-column width-175'>
                         <div class='bold'>Nama Depan</div>
-                        <div>" . $row["first_name"] . "</div>
+                        <div><?php echo $row["first_name"] ?></div>
                     </div>
                     <div class='flex-container-column'>
                         <div class='bold'>Nama Belakang</div>
-                        <div>" . $row["last_name"] . "</div>
+                        <div><?php echo $row["last_name"] ?></div>
                     </div>
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Nomor Ponsel</div>
                     <div class='flex-container-row column-gap-20'>
                         <div>+62</div>
-                        <div>" . $row["phone_number"] . "</div>
+                        <div><?php echo $row["phone_number"] ?></div>
                     </div>
                 </div>
                 <div class='flex-container-row column-gap-40'>
                     <div class='flex-container-column width-175'>
                         <div class='bold'>Bank</div>
-                        <div>" . $row["bank"] . "</div>
+                        <div><?php echo $row["bank"] ?></div>
                     </div>
                     <div class='flex-container-column width-175'>
                         <div class='bold'>Nomor Rekening</div>
-                        <div>" . $row["bank_number"] . "</div>
+                        <div><?php echo $row["bank_number"] ?></div>
                     </div>
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Alamat</div>
-                    <div>" . $row["address"] . "</div>
+                    <div><?php echo $row["address"] ?></div>
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Password</div>
-                    <div>" . $row["password"] . "</div>
+                    <div><?php echo (str_repeat('*', strlen($row["password"])))?></div>
                 </div>
             </div>
         </div>
         <div class='flex-container-row flex-center row-gap-20 width-1280 margin-top-30'>
             <div class='flex-container-column flex-start width-50-percent row-gap-20'>
                 <div class='flex-container-column'>
-                    <div class='bold'>Tentang Claresta</div>
-                    <div>" . $row["about"] . "</div>
+                    <div class='bold'>Tentang <?php echo $row["first_name"] ?></div>
+                    <div><?php echo $row["about"] ?></div>
                 </div>
                 <div class='flex-container-row column-gap-20'>
                     <div class='bold'>IPK</div>
-                    <div>" . $row["ipk"] . "</div>
+                    <div><?php echo $row["ipk"] ?></div>
                     <div><a href=''>transcript-saya-yang-baru.com</a></div>
                 </div>
                 <div class='flex-container-row column-gap-20'>
                     <div class='bold'>CV: </div>
-                    <div><a href=''>" . $row["cv"] . "</a></div>
+                    <div><a href=''><?php echo $row["cv"] ?></a></div>
                 </div>
                 <div class='flex-container-row column-gap-20'>
                     <div class='bold'>
@@ -119,13 +124,11 @@ if (!isset($_SESSION)) {
             </div>
         </div>
         <div class='flex-container-row flex-end width-1280'>
-            <input class='button abort' type='button' value='logout'>
+            <form action="../../assets/php/logout.php" method="post">
+                <input class='button abort' type='submit' value='logout'>
+            </form>
         </div>
-    </div>";
-    } else {
-        echo "DB ERROR";
-    }
-    ?>
+    </div>
    <?php include "../../assets/php/footer.php"?>
 </body>
 

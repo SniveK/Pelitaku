@@ -12,7 +12,7 @@ if (isset($_SESSION['is_tutor'])) {
 						<a href=''>pembelajaran</a>
 						<a href=''>jadwal</a>
 						<a href=''>inbox</a>
-						<a href=''>profil</a>
+						<a href='../../pages/tutor/profile_tutor.php'>profil</a>
 					</div>
 				</div>
 			</div>";
