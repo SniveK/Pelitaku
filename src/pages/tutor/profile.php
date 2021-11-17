@@ -15,25 +15,11 @@ if (!isset($_SESSION)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body class="flex-container-columns">
-    <!-- <header class="header">
-        <nav class="nav">
-            <object data="../../assets/svg/icon_pelitaku.svg" type="" width="28px"></object>
-        </nav>
-    </header> -->
-    <header class="header flex-container-row flex-center">
-        <nav class="nav flex-container-row flex-between">
-            <object data="../../assets/svg/icon_pelitaku.svg" type="" width="28px" "></object>
-			<div class=" flex-container-row column-gap-20">
-                <p>pembelajaran</p>
-                <p>jadwal</p>
-                <p>inbox</p>
-                <p>profil</p>
-                </div>
-        </nav>
-    </header>
+    <?php include "../../assets/php/header.php"?>
 
     <div class="flex-container-column flex-center margin-top-82">
         <div class="flex-container-row flex-center width-1280">
@@ -140,32 +126,7 @@ if (!isset($_SESSION)) {
         echo "DB ERROR";
     }
     ?>
-    <footer class="flex-container-column flex-center footer">
-        <div class="flex-container-row flex-between footer-menu width-1280">
-            <ul class="footer-menu__left">
-                <li><b>Tentang</b></li>
-                <li>Siapa kami? </li>
-                <li>Syarat dan Ketentuan</li>
-                <li>Kebijakan Privasi</li>
-                <li>FAQ</li>
-            </ul>
-            <ul class="footer-menu__center">
-                <li><b>Kelas</b></li>
-                <li>Mulai Kelas</li>
-                <li>Lihat subjek kami</li>
-            </ul>
-            <ul class="footer-menu__right">
-                <li><b>Menjadi tutor</b></li>
-                <li>Keuntungan menjadi tutor</li>
-                <li>Daftar menjadi tutor</li>
-                <li>Masuk</li>
-            </ul>
-        </div>
-        <div class="width-1280">
-            <hr class="line">
-            <p align="center">© Pelitaku, 2021</p>
-        </div>
-    </footer>
+   <?php include "../../assets/php/footer.php"?>
 </body>
 
 </html>

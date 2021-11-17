@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../style.css">
+
 </head>
 
 <body class="flex-container-columns">
@@ -23,30 +24,27 @@
                 <object data="../../assets/svg/signup_tutee_roadmap_2.svg" type=""></object>
             </div>
             <form class="form flex-container-column max-width-600 min-width-550 row-gap-20">
-                <select class="width-504" name="Provinsi" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
+            <select class="width-504" name="provinsi" id="province">
                 </select>
-                <select class="width-504" name="Kota/Kabupaten">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>
+                <select class="width-504" name="kota/kabupaten" id="city">
 
-                <input required class="width-504" type="text" placeholder="Kecamatan">
+                </select>
+                <select class="width-504" name="kecamatan" id="district">
+
+                </select>
+                <select class="width-504" name="kelurahan" id="sub-district">
+
+                </select>
                 <textarea required class="width-504 address-text-area" placeholder="Alamat" id="address"></textarea>
-                <div class="buttons">
-                    <input class="button continue" type="submit" value="Selanjutnya">
-                    <input class="button abort" type="button" value="Batal">
+                <div class="flex-container-row flex-center column-gap-40">
+                    <input class="button continue" type="submit" value="Selanjutnya" id="next">
+                    <input class="button abort" type="button" value="Batal" id="cancel">
                 </div>
             </form>
         </div>
     </div>
     <?php include '../../assets/php/footer.php' ?>
-
+    <script src="../../scripts/signup.js"></script>
 </body>
 
 </html>

@@ -19,8 +19,8 @@
 			<a href=''>Masuk</a> </br>
 		</div>
 	</div>
-	<div> 
-		<hr width="1280px" align="center">
+	<div>
+		<hr class="line">
 		<p align="center">© Pelitaku, 2021</p>
 	</div>
 </footer>

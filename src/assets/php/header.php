@@ -16,7 +16,6 @@ if (isset($_SESSION['is_tutor'])) {
 					</div>
 				</div>
 			</div>";
-
 	} else {
 		echo "
 			<div class='header'>

@@ -11,7 +11,6 @@ if (!isset($_SESSION)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
 
@@ -44,9 +43,9 @@ if (!isset($_SESSION)) {
                 <input class="password width-504" type="password" placeholder="Kata Sandi" id="tuteePassword">
                 <input class="password width-504" type="password" placeholder="Ulangi Kata Sandi" id="tuteeConfirmPassword">
 
-                <div class="buttons">
-                    <input class="button continue" type="button" value="Selanjutnya">
-                    <a href="../../index.php"><input class="button abort" type="button" value="Batal"></a>
+                <div class="flex-container-row flex-center column-gap-40">
+                    <input class="button continue" type="button" value="Selanjutnya" id="next">
+                    <a href="../../index.php"><input class="button abort" type="button" value="Batal" id="cancel"></a>
                 </div>
             </form>
         </div>

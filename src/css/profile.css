@@ -1,24 +1,3 @@
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/Inter/Inter-Regular.woff2?v=3.19") format("woff2"),
-    url("../fonts/Inter/Inter-Regular.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: "Inter";
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/Inter/Inter-Bold.woff2?v=3.19") format("woff2"),
-    url("../fonts/Inter/Inter-Bold.woff?v=3.19") format("woff");
-}
-
-* {
-  font-family: "Inter";
-}
-
 select,
 input,
 textarea {
@@ -31,22 +10,6 @@ body {
   background-color: #f9f9f9;
   font-size: 14px;
   line-height: 24px;
-}
-/* header */
-.header {
-  width: 100%;
-  height: 40px;
-  background-color: #b4d1e1;
-}
-
-.nav {
-  width: 1280px;
-  height: 40px;
-}
-
-.nav > object {
-  margin-left: 3rem;
-  height: 40px;
 }
 
 /* sign-up tutee form */
@@ -373,35 +336,6 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
-
-/* footer */
-.footer {
-  width: 100%;
-  padding-bottom: 0.1rem;
-  background-color: black;
-  color: white;
-}
-
-.footer-menu {
-  width: 1280px;
-  padding: 1.5rem 3rem 1.5rem 3rem;
-}
-
-.footer-menu > ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  row-gap: 20px;
-  padding-inline-start: 0px;
-}
-
-.footer-menu__right {
-  text-align: right;
-}
-
-.line {
-  width: 95%;
 }
 
 /* profile page */

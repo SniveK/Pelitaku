@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../style.css">
+   
 </head>
 
 <body class="flex-container-columns">
@@ -31,9 +32,9 @@
                     <input required class="width-440" type="text" placeholder="Nomor Ponsel" id="parentPhoneNumber">
                 </div>
                 <input required class="email width-504" type="email" placeholder="E-mail" id="parentEmail">
-                <div class="buttons">
-                    <input class="button continue" type="submit" value="Selanjutnya">
-                    <input class="button abort" type="button" value="Batal">
+                <div class="flex-container-row flex-center column-gap-40">
+                    <input class="button continue" type="submit" value="Selanjutnya" id="next">
+                    <input class="button abort" type="button" value="Batal" id="cancel">
                 </div>
             </div>
         </div>
