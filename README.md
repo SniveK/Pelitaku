@@ -43,3 +43,4 @@ Pertemuan 19 Nov
 6. Perlu admin page?
 7. Searching kombinasi subjek & lokasi?
 8. Riwayat kelas tampil berapa banyak?
+9. Rating mau angka bulet (1,2,3...) atau ada komanya (4.5, 3.5,...)?
