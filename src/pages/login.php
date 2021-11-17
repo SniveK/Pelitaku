@@ -80,7 +80,7 @@
             <?php echo $dbErr ?>
             <div class="flex-container-row flex-between width-full">
                 <input class="button continue" type="submit" value="Masuk">
-                <a href="./tutee/signup_tutee_1.php"><input class="button abort" type="button" value="Daftar">  </input></a>
+                <a href="./tutee/signup_1.php"><input class="button abort" type="button" value="Daftar">  </input></a>
             </div>
         </form>
     </div>

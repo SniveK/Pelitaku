@@ -26,7 +26,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
             <span class="title">
                 <h1>Profil</h1>
             </span>
-            <a href="./profile_edit_tutor.php"><input class="button abort" type="button" value="sunting profil"></a>
+            <a href="./profile_edit.php"><input class="button abort" type="button" value="sunting profil"></a>
         </div>
         <div class="width-1280">
             <hr>

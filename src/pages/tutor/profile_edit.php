@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         about=\"" . $_POST["about"] . "\", ipk=\"" . $_POST["ipk"] . "\", cv=\"" . $_POST["cv"] . "\" 
         WHERE users.id=" . $_SESSION["id"];
     if ($conn->query($sql) === TRUE) {
-        header("Location: ./profile_tutor.php");
+        header("Location: ./profile.php");
     } else {
         echo "Error updating record: " . $conn->error;
     }
@@ -135,16 +135,10 @@ if ($result !== false && $result->num_rows > 0) {
             <div class="flex-container-row flex-end width-1280 margin-top-30">
                 <div class="flex-container-row buttons">
                     <input class="button continue" type="submit" value="Simpan" id="save">
-                    <a href="./profile_tutor.php"><input class="button abort" type="button" value="Batal"></a>
+                    <a href="./profile.php"><input class="button abort" type="button" value="Batal"></a>
                 </div>
             </div>
         </form>
-    </div>
-    <div class='flex-container-row flex-end width-1280 margin-top-30'>
-        <div class='flex-container-row buttons'>
-            <input class='button continue' type='button' value='Simpan'>
-            <input class='button abort' type='button' value='Batal'>
-        </div>
     </div>
     <?php include "../../assets/php/footer.php" ?>
 </body>

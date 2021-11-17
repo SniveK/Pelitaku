@@ -1,7 +1,6 @@
 <?php
 $_SESSION['LAST_ACTIVITY'] = time();
 $root = $_SERVER["DOCUMENT_ROOT"];
-
 if (isset($_SESSION['is_tutor'])) {
 	if ($_SESSION['is_tutor']) {
 		echo "
@@ -12,7 +11,7 @@ if (isset($_SESSION['is_tutor'])) {
 						<a href=''>pembelajaran</a>
 						<a href=''>jadwal</a>
 						<a href=''>inbox</a>
-						<a href='../../pages/tutor/profile_tutor.php'>profil</a>
+						<a href='../../pages/tutor/profile.php'>profil</a>
 					</div>
 				</div>
 			</div>";
