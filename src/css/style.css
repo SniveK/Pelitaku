@@ -484,12 +484,6 @@ body {
   border-radius: 50%;
 }
 
-.message-icon {
-  position: fixed;
-  right: 4vh;
-  top: 10vh;
-}
-
 /* search bar */
 .searchbar {
   display: flex;
@@ -516,24 +510,8 @@ input {
   border-radius: 7px;
 }
 
-.input-location {
-  width: 168px;
-  height: 32px;
-  margin-left: 15px;
-  margin-right: 5px;
-  padding-left: 20px;
-  background-image: url(./assets/svg/icon_location.svg);
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 14px 21px;
-  background-position-x: 2px;
-  background-position-y: 4px;
-}
 .input-subject {
   width: 472px;
   height: 32px;
   padding-left: 20px;
-  background-image: url(./assets/svg/icon_search.svg);
-  background-position: right;
-  background-repeat: no-repeat;
 }

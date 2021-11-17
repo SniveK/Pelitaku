@@ -8,21 +8,25 @@ if (isset($_SESSION['is_tutor'])) {
 			<div class='header'>
 				<div class='headercontent'>
 					<object data='../../assets/svg/icon_pelitaku.svg' type='' class='header-icon'></object>
-					<a href='' class='push'>pembelajaran</a>
-					<a href=''>jadwal</a>
-					<a href=''>inbox</a>
-					<a href=''>profil</a>
+					<div>
+						<a href=''>pembelajaran</a>
+						<a href=''>jadwal</a>
+						<a href=''>inbox</a>
+						<a href=''>profil</a>
+					</div>
 				</div>
-			</div>
-			";
+			</div>";
+
 	} else {
 		echo "
 			<div class='header'>
 				<div class='headercontent'>
 					<object data='../../assets/svg/icon_pelitaku.svg' type='' class='header-icon'></object>
-					<a href='' class='push'>pembelajaran</a>
-					<a href=''>inbox</a>
-					<a href=''>profil</a>
+					<div>
+						<a href=''>pembelajaran</a>
+						<a href=''>inbox</a>
+						<a href=''>profil</a>
+					</div>
 				</div>
 			</div>
 			";

@@ -46,11 +46,11 @@ body {
 
 .headercontent {
   width: 1280px;
+  box-sizing: border-box;
   padding-left: 3rem;
   padding-right: 3rem;
-  box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -111,11 +111,13 @@ a:visited:active {
   display: block;
 }
 
-.footermenu a:link, a:visited {
+.footermenu a:link,
+a:visited {
   cursor: pointer;
 }
 
-.footermenu a:link:active, a:visited:active {
+.footermenu a:link:active,
+a:visited:active {
   text-decoration: underline;
 }
 
@@ -163,9 +165,6 @@ input {
   width: 472px;
   height: 32px;
   padding-left: 20px;
-  background-image: url(./assets/svg/icon_search.svg);
-  background-position: right;
-  background-repeat: no-repeat;
 }
 
 /*///////////// TUTORPILIHAN ///////////////*/
