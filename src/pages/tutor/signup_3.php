@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../style.css">
-
+    <link rel="stylesheet" href="../../css/signup_tutor.css">
 
 </head>
 
@@ -43,13 +43,12 @@
                 </div>
                 <div class="flex-container-row gpa column-gap-20">
                     <input class="width-72" type="text" placeholder="GPA">
-                    <input class="width-424" type="text" placeholder="Jurusan" id="parentPhoneNumber">
+                    <input class="width-424" type="text" placeholder="Jurusan" id="tutorGPA">
                 </div>
-                <div class="flex-container-column column-gap-20">
-                    <div class="flex-container-row mastered-course">
-                        <input class="email width-465" type="email" placeholder="E-mail" id="parentEmail">
-                        <div class="height-40 width-20"></div>
-                        <object data="../../assets/svg/signup_tutor_icon_plus.svg" type=""></object>
+                <div class="flex-container-column row-gap-20" id="tutorEmails">
+                    <div class="flex-container-row mastered-course column-gap-20">
+                        <input class="email width-465" type="email" placeholder="E-mail" id="tutorEmail">
+                        <button class="button-email plus" id="tutorEmailAppend"></button>
                     </div>
                 </div>
                 <div class="flex-container-row flex-center column-gap-40">
@@ -61,7 +60,7 @@
     </div>
 
     <?php include '../../assets/php/footer.php' ?>
-
+    <script src="../../scripts/signup_append_email.js"></script>
 </body>
 
 </html>

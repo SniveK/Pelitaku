@@ -63,46 +63,56 @@ function titleCase(str) {
 var address_dict = {};
 var province_id, city_id, district_id, sub_district_id;
 
+// add province
 loadProvince();
 
-// add cities
 document
   .getElementById("province")
   .addEventListener("change", async function () {
     province_id = this.value;
+    // add cities
     loadCity(province_id);
+
+    //get name by using the id
     address_dict["provinsi"] = await getInfoById(
       "../../json/propinsi.json",
       province_id
     );
   });
 
-// add district
 document.getElementById("city").addEventListener("change", async function () {
   city_id = this.value;
+  // add district
   loadDistrict(city_id);
+
+  //get name by using the id
   address_dict["kabupaten"] = await getInfoById(
     `../../json/kabupaten/${province_id}.json`,
     city_id
   );
 });
 
-// add sub-district
 document
   .getElementById("district")
   .addEventListener("change", async function () {
     district_id = this.value;
+    // add sub-district
     loadSubDistrict(district_id);
+
+    //get name by using the id
     address_dict["kecamatan"] = await getInfoById(
       `../../json/kecamatan/${city_id}.json`,
       district_id
     );
   });
 
+// add sub-district
 document
   .getElementById("sub-district")
   .addEventListener("change", async function () {
     sub_district_id = this.value;
+
+    //get name by using the id
     address_dict["kelurahan"] = await getInfoById(
       `../../json/kelurahan/${district_id}.json`,
       sub_district_id

@@ -87,5 +87,4 @@
     <?php include "../assets/php/footer.php"; ?>
     <script src="../scripts/login.js"></script>
 </body>
-
 </html>

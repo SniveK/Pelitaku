@@ -11,7 +11,7 @@
 
 <body class="flex-container-columns">
 
-    <?php include '../../assets/php/header.php' ?>
+    <?php include '../../assets/php/header.php'?>
 
     <div class="flex-container-row flex-center margin-top-82">
         <div class="title">
