@@ -33,7 +33,7 @@ if ($result !== false && $result->num_rows > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/profile_tutor.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
 
@@ -41,12 +41,12 @@ if ($result !== false && $result->num_rows > 0) {
     <?php include "../../assets/php/header.php" ?>
 
     <div class="flex-container-column flex-center margin-top-82">
-        <div class="flex-container-row flex-center width-1280">
+        <div class="flex-container-row flex-center width-1032">
             <span class="title">
                 <h1>Profil</h1>
             </span>
         </div>
-        <div class="width-1280">
+        <div class="width-1032">
             <hr>
         </div>
     </div>
@@ -132,10 +132,12 @@ if ($result !== false && $result->num_rows > 0) {
                     </div>
                 </div>
             </div>
-            <div class="flex-container-row flex-end width-1280 margin-top-30">
-                <div class="flex-container-row buttons">
-                    <input class="button continue" type="submit" value="Simpan" id="save">
-                    <a href="./profile.php"><input class="button abort" type="button" value="Batal"></a>
+            <div class="flex-container-row flex-center margin-top-30 width-1280">
+                <div class="flex-container-row flex-end margin-top-30 width-1032">
+                    <div class="flex-container-row buttons">
+                        <input class="button continue" type="submit" value="Simpan" id="save">
+                        <a href="./profile.php"><input class="button abort" type="button" value="Batal"></a>
+                    </div>
                 </div>
             </div>
         </form>

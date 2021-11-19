@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION)) {
-    session_start(); 
+    session_start();
 }
 if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
@@ -14,21 +14,21 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/profile_tutor.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body class="flex-container-columns">
-    <?php include "../../assets/php/header.php"?>
+    <?php include "../../assets/php/header.php" ?>
 
     <div class="flex-container-column flex-center margin-top-82">
-        <div class="flex-container-row flex-center width-1280">
+        <div class="flex-container-row flex-center width-1032">
             <span class="title">
                 <h1>Profil</h1>
             </span>
             <a href="./profile_edit.php"><input class="button abort" type="button" value="sunting profil"></a>
         </div>
-        <div class="width-1280">
+        <div class="width-1032">
             <hr>
         </div>
     </div>
@@ -36,7 +36,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
     <?php
     include "../../assets/php/dbcon.php";
     // var_dump($_SESSION);
-    $sql = "SELECT * FROM users JOIN tutor on users.id=tutor.id WHERE users.id=".$_SESSION["id"];
+    $sql = "SELECT * FROM users JOIN tutor on users.id=tutor.id WHERE users.id=" . $_SESSION["id"];
     $result = $conn->query($sql);
     if ($result !== false && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
@@ -51,7 +51,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
             </div>
             <div class='review-container' style='position:relative'>
                 <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
-                <div style='position: absolute;bottom: 35px;  width:"<?php echo $row["rating"]*36?>."px; overflow: hidden;'>
+                <div style='position: absolute;bottom: 35px;  width:"<?php echo $row["rating"] * 36 ?>."px; overflow: hidden;'>
                     <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
                 </div>
                 <input class='button abort right' type='button' value='lihat review'>
@@ -96,7 +96,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Password</div>
-                    <div><?php echo (str_repeat('*', strlen($row["password"])))?></div>
+                    <div><?php echo (str_repeat('*', strlen($row["password"]))) ?></div>
                 </div>
             </div>
         </div>
@@ -123,13 +123,13 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
                 </div>
             </div>
         </div>
-        <div class='flex-container-row flex-end width-1280'>
+        <div class='flex-container-row flex-end width-1032'>
             <form action="../../assets/php/logout.php" method="post">
                 <input class='button abort' type='submit' value='logout'>
             </form>
         </div>
     </div>
-   <?php include "../../assets/php/footer.php"?>
+    <?php include "../../assets/php/footer.php" ?>
 </body>
 
 </html>

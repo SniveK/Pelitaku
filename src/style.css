@@ -334,7 +334,10 @@ body {
 .mastered-course > input,
 .phone-number > input,
 .address-text-area,
-.reason-text-area {
+.reason-text-area,
+input,
+select,
+textarea {
   padding-left: 7px;
   height: 40px;
   border-radius: 7px;
@@ -381,6 +384,10 @@ body {
 /* margin */
 .margin-top-82 {
   margin-top: 82px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }
 
 .margin-right-30 {
@@ -431,6 +438,10 @@ body {
   width: 175px;
 }
 
+.width-192 {
+  width: 192px;
+}
+
 .width-248 {
   width: 244px;
 }
@@ -455,6 +466,10 @@ body {
   width: 465px;
 }
 
+.width-496 {
+  width: 496px;
+}
+
 .width-504 {
   width: 504px;
 }
@@ -467,12 +482,20 @@ body {
   width: 650px;
 }
 
+.width-1032 {
+  width: 1032px;
+}
+
 .width-1280 {
   width: 1280px;
 }
 
 .width-full {
   width: 100%;
+}
+
+.width-15-percent {
+  width: 15%;
 }
 
 .width-95-percent {
@@ -486,6 +509,10 @@ body {
 
 .height-45 {
   height: 45px;
+}
+
+.height-192 {
+  height: 192px;
 }
 
 .height-300 {
@@ -534,6 +561,11 @@ body {
 
 .row-gap-10 {
   row-gap: 10px;
+}
+
+/* bold */
+.bold {
+  font-weight: bold;
 }
 
 /* text-align */
