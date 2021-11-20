@@ -1,29 +1,4 @@
-/* @import url(//fonts.googleapis.com/css?family=Inter); */
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/Inter/Inter-Regular.woff2?v=3.19") format("woff2"),
-    url("../fonts/Inter/Inter-Regular.woff?v=3.19") format("woff");
-}
-@font-face {
-  font-family: "Inter";
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/Inter/Inter-Bold.woff2?v=3.19") format("woff2"),
-    url("../fonts/Inter/Inter-Bold.woff?v=3.19") format("woff");
-}
-* {
-  font-family: "Inter";
-  font-size: 14px;
-  line-height: 17px;
-}
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
   font-size: 14px;
   line-height: 24px;
 }
@@ -32,29 +7,9 @@ body {
   background-color: white;
 }
 
-.header {
-  width: auto;
-  height: 40px;
-  background-color: #b4d1e1;
-  padding-left: 3rem;
-  padding-right: 3rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header p {
-  padding-left: 25px;
-  font-weight: bold;
-}
-
-.push {
-  margin-left: auto;
-}
-
 .maincontent {
   height: auto;
+  width: 1280px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -77,21 +32,12 @@ body {
   border: 1px solid #fd6a02;
 }
 
-.footer {
-  width: 100%;
-  padding-bottom: 0.1rem;
-  background-color: black;
-  color: white;
+.avatar {
+  border-radius: 50%;
 }
 
-.footermenu {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: space-between;
-  width: 100%px;
-  height: 120px;
-  padding: 1.5rem 3rem 1.5rem 3rem;
+p {
+  line-height: 10px;
 }
 
 .search-result {
@@ -99,21 +45,15 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   width: 95%;
+  line-height: 17px;
 }
 .search-result > div {
   background-color: #e5f3fb;
   border-radius: 10px;
   padding: 5px 15px 5px 15px;
   margin: 10px;
-  text-align: left;
-  width: 234px;
-  height: 70px;
-}
-
-.avatar {
-  border-radius: 50%;
-}
-
-p {
-  line-height: 10px;
+  width: 264px;
+  height: 80px;
+  display: flex;
+  align-content: center;
 }

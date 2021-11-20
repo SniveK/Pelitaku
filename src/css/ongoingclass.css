@@ -18,6 +18,7 @@ body {
   height: auto;
   padding-top: 50px;
   position: static;
+  margin: 22px 10% 36px 10%;
 }
 
 .maincontent hr{
@@ -28,12 +29,6 @@ body {
 
 .maincontent p{
 	margin: 0;
-}
-
-.message-icon {
-  position: fixed;
-  right: 25px;
-  top: 50%;
 }
 
 .primary {
@@ -55,6 +50,12 @@ body {
   border: 1px solid #fd6a02;
 }
 
+.title {
+	font-size:22px;
+	font-weight:bold;
+	line-height:24px;
+}
+
 .ongoing {
 	display: flex;
 	flex-wrap: wrap;
@@ -67,6 +68,25 @@ body {
 	box-sizing: border-box;
 	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 	border-radius: 7px;
+}
+
+.ongoingdate {
+	font-size:36px;
+	line-height:44px;
+	margin:0;
+	text-align:center;
+}
+
+.ongoingheading {
+	font-size:48px;
+	font-weight:300;
+	line-height:58px;
+}
+
+.ongoingsubheading {
+	font-size:22px;
+	font-weight:600;
+	line-height:27px;
 }
 
 .history {
@@ -83,8 +103,13 @@ body {
 	border-radius: 7px;
 }
 
-.judul {
-	font-size:22px;
-	font-weight:bold;
-	line-height:24px;
+.search-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  margin-top: 24px;
+}
+.search-nav > a {
+  padding: 0px 10px 0px 10px;
+  color: #fd6a02;
 }
