@@ -6,10 +6,7 @@ if (!isset($_SESSION)) {
 if (isset($_SESSION['id'])) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
 }
-if (!empty($_POST['logout'])) {
-    include "../../assets/php/logout.php";
-}
-$emailError='';
+$emailError = '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,27 +30,28 @@ $emailError='';
     </div>
     <?php
     if (!empty($_POST['submit'])) {
-        if($_POST['page']==2){
-            $_SESSION["first_name"]='';
-            $_SESSION["last_name"]='';
-            $_SESSION["email"]='';
-            $_SESSION["password"]='';
-            $_SESSION["phone_number"]='';
+        if ($_POST['page'] == 2) {
             include "../../assets/php/dbcon.php";
-            $sql = "SELECT email FROM users WHERE users.email=\"" . $_POST["email"]."\"";
+            $sql = "SELECT email FROM users WHERE users.email=\"" . $_POST["email"] . "\"";
             $result = $conn->query($sql);
             // 
-            if ( $result !== false && $result->num_rows > 0 ) {
-                $emailError="Email is already used";
+            if ($result !== false && $result->num_rows > 0) {
+                $emailError = "Email is already used";
             } else {
                 $_SESSION['login'] = $_POST['page'];
             }
-        }else{
+        } else {
             $_SESSION['login'] = $_POST['page'];
         }
         foreach ($_POST as $foo => $bar) {
             $_SESSION[$foo] = $bar;
         }
+    } else {
+        $_POST["first_name"] = '';
+        $_POST["last_name"] = '';
+        $_POST["email"] = '';
+        $_POST["password"] = '';
+        $_POST["phone_number"] = '';
     }
     switch ($_SESSION['login']) {
         case '1':
@@ -65,14 +63,14 @@ $emailError='';
                             </div>
                             <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
                                 <div class='flex-container-row name column-gap-20'>
-                                    <input required class='width-248' type='text' placeholder='Nama Depan' id='tuteeFirstName' value='" . $_SESSION["first_name"] . "' name='first_name'>
-                                    <input required class='width-248' type='text' placeholder='Nama Belakang' id='tuteeLastName' value='" . $_SESSION["last_name"] . "' name='last_name'>
+                                    <input required class='width-248' type='text' placeholder='Nama Depan' id='tuteeFirstName' value='" . $_POST["first_name"] . "' name='first_name'>
+                                    <input required class='width-248' type='text' placeholder='Nama Belakang' id='tuteeLastName' value='" . $_POST["last_name"] . "' name='last_name'>
                                 </div>
                                 <div class='flex-container-row phone-number column-gap-20'>
                                     <input required class='width-50 country-code' type='text' value='+62' disabled>
-                                    <input required class='width-440' type='text' placeholder='Nomor Ponsel' id='tuteePhoneNumber' value='" . $_SESSION["phone_number"] . "' name='phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
+                                    <input required class='width-440' type='text' placeholder='Nomor Ponsel' id='tuteePhoneNumber' value='" . $_POST["phone_number"] . "' name='phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
                                 </div>
-                                <input required class='email width-504' type='email' placeholder='E-mail' id='tuteeEmail' value='" . $_SESSION["email"] . "' name='email' >
+                                <input required class='email width-504' type='email' placeholder='E-mail' id='tuteeEmail' value='" . $_POST["email"] . "' name='email' >
                                 $emailError
                                 <input required class='password width-504' type='password' placeholder='Kata Sandi' id='password' name='password'>
                                 <div id='passwordErrorLabel'></div>
