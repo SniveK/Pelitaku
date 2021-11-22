@@ -1,0 +1,28 @@
+.background {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maincontent {
+  width: 1024px;
+  height: auto;
+  padding: 40px 0px 40px 0px;
+  row-gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  margin-top: 24px;
+}
+.search-nav > a {
+  padding: 0px 10px 0px 10px;
+  color: #fd6a02;
+}
