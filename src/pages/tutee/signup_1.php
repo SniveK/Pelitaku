@@ -1,6 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
+    $_SESSION["login"] = 1;
 }
 if (isset($_SESSION['id'])) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
@@ -8,6 +9,7 @@ if (isset($_SESSION['id'])) {
 if (!empty($_POST['logout'])) {
     include "../../assets/php/logout.php";
 }
+$emailError='';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@ if (!empty($_POST['logout'])) {
 
 <body class="flex-container-columns">
 
-    <?php include '../../assets/php/header.php'?>
+    <?php include '../../assets/php/header.php' ?>
 
     <div class="flex-container-row flex-center margin-top-82">
         <div class="title">
@@ -30,58 +32,66 @@ if (!empty($_POST['logout'])) {
         </div>
     </div>
     <?php
-    echo $_POST['page'];
     if (!empty($_POST['submit'])) {
-        if (empty($_SESSION['login'])) {
-            $_SESSION['login'] = '1';
-        } else {
+        if($_POST['page']==2){
+            $_SESSION["first_name"]='';
+            $_SESSION["last_name"]='';
+            $_SESSION["email"]='';
+            $_SESSION["password"]='';
+            $_SESSION["phone_number"]='';
+            include "../../assets/php/dbcon.php";
+            $sql = "SELECT email FROM users WHERE users.email=\"" . $_POST["email"]."\"";
+            $result = $conn->query($sql);
+            // 
+            if ( $result !== false && $result->num_rows > 0 ) {
+                $emailError="Email is already used";
+            } else {
+                $_SESSION['login'] = $_POST['page'];
+            }
+        }else{
             $_SESSION['login'] = $_POST['page'];
         }
         foreach ($_POST as $foo => $bar) {
             $_SESSION[$foo] = $bar;
         }
-        // echo "<script type='text/javascript'> window.location.href = './signup_2.php';</script>";
-        var_dump($_POST);
-        echo "<br><br><br>";
-        var_dump($_SESSION);
     }
-    echo $_SESSION['login'];
-    if (empty($_SESSION['login'])) {
-        echo "
-            <div class='flex-container-row flex-center margin-bottom-82'>
-                <div class='flex-container-row'>
-                    <div class='roadmap'>
-                        <object data='../../assets/svg/signup_tutee_roadmap_1.svg' type=''></object>
+    switch ($_SESSION['login']) {
+        case '1':
+            echo "
+                    <div class='flex-container-row flex-center margin-bottom-82'>
+                        <div class='flex-container-row'>
+                            <div class='roadmap'>
+                                <object data='../../assets/svg/signup_tutee_roadmap_1.svg' type=''></object>
+                            </div>
+                            <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
+                                <div class='flex-container-row name column-gap-20'>
+                                    <input required class='width-248' type='text' placeholder='Nama Depan' id='tuteeFirstName' value='" . $_SESSION["first_name"] . "' name='first_name'>
+                                    <input required class='width-248' type='text' placeholder='Nama Belakang' id='tuteeLastName' value='" . $_SESSION["last_name"] . "' name='last_name'>
+                                </div>
+                                <div class='flex-container-row phone-number column-gap-20'>
+                                    <input required class='width-50 country-code' type='text' value='+62' disabled>
+                                    <input required class='width-440' type='text' placeholder='Nomor Ponsel' id='tuteePhoneNumber' value='" . $_SESSION["phone_number"] . "' name='phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
+                                </div>
+                                <input required class='email width-504' type='email' placeholder='E-mail' id='tuteeEmail' value='" . $_SESSION["email"] . "' name='email' >
+                                $emailError
+                                <input required class='password width-504' type='password' placeholder='Kata Sandi' id='password' name='password'>
+                                <div id='passwordErrorLabel'></div>
+                                <input required class='password width-504' type='password' placeholder='Ulangi Kata Sandi' id='confirm'>
+                                <div id='confirmErrorLabel'></div>
+                                <div class='flex-container-row flex-center column-gap-40'>
+                                    <input class='button continue' type='submit' name='submit' value='Selanjutnya' id='next' disabled>
+                                    <a href='../../assets/php/logout.php'><a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a></a>
+                                    <input type='hidden' name='page' value=2>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
-                        <div class='flex-container-row name column-gap-20'>
-                            <input required class='width-248' type='text' placeholder='Nama Depan' id='tuteeFirstName' name='first_name'>
-                            <input required class='width-248' type='text' placeholder='Nama Belakang' id='tuteeLastName' name='last_name'>
-                        </div>
-                        <div class='flex-container-row phone-number column-gap-20'>
-                            <input required class='width-50 country-code' type='text' value='+62' disabled>
-                            <input required class='width-440' type='text' placeholder='Nomor Ponsel' id='tuteePhoneNumber' name='phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
-                        </div>
-                        <input required class='email width-504' type='email' placeholder='E-mail' id='tuteeEmail' name='email'>
-                        
-                        <input required class='password width-504' type='password' placeholder='Kata Sandi' id='password' name='password'>
-                        <div id='passwordErrorLabel'></div>
-                        <input required class='password width-504' type='password' placeholder='Ulangi Kata Sandi' id='confirm'>
-                        <div id='confirmErrorLabel'></div>
-                        <div class='flex-container-row flex-center column-gap-40'>
-                            <input class='button continue' type='submit' name='submit' value='Selanjutnya' id='next' disabled>
-                            <a href='../../assets/php/logout.php'><a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a></a>
-                            <input type='hidden' name='page' value=1>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <script src='../../scripts/signup_1.js'></script>
-            ";
-    } else {
-        switch ($_SESSION['login']) {
-            case '1':
-                echo "
+                    <script src='../../scripts/signup_1.js'></script>
+                    ";
+            break;
+
+        case '2':
+            echo "
                         <div class='flex-container-row flex-center margin-bottom-82'>
                             <div class='flex-container-row'>
                                 <div class='roadmap'>
@@ -105,16 +115,16 @@ if (!empty($_POST['logout'])) {
                                     <div class='flex-container-row flex-center column-gap-40'>
                                         <input class='button continue' type='submit' name='submit' value='Selanjutnya' id='next'>
                                         <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
-                                        <input type='hidden' name='page' value=2>
+                                        <input type='hidden' name='page' value=3>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     <script src='../../scripts/signup_2.js'></script>
                     ";
-                break;
-            case '2':
-                echo "
+            break;
+        case '3':
+            echo "
                     <div class='flex-container-row flex-center margin-bottom-82'>
                         <div class='flex-container-row'>
                             <div class='roadmap'>
@@ -133,15 +143,15 @@ if (!empty($_POST['logout'])) {
                                 <div class='flex-container-row flex-center column-gap-40'>
                                     <input class='button continue' type='submit' value='Selanjutnya' name='submit' id='next'>
                                     <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
-                                    <input type='hidden' name='page' value=3>
+                                    <input type='hidden' name='page' value=4>
                                 </div>
                             </form>
                         </div>
                     </div>
                     ";
-                break;
-            case '3':
-                echo "
+            break;
+        case '4':
+            echo "
                     <div class='flex-container-column flex-center margin-bottom-82 margin-top-82'>
                         <div class='width-1280'>
                             <div class='flex-container-column margin-left-150'>
@@ -219,45 +229,34 @@ if (!empty($_POST['logout'])) {
                             <div class='buttons width-full flex-container-row flex-center margin-top-82 column-gap-40' >
                                 <input class='button continue' type='submit' value='Selanjutnya' name='submit'>
                                 <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
-                                <input type='hidden' name='page' value=4>
+                                <input type='hidden' name='page' value=5>
                             </div>
                             </form>
                         </div>
                     </div>
                     ";
-                break;
-            case '4':
-                include "../../assets/php/dbcon.php";
-                $sql = "INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor`) 
+            break;
+        case '5':
+            include "../../assets/php/dbcon.php";
+            $sql = "INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor`) 
                 VALUES (NULL, '" . $_SESSION["email"] . "', '" . $_SESSION["password"] . "','" . $_SESSION["first_name"] . "', '" . $_SESSION["last_name"] . "', '" . $_SESSION["phone_number"] . "', '" . $_SESSION["provinsi"] . "', '" . $_SESSION["kota/kabupaten"] . "', '" . $_SESSION["kecamatan"] . "', '" . $_SESSION["kelurahan"] . "', '" . $_SESSION["address"] . "', '', '0');
                 ";
-                if ($conn->query($sql) === TRUE) {
-                    
-                } else {
-                    echo "Error updating record: " . $conn->error;
-                }
-                $sql = "INSERT INTO `tutee` (`id`, `parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) 
+            if ($conn->query($sql) === TRUE) {
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+            $sql = "INSERT INTO `tutee` (`id`, `parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) 
                 VALUES (NULL, '" . $_SESSION["parent_first_name"] . "', '" . $_SESSION["parent_last_name"] . "', '" . $_SESSION["parent_phone_number"] . "', '" . $_SESSION["parent_email"] . "', '" . $_SESSION["will_1"] . "', '" . $_SESSION["will_2"] . "', '" . $_SESSION["will_3"] . "', '" . $_SESSION["will_4"] . "', '" . $_SESSION["will_5"] . "', '" . $_SESSION["will_not_1"] . "', '" . $_SESSION["will_not_2"] . "', '" . $_SESSION["will_not_3"] . "', '" . $_SESSION["will_not_4"] . "', '" . $_SESSION["will_not_5"] . "');
                 ";
-                if ($conn->query($sql) === TRUE) {
-                    echo "<script type='text/javascript'>location.href = '../../index.php';</script>";
-                } else {
-                    echo "Error updating record: " . $conn->error;
-                }
-                break;
-        }
+            if ($conn->query($sql) === TRUE) {
+                echo "<script type='text/javascript'>location.href = '../pages/login.php';</script>";
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+            break;
     }
-// INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor`) VALUES (NULL, '', '', '', '', '', '', '', '', '', '', '', '0');
-
-// INSERT INTO `tutee` (`id`, `parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) VALUES (NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-
-// INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor` ,`parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`)
-// 	SELECT (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor` ,`parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) FROM users JOIN tutor ON 	 users.id = tutor.id
-// VALUES (NULL, '', '', '', '', '', '', '', '', '', '', '', '0',NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
     ?>
-    <!-- ["first_name"]=> string(3) "asd" ["last_name"]=> string(3) "asd" ["phone_number"]=> string(3) "654" ["email"]=> string(13) "asd@gmail.com" ["password"]=> string(3) "asd" ["submit"]=> string(11) "Selanjutnya" ["page"]=> string(1) "3" ["provinsi"]=> string(2) "11" ["kota/kabupaten"]=> string(4) "1101" ["kecamatan"]=> string(6) "110101" " ["parent_first_name"]=> string(3) "asd" ["parent_last_name"]=> string(3) "asd" ["parent_phone_number"]=> string(3) "987" ["parent_email"]=> string(13) "asd@gmail.com" } -->
     <?php include '../../assets/php/footer.php' ?>
-    
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);

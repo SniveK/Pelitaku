@@ -1,6 +1,3 @@
-
-
-
 let password = document.getElementById("password");
 let passwordError = document.getElementById("passwordErrorLabel");
 let passwordBool = false;
