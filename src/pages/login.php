@@ -1,57 +1,58 @@
 <?php
-    // session_destroy();
-    if (!isset($_SESSION)) {
-        session_start(); 
+// session_destroy();
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_SESSION['id'])) {
+    echo "<script type='text/javascript'>window.history.go(-1)</script>";
+}
+$passwordErr = $emailErr = $password = $email = $dbErr = "";
+error_reporting(E_ERROR | E_PARSE);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $show = true;
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        // check if e-mail address is well-formed
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
     }
-    if(isset($_SESSION['id'])){
-        echo "<script type='text/javascript'>window.history.go(-1)</script>";
+    if (empty($_POST["password"])) {
+        $passwordErr = "password is required";
+    } else {
+        $password = test_input($_POST['password']);
     }
-    $passwordErr = $emailErr = $password = $email = $dbErr = "";
-    error_reporting(E_ERROR | E_PARSE);
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo "<script type='text/javascript'> showLogin()</script>";
-        if (empty($_POST["email"])) {
-            $emailErr = "Email is required";
+    if ($emailErr == "" && $passwordErr == "") {
+        include("../assets/php/dbcon.php");
+        $sql = "SELECT id,is_tutor FROM users WHERE email = '$email' AND password = '$password'";
+        // $sql = "SELECT * FROM users";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $_SESSION["id"] = $row["id"];
+            $_SESSION["is_tutor"] = $row["is_tutor"];
+            echo "<script type='text/javascript'>location.href = '../index.php';</script>";
         } else {
-            $email = test_input($_POST["email"]);
-            // check if e-mail address is well-formed
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid email format";
-            }
+            $dbErr = "email or password is incorrect";
         }
-        if (empty($_POST["password"])) {
-            $passwordErr = "password is required";
-        } else {
-            $password = test_input($_POST['password']);
-        }
-        if ($emailErr == "" && $passwordErr == "") {
-            include("../assets/php/dbcon.php");
-            $sql = "SELECT id,is_tutor FROM users WHERE email = '$email' AND password = '$password'";
-            // $sql = "SELECT * FROM users";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $_SESSION["id"] = $row["id"];
-                $_SESSION["is_tutor"] = $row["is_tutor"];
-                echo "<script type='text/javascript'>location.href = '../index.php';</script>";
-            } else {
-                $dbErr = "email or password is incorrect";
-            }
-        }
-        $_SESSION['LAST_ACTIVITY'] = time();
     }
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+    $_SESSION['LAST_ACTIVITY'] = time();
+}
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <script src="../scripts/login.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +66,7 @@
         <img src="../assets/png/login_pelitaku.png" alt="">
         <div class="flex-container-row column-gap-40 margin-top-82">
             <input class="button login" type="button" value="Masuk" onclick="showLogin()">
-            <a href="./tutee/signup_tutee_1.php"><input class="button abort" type="button" value="Daftar"></a>
+            <a href="./tutee/signup_1.php"><input class="button abort" type="button" value="Daftar"></a>
         </div>
     </div>
     <div class="login-box hide flex-container-column flex-center margin-top-82 margin-bottom-82 width-650 login-border" id="login">
@@ -80,11 +81,15 @@
             <?php echo $dbErr ?>
             <div class="flex-container-row flex-between width-full">
                 <input class="button continue" type="submit" value="Masuk">
-                <a href="./tutee/signup_1.php"><input class="button abort" type="button" value="Daftar">  </input></a>
+                <a href="./tutee/signup_1.php"><input class="button abort" type="button" value="Daftar"> </input></a>
             </div>
         </form>
     </div>
-    <?php include "../assets/php/footer.php"; ?>
-    <script src="../scripts/login.js"></script>
+    <?php
+    include "../assets/php/footer.php";
+    if ($show) {
+        echo "<script type='text/javascript'> showLogin()</script>";
+    }
+    ?>
 </body>
 </html>

@@ -1,3 +1,14 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_SESSION['id'])) {
+    echo "<script type='text/javascript'>window.history.go(-1)</script>";
+}
+if (!empty($_POST['logout'])) {
+    include "../../assets/php/logout.php";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,33 +29,240 @@
             <h1>Buat Akun Pelitaku</h1>
         </div>
     </div>
-
-    <div class="flex-container-row flex-center margin-bottom-82">
-        <div class="flex-container-row">
-            <div class="roadmap">
-                <object data="../../assets/svg/signup_tutee_roadmap_1.svg" type=""></object>
+    <?php
+    echo $_POST['page'];
+    if (!empty($_POST['submit'])) {
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = '1';
+        } else {
+            $_SESSION['login'] = $_POST['page'];
+        }
+        foreach ($_POST as $foo => $bar) {
+            $_SESSION[$foo] = $bar;
+        }
+        // echo "<script type='text/javascript'> window.location.href = './signup_2.php';</script>";
+        var_dump($_POST);
+        echo "<br><br><br>";
+        var_dump($_SESSION);
+    }
+    echo $_SESSION['login'];
+    if (empty($_SESSION['login'])) {
+        echo "
+            <div class='flex-container-row flex-center margin-bottom-82'>
+                <div class='flex-container-row'>
+                    <div class='roadmap'>
+                        <object data='../../assets/svg/signup_tutee_roadmap_1.svg' type=''></object>
+                    </div>
+                    <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
+                        <div class='flex-container-row name column-gap-20'>
+                            <input required class='width-248' type='text' placeholder='Nama Depan' id='tuteeFirstName' name='first_name'>
+                            <input required class='width-248' type='text' placeholder='Nama Belakang' id='tuteeLastName' name='last_name'>
+                        </div>
+                        <div class='flex-container-row phone-number column-gap-20'>
+                            <input required class='width-50 country-code' type='text' value='+62' disabled>
+                            <input required class='width-440' type='text' placeholder='Nomor Ponsel' id='tuteePhoneNumber' name='phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
+                        </div>
+                        <input required class='email width-504' type='email' placeholder='E-mail' id='tuteeEmail' name='email'>
+                        
+                        <input required class='password width-504' type='password' placeholder='Kata Sandi' id='password' name='password'>
+                        <div id='passwordErrorLabel'></div>
+                        <input required class='password width-504' type='password' placeholder='Ulangi Kata Sandi' id='confirm'>
+                        <div id='confirmErrorLabel'></div>
+                        <div class='flex-container-row flex-center column-gap-40'>
+                            <input class='button continue' type='submit' name='submit' value='Selanjutnya' id='next' disabled>
+                            <a href='../../assets/php/logout.php'><a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a></a>
+                            <input type='hidden' name='page' value=1>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20" >
-                <div class="flex-container-row name column-gap-20">
-                    <input required class="width-248" type="text" placeholder="Nama Depan" id="tuteeFirstName">
-                    <input required class="width-248" type="text" placeholder="Nama Belakang" id="tuteeLastName">
-                </div>
-                <div class="flex-container-row phone-number column-gap-20">
-                    <input required class="width-50 country-code" type="text" value="+62" disabled>
-                    <input required class="width-440" type="text" placeholder="Nomor Ponsel" id="tuteePhoneNumber">
-                </div>
-                <input required class="email width-504" type="email" placeholder="E-mail" id="tuteeEmail">
-                <input required class="password width-504" type="password" placeholder="Kata Sandi" id="tuteePassword">
-                <input required class="password width-504" type="password" placeholder="Ulangi Kata Sandi" id="tuteeConfirmPassword">
-                <div class="flex-container-row flex-center column-gap-40">
-                    <input class="button continue" type="submit" value="Selanjutnya" id="next">
-                    <input class="button abort" type="button" value="Batal" id="cancel">
-                </div>
-            </form>
-        </div>
-    </div>
-    <?php include '../../assets/php/footer.php' ?>
+            <script src='../../scripts/signup_1.js'></script>
+            ";
+    } else {
+        switch ($_SESSION['login']) {
+            case '1':
+                echo "
+                        <div class='flex-container-row flex-center margin-bottom-82'>
+                            <div class='flex-container-row'>
+                                <div class='roadmap'>
+                                    <object data='../../assets/svg/signup_tutee_roadmap_2.svg' type=''></object>
+                                </div>
+                                <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
+                                    <select required class='width-504' name='provinsi' id='province'>
+                                    <option disabled selected value> -- select an option -- </option>
 
+                                    </select>
+                                    <select required class='width-504' name='kota/kabupaten' id='city'>
+
+                                    </select>
+                                    <select required class='width-504' name='kecamatan' id='district'>
+
+                                    </select>
+                                    <select required class='width-504' name='kelurahan' id='sub-district'>
+
+                                    </select>
+                                    <textarea required class='width-504 address-text-area' placeholder='Alamat' name='address' name='address'></textarea>
+                                    <div class='flex-container-row flex-center column-gap-40'>
+                                        <input class='button continue' type='submit' name='submit' value='Selanjutnya' id='next'>
+                                        <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
+                                        <input type='hidden' name='page' value=2>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <script src='../../scripts/signup_2.js'></script>
+                    ";
+                break;
+            case '2':
+                echo "
+                    <div class='flex-container-row flex-center margin-bottom-82'>
+                        <div class='flex-container-row'>
+                            <div class='roadmap'>
+                                <object data='../../assets/svg/signup_tutee_roadmap_3.svg' type=''></object>
+                            </div>
+                            <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
+                                <div class='flex-container-row name column-gap-20'>
+                                    <input required class='width-248' type='text' placeholder='Nama Depan' name='parent_first_name'>
+                                    <input required class='width-248' type='text' placeholder='Nama Belakang' name='parent_last_name'>
+                                </div>
+                                <div class='flex-container-row phone-number column-gap-20'>
+                                    <input required class='width-50 country-code' type='text' value='+62' disabled>
+                                    <input required class='width-440' type='text' placeholder='Nomor Ponsel' name='parent_phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
+                                </div>
+                                <input required class='email width-504' type='email' placeholder='E-mail' name='parent_email'>
+                                <div class='flex-container-row flex-center column-gap-40'>
+                                    <input class='button continue' type='submit' value='Selanjutnya' name='submit' id='next'>
+                                    <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
+                                    <input type='hidden' name='page' value=3>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    ";
+                break;
+            case '3':
+                echo "
+                    <div class='flex-container-column flex-center margin-bottom-82 margin-top-82'>
+                        <div class='width-1280'>
+                            <div class='flex-container-column margin-left-150'>
+                                <div class='flex-start commitment-image'>
+                                    <object data='../../assets/svg/signup_tutee_roadmap_4.svg' type=''></object>
+                                </div>
+                            </div>
+                            <div>
+                
+                            </div>
+                            <div class='card'>
+                                <div class='flex-container-row flex-center column-gap-40'>
+                                    <img class='commitment-image' src='../../assets/png/signup_tutee_commitment_1.png' alt=''>
+                                    <div class='card__text text-align-left font-size-20'>
+                                        <h1>Untuk membangun komitmen bersama</h1>
+                                        <p> Jika kita terbiasa untuk membangun komitmen sejak dini, di dunia kerja nanti akan membantu kita untuk tetap disiplin.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='card'>
+                                <div class='flex-container-row flex-center column-gap-40'>
+                                    <div class='card__text text-align-right font-size-20'>
+                                        <h1> Agar lebih berkonsentrasi</h1>
+                                        <p> Dengan mengurangi distraksi, dapat meningkatkan konsentrasi kita dan menaikkan efektivitas belajar lho
+                                        <p>
+                                    </div>
+                                    <img class='commitment-image' src='../../assets/png/signup_tutee_commitment_2.png' alt=''>
+                                </div>
+                            </div>
+                            <div class='card'>
+                                <div class='flex-container-row flex-center column-gap-40'>
+                                    <img class='commitment-image' src='../../assets/png/signup_tutee_commitment_3.png' alt=''>
+                                    <div class='card__text text-align-left font-size-20'>
+                                        <h1>Menghargai tutor</h1>
+                                        <p> Dengan mematuhi komitmen yang kita buat, kita juga jadi lebih menghargai tutor yang mengajar lho. Jadi mereka juga jadi lebih semangat mengajari kita. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='card'>
+                                <div class='flex-container-row flex-center column-gap-40'>
+                                    <div class='card__text text-align-right font-size-20'>
+                                        <h1>Perjanjian untuk semua sesi</h1>
+                                        <p>Komitmen yang kalian tulis sekarang harus kalian tepati di semua sesi tutoring melalui platfotm Pelitaku.</p>
+                                    </div>
+                                    <img class='commitment-image' src='../../assets/png/signup_tutee_commitment_4.png' alt=''>
+                                </div>
+                            </div>
+                            <form action='' method='POST'> 
+                            <div class='flex-container-row flex-center width-full column-gap-40 margin-top-82'>
+                                <div class='commitment width-504'>
+                                    <div class='font-size-20'>
+                                        <p>Saya akan</p>
+                                        <ul>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_1'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_2'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_3'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_4'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_5'></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class='commitment width-504'>
+                                    <div class='font-size-20'>
+                                        <p>Saya tidak akan</p>
+                                        <ul>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_not_1' value='Menggunakan Ponsel Selama Belajar' readonly></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_not_2'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_not_3'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_not_4'></li>
+                                            <li><input class='font-size-20 width-95-percent' type='text' name='will_not_5'></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='buttons width-full flex-container-row flex-center margin-top-82 column-gap-40' >
+                                <input class='button continue' type='submit' value='Selanjutnya' name='submit'>
+                                <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
+                                <input type='hidden' name='page' value=4>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    ";
+                break;
+            case '4':
+                include "../../assets/php/dbcon.php";
+                $sql = "INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor`) 
+                VALUES (NULL, '" . $_SESSION["email"] . "', '" . $_SESSION["password"] . "','" . $_SESSION["first_name"] . "', '" . $_SESSION["last_name"] . "', '" . $_SESSION["phone_number"] . "', '" . $_SESSION["provinsi"] . "', '" . $_SESSION["kota/kabupaten"] . "', '" . $_SESSION["kecamatan"] . "', '" . $_SESSION["kelurahan"] . "', '" . $_SESSION["address"] . "', '', '0');
+                ";
+                if ($conn->query($sql) === TRUE) {
+                    
+                } else {
+                    echo "Error updating record: " . $conn->error;
+                }
+                $sql = "INSERT INTO `tutee` (`id`, `parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) 
+                VALUES (NULL, '" . $_SESSION["parent_first_name"] . "', '" . $_SESSION["parent_last_name"] . "', '" . $_SESSION["parent_phone_number"] . "', '" . $_SESSION["parent_email"] . "', '" . $_SESSION["will_1"] . "', '" . $_SESSION["will_2"] . "', '" . $_SESSION["will_3"] . "', '" . $_SESSION["will_4"] . "', '" . $_SESSION["will_5"] . "', '" . $_SESSION["will_not_1"] . "', '" . $_SESSION["will_not_2"] . "', '" . $_SESSION["will_not_3"] . "', '" . $_SESSION["will_not_4"] . "', '" . $_SESSION["will_not_5"] . "');
+                ";
+                if ($conn->query($sql) === TRUE) {
+                    echo "<script type='text/javascript'>location.href = '../../index.php';</script>";
+                } else {
+                    echo "Error updating record: " . $conn->error;
+                }
+                break;
+        }
+    }
+// INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor`) VALUES (NULL, '', '', '', '', '', '', '', '', '', '', '', '0');
+
+// INSERT INTO `tutee` (`id`, `parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) VALUES (NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+
+// INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor` ,`parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`)
+// 	SELECT (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor` ,`parent_first_name`, `parent_last_name`, `parent_phone_number`, `parent_email`, `will_1`, `will_2`, `will_3`, `will_4`, `will_5`, `will_not_1`, `will_not_2`, `will_not_3`, `will_not_4`, `will_not_5`) FROM users JOIN tutor ON 	 users.id = tutor.id
+// VALUES (NULL, '', '', '', '', '', '', '', '', '', '', '', '0',NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+    ?>
+    <!-- ["first_name"]=> string(3) "asd" ["last_name"]=> string(3) "asd" ["phone_number"]=> string(3) "654" ["email"]=> string(13) "asd@gmail.com" ["password"]=> string(3) "asd" ["submit"]=> string(11) "Selanjutnya" ["page"]=> string(1) "3" ["provinsi"]=> string(2) "11" ["kota/kabupaten"]=> string(4) "1101" ["kecamatan"]=> string(6) "110101" " ["parent_first_name"]=> string(3) "asd" ["parent_last_name"]=> string(3) "asd" ["parent_phone_number"]=> string(3) "987" ["parent_email"]=> string(13) "asd@gmail.com" } -->
+    <?php include '../../assets/php/footer.php' ?>
+    
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>

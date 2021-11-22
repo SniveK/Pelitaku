@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if(isset($_SESSION['id'])){
+    echo "<script type='text/javascript'>window.history.go(-1)</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,11 +80,11 @@
                     <div class="font-size-20">
                         <p>Saya akan</p>
                         <ul>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-1"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-2"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-3"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-4"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-5"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-1" name="i-will-1"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-2" name="i-will-2"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-3" name="i-will-3"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-4" name="i-will-4"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-will-5" name="i-will-5"></li>
                         </ul>
                     </div>
                 </div>
@@ -84,11 +92,11 @@
                     <div class="font-size-20">
                         <p>Saya tidak akan</p>
                         <ul>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-1" value="Menggunakan Ponsel Selama Belajar" disabled></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-2"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-3"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-4"></li>
-                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-5"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-1" name="i-wont-1" value="Menggunakan Ponsel Selama Belajar" disabled></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-2" name="i-wont-2"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-3" name="i-wont-3"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-4" name="i-wont-4"></li>
+                            <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-5" name="i-wont-5"></li>
                         </ul>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
+if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
 }
 include "../../assets/php/dbcon.php";

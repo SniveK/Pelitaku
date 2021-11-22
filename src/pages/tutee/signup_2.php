@@ -1,3 +1,16 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_SESSION['id'])) {
+    echo "<script type='text/javascript'>window.history.go(-1)</script>";
+}
+if (!empty($_POST['submit'])) {
+    $_SESSION['login'] = 1;
+    echo "<p>LOLLL</p>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +36,8 @@
             <div class="roadmap">
                 <object data="../../assets/svg/signup_tutee_roadmap_2.svg" type=""></object>
             </div>
-            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20">
-            <select class="width-504" name="provinsi" id="province">
+            <form class="form flex-container-column max-width-600 min-width-550 row-gap-20" method="POST">
+                <select class="width-504" name="provinsi" id="province">
                 </select>
                 <select class="width-504" name="kota/kabupaten" id="city">
 
@@ -37,7 +50,7 @@
                 </select>
                 <textarea required class="width-504 address-text-area" placeholder="Alamat" id="address"></textarea>
                 <div class="flex-container-row flex-center column-gap-40">
-                    <input class="button continue" type="submit" value="Selanjutnya" id="next">
+                    <input class="button continue" type="submit" name="submit" value="1" id="next">
                     <input class="button abort" type="button" value="Batal" id="cancel">
                 </div>
             </form>
@@ -45,6 +58,7 @@
     </div>
     <?php include '../../assets/php/footer.php' ?>
     <script src="../../scripts/signup.js"></script>
+
 </body>
 
 </html>

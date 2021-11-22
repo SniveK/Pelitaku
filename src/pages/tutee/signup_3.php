@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if(isset($_SESSION['id'])){
+    echo "<script type='text/javascript'>window.history.go(-1)</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
