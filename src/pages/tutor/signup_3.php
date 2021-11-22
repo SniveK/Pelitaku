@@ -29,26 +29,32 @@
             </div>
             <form class="form flex-container-column max-width-600 min-width-550 row-gap-20">
                 <div class="flex-container-row bank column-gap-20">
-                    <select class="width-175" name="Provinsi" id="cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
+                    <select class="width-175" name="bank" id="bank">
+                        <option value="BCA">BCA</option>
+                        <option value="Mandiri">Mandiri</option>
+                        <option value="BNI">BNI</option>
+                        <option value="Permata">Permata</option>
                     </select>
                     <input class="width-320" type="text" placeholder="Nomor Rekening" id="bankAccountNumber">
                 </div>
                 <div class="flex-container-row major column-gap-20">
                     <input class="width-175 country-code" type="text" placeholder="Fakultas" id="tutorFaculty">
-                    <input class="width-320" type="text" placeholder="Jurusan" id="tutorMajor">
+                    <!-- <input class="width-320" type="text" placeholder="Jurusan" id="tutorMajor"> -->
+                    <select class="width-320" name="major" id="major">
+                        <option disabled selected value> -- select an option -- </option>
+                    </select>
                 </div>
                 <div class="flex-container-row gpa column-gap-20">
                     <input class="width-72" type="text" placeholder="GPA">
-                    <input class="width-424" type="text" placeholder="Jurusan" id="tutorGPA">
+                    <input class="width-424" type="text" placeholder="link/url transkrip nilai" id="linkTranscriptGPA">
                 </div>
-                <div class="flex-container-column row-gap-20" id="tutorEmails">
+                <div class="flex-container-column row-gap-20" id="tutorSubjects">
                     <div class="flex-container-row mastered-course column-gap-20">
-                        <input class="email width-465" type="email" placeholder="E-mail" id="tutorEmail">
-                        <button class="button-email plus" id="tutorEmailAppend"></button>
+                        <!-- <input class="email width-465" type="email" placeholder="Mata Kuli" id="tutorEmail"> -->
+                        <select class="subject width-465" name="subject" id="subject">
+
+                        </select>
+                        <button class="button-email plus-subject" id="tutorSubjectAppend"></button>
                     </div>
                 </div>
                 <div class="flex-container-row flex-center column-gap-40">
@@ -60,7 +66,7 @@
     </div>
 
     <?php include '../../assets/php/footer.php' ?>
-    <script src="../../scripts/signup_append_email.js"></script>
+    <script src="../../scripts/signup_3.js"></script>
 </body>
 
 </html>

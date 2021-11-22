@@ -26,6 +26,7 @@
             </div>
             <form class="form flex-container-column flex-center max-width-600 min-width-550 row-gap-20">
                 <select class="width-504" name="provinsi" id="province">
+                    <option disabled selected value> -- select an option -- </option>
                 </select>
                 <select class="width-504" name="kota/kabupaten" id="city">
 
@@ -45,7 +46,7 @@
         </div>
     </div>
     <?php include '../../assets/php/footer.php' ?>
-    <script src="../../scripts/signup.js"></script>
+    <script src="../../scripts/signup_2.js"></script>
 </body>
 
 </html>
