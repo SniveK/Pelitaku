@@ -10,7 +10,7 @@ Frontend
 - [ ] Class detail - Michelle
 - [X] Available class - Kevin
 - [ ] Available Tutor - Marcell
-- [ ] Tutor detail (profile) 
+- [ ] Tutor detail (profile) - Michelle
 - [ ] Tutor Review
 - [ ] Booking page + Choose date - **Bersama :)**
 - [ ] Tutor Schedule
