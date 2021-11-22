@@ -88,7 +88,7 @@ if ($result !== false && $result->num_rows > 0) {
                     <div class="flex-container-row column-gap-20">
                         <div class="flex-container-column width-175">
                             <div class="bold">Bank</div>
-                            <select class="width-full" name="bank" id="cars" value="<?php echo $row["bank"] ?>">
+                            <select class="width-full" name="bank" id="bank" value="<?php echo $row["bank"] ?>">
                                 <option value="BCA">BCA</option>
                                 <option value="Mandiri">Mandiri</option>
                                 <option value="BNI">BNI</option>
