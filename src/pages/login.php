@@ -66,10 +66,10 @@ function test_input($data)
         <img src="../assets/png/login_pelitaku.png" alt="">
         <div class="flex-container-row column-gap-40 margin-top-82">
             <input class="button login" type="button" value="Masuk" onclick="showLogin()">
-            <a href="./tutee/signup_1.php"><input class="button abort" type="button" value="Daftar"></a>
+            <a href="./tutee/signup.php"><input class="button abort" type="button" value="Daftar"></a>
         </div>
 		<div class="margin-top-15">
-			<a href="./tutor/signup_1.php"> Daftar Menjadi Tutor </a>
+			<a href="./tutor/signup.php"> Daftar Menjadi Tutor </a>
 		</div>
     </div>
     <div class="login-box hide flex-container-column flex-center margin-top-82 margin-bottom-82 width-650 login-border" id="login">
@@ -84,7 +84,7 @@ function test_input($data)
             <?php echo $dbErr ?>
             <div class="flex-container-row flex-between width-full">
                 <input class="button continue" type="submit" value="Masuk">
-                <a href="./tutee/signup_1.php"><input class="button abort" type="button" value="Daftar"> </input></a>
+                <a href="./tutee/signup.php"><input class="button abort" type="button" value="Daftar"> </input></a>
             </div>
         </form>
     </div>

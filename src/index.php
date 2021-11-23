@@ -114,7 +114,7 @@
     </div>
     <?php include './assets/php/footer.php'; ?>
 
-    <script src="script.js" type="application/javascript"></script>
+    <script src="./script.js" type="application/javascript"></script>
 </body>
 
 </html>

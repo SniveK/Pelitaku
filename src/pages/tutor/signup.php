@@ -53,7 +53,7 @@ $emailError = '';
         $_POST["password"] = '';
         $_POST["phone_number"] = '';
     }
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     switch ($_SESSION['login']) {
         case '1':
             echo "

@@ -247,7 +247,7 @@ $emailError = '';
                 VALUES (NULL, '" . $_SESSION["parent_first_name"] . "', '" . $_SESSION["parent_last_name"] . "', '" . $_SESSION["parent_phone_number"] . "', '" . $_SESSION["parent_email"] . "', '" . $_SESSION["will_1"] . "', '" . $_SESSION["will_2"] . "', '" . $_SESSION["will_3"] . "', '" . $_SESSION["will_4"] . "', '" . $_SESSION["will_5"] . "', '" . $_SESSION["will_not_1"] . "', '" . $_SESSION["will_not_2"] . "', '" . $_SESSION["will_not_3"] . "', '" . $_SESSION["will_not_4"] . "', '" . $_SESSION["will_not_5"] . "');
                 ";
             if ($conn->query($sql) === TRUE) {
-                echo "<script type='text/javascript'>location.href = '../pages/login.php';</script>";
+                echo "<script type='text/javascript'>location.href = '../login.php';</script>";
             } else {
                 echo "Error updating record: " . $conn->error;
             }
