@@ -3,7 +3,7 @@ async function loadProvince() {
   provinces_json = await provinces.json();
   for (let i = 0; i < provinces_json.length; i++) {
     document.getElementById("province").innerHTML += `
-            <option value="${provinces_json[i].id}">${provinces_json[i].nama}</option>
+            <option value="${provinces_json[i].nama}" id="${provinces_json[i].id}">${provinces_json[i].nama}</option>
         `;
   }
 }
@@ -14,7 +14,7 @@ async function loadCity(province_id) {
   cities_json = await cities.json();
   for (let i = 0; i < cities_json.length; i++) {
     document.getElementById("city").innerHTML += `
-            <option value="${cities_json[i].id}">${cities_json[i].nama}</option>
+            <option value="${cities_json[i].nama}" id="${cities_json[i].id}">${cities_json[i].nama}</option>
         `;
   }
 }
@@ -25,7 +25,7 @@ async function loadDistrict(city_id) {
   districts_json = await districts.json();
   for (let i = 0; i < districts_json.length; i++) {
     document.getElementById("district").innerHTML += `
-            <option value="${districts_json[i].id}">${districts_json[i].nama}</option>
+            <option value="${districts_json[i].nama} "id="${districts_json[i].id}">${districts_json[i].nama}</option>
         `;
   }
 }
@@ -36,7 +36,7 @@ async function loadSubDistrict(district_id) {
   sub_districts_json = await sub_districts.json();
   for (let i = 0; i < sub_districts_json.length; i++) {
     document.getElementById("sub-district").innerHTML += `
-            <option value="${sub_districts_json[i].id}">${sub_districts_json[i].nama}</option>
+            <option value="${sub_districts_json[i].nama}" id="${sub_districts_json[i].id}">${sub_districts_json[i].nama}</option>
         `;
   }
 }
@@ -69,9 +69,9 @@ loadProvince();
 document
   .getElementById("province")
   .addEventListener("click", async function () {
-    province_id = this.value;
+    // province_id = this.value;
     // add cities
-    loadCity(province_id);
+    loadCity(this.options[this.selectedIndex].id);
 
     //get name by using the id
     address_dict["provinsi"] = await getInfoById(
@@ -82,9 +82,9 @@ document
 
 // add district
 document.getElementById("city").addEventListener("click", async function () {
-  city_id = this.value;
+  // city_id = this.value;
   // add district
-  loadDistrict(city_id);
+  loadDistrict(this.options[this.selectedIndex].id);
 
   //get name by using the id
   address_dict["kabupaten"] = await getInfoById(
@@ -96,9 +96,9 @@ document.getElementById("city").addEventListener("click", async function () {
 document
   .getElementById("district")
   .addEventListener("click", async function () {
-    district_id = this.value;
+    // district_id = this.value;
     // add sub-district
-    loadSubDistrict(district_id);
+    loadSubDistrict(this.options[this.selectedIndex].id);
 
     //get name by using the id
     address_dict["kecamatan"] = await getInfoById(

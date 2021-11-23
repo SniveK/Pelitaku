@@ -23,7 +23,7 @@ if (isset($_SESSION['is_tutor'])) {
 					<div>
 						<a href=''>pembelajaran</a>
 						<a href=''>inbox</a>
-						<a href=''>profil</a>
+						<a href='../../pages/tutee/profile.php'>profil</a>
 					</div>
 				</div>
 			</div>

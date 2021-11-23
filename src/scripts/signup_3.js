@@ -32,14 +32,15 @@ document.getElementById("major").addEventListener("click", async function () {
   let major_id = this.value;
   loadSubject(major_id);
 });
-
+let counter=1;
 // icon plus for appending email
 document.querySelector(".plus-subject").addEventListener("click", (event) => {
+  counter+=1;
   event.preventDefault();
   div = document.createElement("div");
   div.classList.add("flex-container-row", "mastered-course", "column-gap-20");
   div.innerHTML = `
-  <select class="subject width-465" name="subject" id="subject">
+  <select class="subject width-465" name="subject_`+counter+`" id="subject">
     ${subject_from_json}
   </select>
   <button class="button-email minus" id="tutorEmailDelete"></button>
