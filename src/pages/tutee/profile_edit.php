@@ -44,15 +44,18 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 0) {
         echo "DB ERROR";
     }
     ?>
-    <div class='flex-container-column flex-center margin-bottom-82'>
+    <div class='flex-container-column flex-center margin-bottom-82 row-gap-40'>
         <!-- photo -->
-        <div class='profile-image-container'>
-            <div class='image-container'>
-                <div class='circle width-192 height-192'></div>
+        <div class="profile-image-container">
+            <div class="image-container">
+                <div class="circle width-192 height-192"></div>
+            </div>
+            <div class="image-edit-button">
+                <input class="button abort" type="button" value="ubah foto profil">
             </div>
         </div>
-        <!-- description -->
 
+        <!-- description -->
         <div class="tutee-desc-container font-size-18 line-height-30">
             <div class='flex-container-column flex-start row-gap-20 tutee-desc-col-1'>
                 <div class='flex-container-column'>
