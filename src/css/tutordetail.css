@@ -1,0 +1,89 @@
+p, b{
+	margin: 5px 0 5px 0;
+}
+
+.background {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.maincontent {
+  width: 1024px;
+  height: auto;
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+	display: flex;
+	flex-direction: row;
+}
+
+.profiledetail {
+	display: flex;
+	flex-direction: column;
+	margin: 0 20px 0 20px;
+}
+
+.heading {
+	width: 624px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.rating {
+	position: relative;
+}
+
+.star-grey {
+  position: absolute;
+  top: 25%;
+}
+
+.star-yellow {
+  position: absolute;
+  top: 25%;
+  overflow: hidden;
+}
+
+.reviewtutor {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  line-height: 17px;
+  row-gap: 20px;
+}
+
+.reviewlist{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	background-color: #e5f3fb;
+	border-radius: 10px;
+	padding: 5px 15px 5px 15px;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.title {
+	font-size:22px;
+	font-weight:bold;
+	line-height:24px;
+	margin-top: 50px;"
+}
+
+.identity {
+	width: 150px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+.reviewtext {
+	width: 725px;
+	padding: 0 20px 0 20px;
+}
