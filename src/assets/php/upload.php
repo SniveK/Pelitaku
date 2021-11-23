@@ -1,15 +1,22 @@
 
 <?php
-session_start();
-$target_dir = "../../assets/uploads/".$_SESSION["path"]."/";
-$target_file = $target_dir . basename($_SESSION["id"]);
+$path = "profile_pictures";
+$filename = "1";
+$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+$target_dir = "../../assets/uploads/" . $path . "/";
+$target_file = $target_dir .$filename.".".$imageFileType;
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$file_type=$_FILES['image']['type'];
+$extensions = array("jpeg", "jpg", "png");
+// $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
 
 //checking if file exsists
-if (file_exists($target_file)) {
-  unlink($target_file);
+foreach ($extensions as $ext) {
+  if (file_exists($target_dir .$filename.".".$ext)) {
+    unlink($target_dir .$filename.".".$ext);
+  }
 }
+
 
 // Check file size
 if ($_FILES["image"]["size"] > 500000) {
@@ -19,9 +26,17 @@ if ($_FILES["image"]["size"] > 500000) {
 
 // Allow certain file formats
 if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+  echo $imageFileType;
   echo "Sorry, only JPG, JPEG & PNG files are allowed.";
   $uploadOk = 0;
 }
+
+
+
+// if (in_array($file_ext, $extensions) === false) {
+//   echo "extension not allowed, please choose a JPEG or PNG file.";
+//   $uploadOk = 0;
+// }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {

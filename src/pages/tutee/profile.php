@@ -48,7 +48,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
         <!-- photo -->
         <div class='profile-image-container'>
             <div class='image-container'>
-                <div class='circle width-192 height-192'></div>
+                <div class='circle width-192 height-192' style='background: url("../../assets/uploads/profile_pictures/1.jpg");'></div>
             </div>
         </div>
         <!-- description -->
