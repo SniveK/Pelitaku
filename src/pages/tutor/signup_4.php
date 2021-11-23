@@ -27,7 +27,7 @@
             </div>
             <form class="form flex-container-column max-width-600 min-width-550 row-gap-20">
                 <textarea class="width-504 height-300 reason-text-area" placeholder="Ceritakan tujuan anda mendaftar menjadi tutor" id="address"></textarea>
-                <input class="width-504" type="text" placeholder="Kecamatan">
+                <input class="width-504" type="text" placeholder="link/url CV">
                 <div class="flex-container-row flex-center column-gap-40">
                     <input class="button continue" type="button" value="Selanjutnya" id="next">
                     <input class="button abort" type="button" value="Batal" id="cancel">

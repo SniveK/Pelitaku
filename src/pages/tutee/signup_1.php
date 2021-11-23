@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-    $_SESSION["login"] = 1;
+    $_SESSION["login"] = '1';
 }
 if (isset($_SESSION['id'])) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
