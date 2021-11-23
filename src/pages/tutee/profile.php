@@ -36,7 +36,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
     <?php
     include "../../assets/php/dbcon.php";
     // var_dump($_SESSION);
-    $sql = "SELECT * FROM users JOIN tutor on users.id=tutor.id WHERE users.id=" . $_SESSION["id"];
+    $sql = "SELECT * FROM users JOIN tutee on users.id=tutee.id WHERE users.id=" . $_SESSION["id"];
     $result = $conn->query($sql);
     if ($result !== false && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
@@ -78,15 +78,29 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Alamat</div>
-                    <div><?php echo $row["address"] ?></div>
+                    <div><?php echo $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '.$row["address"] ?></div>
                 </div>
             </div>
 
             <div class='flex-container-column flex-start row-gap-20 tutee-desc-col-2'>
                 <div class='flex-container-column'>
+                    <div class='bold'>Email Orang Tua/Wali</div>
+                    <div><?php echo $row["parent_email"] ?></div>
+                </div>
+                <!-- <div class='flex-container-column'>
                     <div class='bold'>Nama Orang Tua/Wali</div>
-                    <!-- php yang ini nanti diubah buat nama orang tua -->
-                    <!-- <div><?php echo $row["address"] ?></div> -->
+                    php yang ini nanti diubah buat nama orang tua
+                    <div><?php echo $row["parent_first_name"] . ' ' .$row["parent_last_name"]  ?></div>
+                </div> -->
+                <div class='flex-container-row column-gap-40'>
+                    <div class='flex-container-column width-175'>
+                        <div class='bold'>Nama Depan Orang Tua/Wali</div>
+                        <div><?php echo $row["parent_first_name"] ?></div>
+                    </div>
+                    <div class='flex-container-column'>
+                        <div class='bold'>Nama Belakang Orang Tua/Wali</div>
+                        <div><?php echo $row["parent_last_name"] ?></div>
+                    </div>
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Nomor Ponsel Orang Tua</div>
@@ -104,11 +118,11 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                 <div class="font-size-20">
                     <p>Saya akan</p>
                     <ul>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-will-1" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-will-2" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-will-3" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-will-4" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-will-5" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_1"]; ?>" id="i-will-1" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_2"]; ?>" id="i-will-2" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_3"]; ?>" id="i-will-3" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_4"]; ?>" id="i-will-4" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_5"]; ?>" id="i-will-5" disabled></li>
                     </ul>
                 </div>
             </div>
@@ -117,10 +131,10 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                     <p>Saya tidak akan</p>
                     <ul>
                         <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-1" value="Menggunakan Ponsel Selama Belajar" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-2" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-3" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-4" disabled></li>
-                        <li><input class="font-size-20 width-95-percent" type="text" id="i-wont-5" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_not_2"]; ?>" id="i-wont-2" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_not_3"]; ?>" id="i-wont-3" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_not_4"]; ?>" id="i-wont-4" disabled></li>
+                        <li><input class="font-size-20 width-95-percent" type="text" value="<?php echo $row["will_not_5"]; ?>" id="i-wont-5" disabled></li>
                     </ul>
                 </div>
             </div>

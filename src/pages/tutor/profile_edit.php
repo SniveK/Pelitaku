@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
-    echo "<script type='text/javascript'>window.history.go(-1)</script>";
+    // echo "<script type='text/javascript'>window.history.go(-1)</script>";
 }
 include "../../assets/php/dbcon.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -55,8 +55,11 @@ if ($result !== false && $result->num_rows > 0) {
             <div class="image-container">
                 <div class="circle width-192 height-192"></div>
             </div>
-            <div class="review-container">
-                <object data="../../assets/svg/profile_tutor_starbar.svg" type=""></object>
+            <div class='review-container' style='position:relative'>
+                <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
+                <div style='position: absolute;bottom: 35px;  width:<?php echo (round($row["rating"])*36) ?>px; overflow: hidden;'>
+                    <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
+                </div>
             </div>
         </div>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
@@ -102,7 +105,7 @@ if ($result !== false && $result->num_rows > 0) {
                     </div>
                     <div class="flex-container-column">
                         <div class="bold">Alamat</div>
-                        <input class="width-full" type="text" placeholder="Alamat" name="address" id="profilePhoneNumber" value="<?php echo $row["address"] ?>">
+                        <input class="width-full" type="text" placeholder="Alamat" name="address" id="profilePhoneNumber" value="<?php echo $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '.$row["address"] ?>">
                     </div>
                     <div class="flex-container-column">
                         <div class="bold">Password</div>
