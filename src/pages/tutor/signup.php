@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-    $_SESSION["login"] = '1';
+    $_SESSION["login"] = '3';
 }
 if (isset($_SESSION['id'])) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
@@ -53,7 +53,7 @@ $emailError = '';
         $_POST["password"] = '';
         $_POST["phone_number"] = '';
     }
-    // var_dump($_SESSION);
+    var_dump($_SESSION);
     switch ($_SESSION['login']) {
         case '1':
             echo "
@@ -87,8 +87,8 @@ $emailError = '';
                 </div>
                 <script src='../../scripts/signup_1.js'></script>
             ";
-        break;
-            
+            break;
+
         case '2':
             echo "
             <div class='flex-container-row flex-center margin-bottom-82'>
@@ -120,7 +120,7 @@ $emailError = '';
             </div>
             <script src='../../scripts/signup_2.js'></script>
             ";
-        break;
+            break;
         case '3':
             echo "
             <div class='flex-container-row flex-center margin-bottom-82'>
@@ -139,10 +139,11 @@ $emailError = '';
                             <input required class='width-320' type='text' placeholder='Nomor Rekening' name='bank_number' id='bankAccountNumber'>
                         </div>
                         <div class='flex-container-row major column-gap-20'>
-                            <input required class='width-175 country-code' type='text' placeholder='Fakultas' name='faculty' id='tutorFaculty'>
-                            <!-- <input required class='width-320' type='text' placeholder='Jurusan' id='tutorMajor'> -->
-                            <select class='width-320' name='major' id='major'>
+                            <select class='width-175' name='faculty' id='faculty'>
                                 <option disabled selected value> -- select an option -- </option>
+                            </select>
+                            <select class='width-320' name='major' id='major'>
+                            
                             </select>
                         </div>
                         <div class='flex-container-row gpa column-gap-20'>
@@ -151,7 +152,6 @@ $emailError = '';
                         </div>
                         <div class='flex-container-column row-gap-20' id='tutorSubjects'>
                             <div class='flex-container-row mastered-course column-gap-20'>
-                                <!-- <input required class='email width-465' type='email' placeholder='Mata Kuli'  id='tutorEmail'> -->
                                 <select class='subject width-465' name='subject_1' id='subject'>
         
                                 </select>
@@ -205,14 +205,14 @@ $emailError = '';
             } else {
                 echo "Error updating record: " . $conn->error;
             }
-            $sql = "SELECT id FROM users where email=\"".$_SESSION["email"]."\"";
+            $sql = "SELECT id FROM users where email=\"" . $_SESSION["email"] . "\"";
             $result = $conn->query($sql);
             if ($result !== false && $result->num_rows > 0) {
-                $row = $result ->fetch_assoc();
-                $_SESSION["id"]=$row["id"];
-            } 
-            $subject=1;
-            while(isset($_SESSION["subject".$subject])){
+                $row = $result->fetch_assoc();
+                $_SESSION["id"] = $row["id"];
+            }
+            $subject = 1;
+            while (isset($_SESSION["subject" . $subject])) {
                 $sql = "INSERT INTO `class_tutor` (`class_id`,`tutor_id`) 
                 VALUES ();
                 ";

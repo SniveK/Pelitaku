@@ -11,12 +11,19 @@
   height: 300px;
   display: grid;
   grid-template-columns: 7fr 1fr;
-  grid-template-rows: 50px 50px 200px;
+  grid-template-rows: 50px 50px 150px 50px;
 }
 
 .image-container {
   grid-row-start: 1;
   grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.image-edit-button {
+  grid-row-start: 4;
+  grid-row-end: 5;
   grid-column-start: 1;
   grid-column-end: 2;
 }
@@ -39,6 +46,12 @@
 .image-container > div {
   position: relative;
   left: 47%;
+  top: 10%;
+}
+
+.image-edit-button > input {
+  position: relative;
+  left: 49%;
   top: 10%;
 }
 

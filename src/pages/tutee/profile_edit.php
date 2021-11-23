@@ -50,6 +50,9 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                 <div class='image-container'>
                     <div class='circle width-192 height-192'></div>
                 </div>
+                <div class="image-edit-button">
+                    <input class="button abort" type="button" value="ubah foto profil">
+                </div>
             </div>
             <!-- description -->
 
@@ -84,7 +87,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                     </div>
                     <div class='flex-container-column'>
                         <div class='bold'>Alamat</div>
-                        <input class="width-full" type="text" placeholder="Alamat" name="address" id="profileAddress" value="<?php echo $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '.$row["address"] ?>">
+                        <input class="width-full" type="text" placeholder="Alamat" name="address" id="profileAddress" value="<?php echo $row["province"] . ', ' . $row["city"] . ', ' . $row["district"] . ', ' . $row["sub_district"] . ', ' . $row["address"] ?>">
                     </div>
                     <div class='flex-container-column'>
                         <div class='bold'>Password</div>
