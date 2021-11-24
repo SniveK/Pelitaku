@@ -7,12 +7,20 @@ if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
 }
 include "../../assets/php/dbcon.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $uploadOk = 1;
+    if (file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {
+        $path = "profile_pictures";
+        $filename = $_SESSION["id"];
+        include "../../assets/php/upload.php";
+    }
+
+    
     $sql = "UPDATE users JOIN tutor ON users.id = tutor.id SET email=\"" . $_POST["email"] . "\", first_name=\"" . $_POST["first_name"] . "\", last_name=\"" . $_POST["last_name"] . "\", 
         phone_number=\"" . $_POST["phone_number"] . "\", address=\"" . $_POST["address"] . "\", bank=\"" . $_POST["bank"] . "\", bank_number=\"" . $_POST["bank_number"] . "\", 
         about=\"" . $_POST["about"] . "\", ipk=\"" . $_POST["ipk"] . "\", cv=\"" . $_POST["cv"] . "\" 
         WHERE users.id=" . $_SESSION["id"];
     if ($conn->query($sql) === TRUE) {
-        header("Location: ./profile.php");
+        echo "<script type='text/javascript'>location.href = './profile.php';</script>";
     } else {
         echo "Error updating record: " . $conn->error;
     }
@@ -53,18 +61,25 @@ if ($result !== false && $result->num_rows > 0) {
     <div class="flex-container-column flex-center margin-bottom-82">
         <div class="profile-image-container">
             <div class="image-container">
-            <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpeg");' id="profile_picture"></div>
+                <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"] ?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"] ?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"] ?>.jpeg");' id="profile_picture"></div>
             </div>
+
             <div class='review-container' style='position:relative'>
                 <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
-                <div style='position: absolute;bottom: 35px;  width:<?php echo (round($row["rating"])*36) ?>px; overflow: hidden;'>
+                <div style='position: absolute;bottom: 35px;  width:<?php echo (round($row["rating"]) * 36) ?>px; overflow: hidden;'>
                     <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
                 </div>
             </div>
         </div>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
+
             <div class="flex-container-row flex-center width-1280">
+
                 <div class="flex-container-column flex-start width-30-percent row-gap-20">
+                    <div class="image-edit-button">
+                        <input class="button abort" type="file" name="image" value="ubah foto profil" onchange="loadFile(event)">
+                    </div>
                     <div class="flex-container-column width-full">
                         <div class="bold">Email</div>
                         <div class="width-full">
@@ -147,6 +162,7 @@ if ($result !== false && $result->num_rows > 0) {
         </form>
     </div>
     <?php include "../../assets/php/footer.php" ?>
+    <script src="../../scripts/profile_edit.js"></script>
 </body>
 
 </html>

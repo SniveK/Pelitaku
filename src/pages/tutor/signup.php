@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-    $_SESSION["login"] = '3';
+    $_SESSION["login"] = '1';
 }
 if (isset($_SESSION['id'])) {
     echo "<script type='text/javascript'>window.history.go(-1)</script>";
@@ -53,7 +53,7 @@ $emailError = '';
         $_POST["password"] = '';
         $_POST["phone_number"] = '';
     }
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     switch ($_SESSION['login']) {
         case '1':
             echo "
@@ -109,7 +109,7 @@ $emailError = '';
                         <select required class='width-504' name='kelurahan' id='sub-district'>
         
                         </select>
-                        <textarea required class='width-504 address-text-area' placeholder='Alamat' id='address'></textarea>
+                        <textarea required class='width-504 address-text-area' placeholder='Alamat' id='address' name='address'></textarea>
                         <div class='flex-container-row flex-center column-gap-40'>
                             <input class='button continue' type='submit' name='submit'  value='Selanjutnya' id='next'>
                             <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
@@ -177,10 +177,10 @@ $emailError = '';
                         <object data='../../assets/svg/signup_tutor_roadmap_4.svg' type=''></object>
                     </div>
                     <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
-                        <textarea required class='width-504 height-300 reason-text-area' placeholder='Ceritakan tujuan anda mendaftar menjadi tutor' id='address'></textarea>
-                        <input required class='width-504' type='text' placeholder='link/url CV'>
+                        <textarea required class='width-504 height-300 reason-text-area' placeholder='Ceritakan tujuan anda mendaftar menjadi tutor' id='address' name='about'></textarea>
+                        <input required class='width-504' type='text' placeholder='link/url CV' name='cv'>
                         <div class='flex-container-row flex-center column-gap-40'>
-                            <input class='button continue' type='button' value='Selanjutnya' id='next'>
+                            <input class='button continue' type='submit' name='submit' value='Selanjutnya' id='next'>
                             <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
                             <input type='hidden' name='page' value=5>
                         </div>
@@ -192,18 +192,11 @@ $emailError = '';
         case '5':
             include "../../assets/php/dbcon.php";
             $sql = "INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone_number`, `province`, `city`, `district`, `sub_district`, `address`, `profile_photo`, `is_tutor`) 
-                VALUES (NULL, '" . $_SESSION["email"] . "', '" . $_SESSION["password"] . "','" . $_SESSION["first_name"] . "', '" . $_SESSION["last_name"] . "', '" . $_SESSION["phone_number"] . "', '" . $_SESSION["provinsi"] . "', '" . $_SESSION["kota/kabupaten"] . "', '" . $_SESSION["kecamatan"] . "', '" . $_SESSION["kelurahan"] . "', '" . $_SESSION["address"] . "', '', '0');
+                VALUES (NULL, '" . $_SESSION["email"] . "', '" . $_SESSION["password"] . "','" . $_SESSION["first_name"] . "', '" . $_SESSION["last_name"] . "', '" . $_SESSION["phone_number"] . "', '" . $_SESSION["provinsi"] . "', '" . $_SESSION["kota/kabupaten"] . "', '" . $_SESSION["kecamatan"] . "', '" . $_SESSION["kelurahan"] . "', '" . $_SESSION["address"] . "', '', '1');
                 ";
             if ($conn->query($sql) === TRUE) {
             } else {
-                echo "Error updating record: " . $conn->error;
-            }
-            $sql = "INSERT INTO `tutor` (`id`, `bank`, `bank_number`, `about`, `ipk`, `transcript`, `cv`) 
-                VALUES (NULL, '" . $_SESSION["bank"] . "', '" . $_SESSION["bank_number"] . "', '" . $_SESSION["about"] . "', '" . $_SESSION["ipk"] . "', '" . $_SESSION["transcript"] . "', '" . $_SESSION["cv"] . "');
-                ";
-            if ($conn->query($sql) === TRUE) {
-            } else {
-                echo "Error updating record: " . $conn->error;
+                echo "Error 1 updating record: " . $conn->error;
             }
             $sql = "SELECT id FROM users where email=\"" . $_SESSION["email"] . "\"";
             $result = $conn->query($sql);
@@ -211,22 +204,32 @@ $emailError = '';
                 $row = $result->fetch_assoc();
                 $_SESSION["id"] = $row["id"];
             }
+            $sql = "INSERT INTO `tutor` (`id`, `bank`, `bank_number`, `about`, `ipk`, `transcript`, `cv`) 
+                VALUES ( '" . $_SESSION["id"] . "', '" . $_SESSION["bank"] . "', '" . $_SESSION["bank_number"] . "', '" . $_SESSION["about"] . "', '" . $_SESSION["ipk"] . "', '" . $_SESSION["transcript"] . "', '" . $_SESSION["cv"] . "');
+                ";
+            echo $sql;
+            if ($conn->query($sql) === TRUE) {
+            } else {
+                echo "Error 2 updating record: " . $conn->error;
+            }
             $subject = 1;
-            while (isset($_SESSION["subject" . $subject])) {
-                $sql = "INSERT INTO `class_tutor` (`class_id`,`tutor_id`) 
-                VALUES ();
+            while (isset($_SESSION["subject_" . $subject])) {
+                $sql = "INSERT INTO `class_tutor` (`class_subject`,`tutor_id`) 
+                VALUES (\"".$_SESSION["subject_" . $subject]."\",".$_SESSION["id"].");
                 ";
                 if ($conn->query($sql) === TRUE) {
                 } else {
-                    echo "Error updating record: " . $conn->error;
+                    echo "Error 3 updating record: " . $conn->error;
                 }
+                $subject++;
+                echo $subject."<br>";
+                echo $sql;
             }
-            echo "<script type='text/javascript'>location.href = '../pages/login.php';</script>";
+            session_destroy();
+            echo "<script type='text/javascript'>location.href = '../login.php';</script>";
             break;
     }
     ?>
-
-
     <?php include '../../assets/php/footer.php' ?>
 
 </body>

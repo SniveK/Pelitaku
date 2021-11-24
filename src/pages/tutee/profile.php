@@ -35,13 +35,15 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
 
     <?php
     include "../../assets/php/dbcon.php";
-    // var_dump($_SESSION);
+    var_dump($_SESSION);
     $sql = "SELECT * FROM users JOIN tutee on users.id=tutee.id WHERE users.id=" . $_SESSION["id"];
     $result = $conn->query($sql);
     if ($result !== false && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } else {
-        echo "DB ERROR";
+        echo "Error updating record: " . $conn->error;
+        echo "<br>";
+        echo $sql;
     }
     ?>
     <div class='flex-container-column flex-center margin-bottom-82'>

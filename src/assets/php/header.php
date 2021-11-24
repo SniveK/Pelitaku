@@ -6,7 +6,7 @@ if (isset($_SESSION['is_tutor'])) {
 		echo "
 			<div class='header'>
 				<div class='headercontent'>
-					<object data='../../assets/svg/icon_pelitaku.svg' type='' class='header-icon'></object>
+					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon'></a>
 					<div>
 						<a href=''>pembelajaran</a>
 						<a href=''>jadwal</a>
@@ -19,7 +19,7 @@ if (isset($_SESSION['is_tutor'])) {
 		echo "
 			<div class='header'>
 				<div class='headercontent'>
-					<object data='../../assets/svg/icon_pelitaku.svg' type='' class='header-icon'></object>
+					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon'></a>
 					<div>
 						<a href=''>pembelajaran</a>
 						<a href=''>inbox</a>
@@ -33,7 +33,7 @@ if (isset($_SESSION['is_tutor'])) {
 	echo "
 	<div class='header'>
 		<div class='headercontent'>
-			<object data='../../assets/svg/icon_pelitaku.svg' type='' class='header-icon'></object>
+			<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon'></a>
 			<a href='../../pages/login.php' class='push'>masuk</a>
 		</div>
 	</div>

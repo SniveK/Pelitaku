@@ -41,7 +41,7 @@ if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
     if ($result !== false && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } else {
-        echo "DB ERROR";
+        echo "Error updating record: " . $conn->error;
     }
     ?>
     <div class='flex-container-column flex-center margin-bottom-82'>
