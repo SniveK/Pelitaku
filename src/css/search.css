@@ -1,3 +1,20 @@
+.background {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.maincontent {
+  width: 1024px;
+  height: auto;
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 30px;
+}
+
 .filter {
   align-self: center;
 }
@@ -7,23 +24,30 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  width: 95%;
+  width: 1024px;
 }
 .search-result > div {
-  background-color: #e5f3fb;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  
+  background: #e5f3fb;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  padding: 20px 15px 20px 15px;
-  margin: 10px;
-  text-align: left;
   width: 240px;
-  height: 105px;
+  height: 176px;
+  padding: 15px;
 }
+.search-result > div > div > p, b {
+  margin: 0 auto 0 5px;
+  font-size: 14px;
+}
+
+
 .search-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  right: 0%;
-  width: 90%;
+  justify-content: right
 }
 .search-nav > a {
   padding: 0px 10px 0px 10px;
@@ -56,39 +80,50 @@ select {
   appearance: none;
 }
 
-.tutor-border {
-  background-color: #e5f3fb;
-  box-sizing: border-box;
-  margin: 0px 150px 0px 150px;
-  padding: 50px 0px 50px 0px;
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.tutor-boxes {
-  display: grid;
-  grid-template-columns: repeat(3, 240px);
-  column-gap: 120px;
-  margin-left: 150px;
-}
-
-.tutor-small-box {
-  background: #e5f3fb;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  width: 240px;
-  height: 176px;
-  padding: 10px;
+.avatar {
+  border-radius: 50%;
 }
 
 .star-grey {
   position: absolute;
-  top: 25px;
-  right: -5px;
+  bottom: 0;
+  left: 0;
 }
 
 .star-yellow {
   position: absolute;
-  right: -5px;
-  top: 25px;
+  bottom: 0;
+  left: 0;
+}
+
+.background {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.maincontent {
+  width: 1024px;
+  height: auto;
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchtitle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 20px;
+}
+
+.specialpicks {
+	display: flex;
+	flex-direction: column;
+	column-gap: 20;
+	background-color: #e5f3fb;
+	padding: 20px 50px 20px 50px;
+	border-radius: 7px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
