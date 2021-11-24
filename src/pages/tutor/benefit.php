@@ -79,7 +79,7 @@
             </div>
 
             <div class="width-full buttons flex-container-row flex-center">
-                <a href="./signup_1.php"><input class="button signup" type="button" value="Daftar"></a>
+                <a href="./signup.php"><input class="button signup" type="button" value="Daftar"></a>
             </div>
         </div>
     </div>

@@ -215,14 +215,14 @@ $emailError = '';
             $subject = 1;
             while (isset($_SESSION["subject_" . $subject])) {
                 $sql = "INSERT INTO `class_tutor` (`class_subject`,`tutor_id`) 
-                VALUES (\"".$_SESSION["subject_" . $subject]."\",".$_SESSION["id"].");
+                VALUES (\"" . $_SESSION["subject_" . $subject] . "\"," . $_SESSION["id"] . ");
                 ";
                 if ($conn->query($sql) === TRUE) {
                 } else {
                     echo "Error 3 updating record: " . $conn->error;
                 }
                 $subject++;
-                echo $subject."<br>";
+                echo $subject . "<br>";
                 echo $sql;
             }
             session_destroy();
