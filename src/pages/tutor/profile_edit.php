@@ -53,7 +53,7 @@ if ($result !== false && $result->num_rows > 0) {
     <div class="flex-container-column flex-center margin-bottom-82">
         <div class="profile-image-container">
             <div class="image-container">
-                <div class="circle width-192 height-192"></div>
+            <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpeg");' id="profile_picture"></div>
             </div>
             <div class='review-container' style='position:relative'>
                 <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
@@ -105,7 +105,8 @@ if ($result !== false && $result->num_rows > 0) {
                     </div>
                     <div class="flex-container-column">
                         <div class="bold">Alamat</div>
-                        <input class="width-full" type="text" placeholder="Alamat" name="address" id="profilePhoneNumber" value="<?php echo $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '.$row["address"] ?>">
+                        <input class="width-full" type="text" placeholder="Alamat" name="address" id="profilePhoneNumber" value="<?php echo $row["address"] ?>">
+                        <!-- $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '. -->
                     </div>
                     <div class="flex-container-column">
                         <div class="bold">Password</div>

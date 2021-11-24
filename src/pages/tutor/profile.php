@@ -47,7 +47,7 @@ if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
     <div class='flex-container-column flex-center margin-bottom-82'>
         <div class='profile-image-container'>
             <div class='image-container'>
-                <div class='circle width-192 height-192'></div>
+            <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpeg");'></div>
             </div>
             <div class='review-container' style='position:relative'>
                 <div style='position: absolute;bottom: 35px; '><img src='../../assets/png/starbar_big_grey.png' alt='grey stars'></div>
@@ -92,7 +92,8 @@ if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Alamat</div>
-                    <div><?php echo $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '.$row["address"] ?></div>
+                    <div><?php echo $row["address"] ?></div>
+                    <!-- $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '. -->
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Password</div>

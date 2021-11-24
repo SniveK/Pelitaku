@@ -34,22 +34,24 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $path = "profile_pictures";
-        $filename = $_SESSION["id"];
-        include "../../assets/php/upload.php";
+        $uploadOk=1;
+        if (file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {
+            $path = "profile_pictures";
+            $filename = $_SESSION["id"];
+            include "../../assets/php/upload.php";
+        }
 
         include "../../assets/php/dbcon.php";
         $sql = "UPDATE users JOIN tutee ON users.id = tutee.id SET email=\"" . $_POST["email"] . "\", first_name=\"" . $_POST["first_name"] . "\", last_name=\"" . $_POST["last_name"] . "\", 
         phone_number=\"" . $_POST["phone_number"] . "\", address=\"" . $_POST["address"] . "\", parent_email=\"" . $_POST["parent_email"] . "\", parent_first_name=\"" . $_POST["parent_first_name"] . "\", 
         parent_last_name=\"" . $_POST["parent_last_name"] . "\", parent_phone_number=\"" . $_POST["parent_phone_number"] . "\", will_1=\"" . $_POST["will_1"] . "\" , will_2=\"" . $_POST["will_2"] . "\" , will_3=\"" . $_POST["will_3"] . "\" , will_4=\"" . $_POST["will_4"] . "\" , will_5=\"" . $_POST["will_5"] . "\" , will_not_2=\"" . $_POST["will_not_2"] . "\" , will_not_3=\"" . $_POST["will_not_3"] . "\" , will_not_4=\"" . $_POST["will_not_4"] . "\" , will_not_5=\"" . $_POST["will_not_5"] . "\" 
         WHERE users.id=" . $_SESSION["id"];
-        if ($conn->query($sql) === TRUE) {
-            // echo "<script type='text/javascript'>location.href = './profile.php';</script>";
+        if ($conn->query($sql) === TRUE && $uploadOk) {
+            echo "<script type='text/javascript'>location.href = './profile.php';</script>";
         } else {
             echo "Error updating record: " . $conn->error;
         }
     }
-
     include "../../assets/php/dbcon.php";
     // var_dump($_SESSION);
     $sql = "SELECT * FROM users JOIN tutee on users.id=tutee.id WHERE users.id=" . $_SESSION["id"];
@@ -65,10 +67,10 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
             <!-- photo -->
             <div class='profile-image-container'>
                 <div class='image-container'>
-                    <div class='circle width-192 height-192' style='background: url("../../assets/uploads/profile_pictures/1.jpg");'></div>
+                    <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpeg");' id="profile_picture"></div>
                 </div>
                 <div class="image-edit-button">
-                    <input class="button abort" type="file" name="image" value="ubah foto profil">
+                    <input class="button abort" type="file" name="image" value="ubah foto profil" onchange="loadFile(event)">
                 </div>
             </div>
             <!-- description -->
@@ -104,7 +106,8 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                     </div>
                     <div class='flex-container-column'>
                         <div class='bold'>Alamat</div>
-                        <input required class="width-full" type="text" placeholder="Alamat" name="address" id="profileAddress" value="<?php echo $row["province"] . ', ' . $row["city"] . ', ' . $row["district"] . ', ' . $row["sub_district"] . ', ' . $row["address"] ?>">
+                        <input required class="width-full" type="text" placeholder="Alamat" name="address" id="profileAddress" value="<?php echo $row["address"] ?>">
+                        <!-- $row["province"] . ', ' . $row["city"] . ', ' . $row["district"] . ', ' . $row["sub_district"] . ', ' .  -->
                     </div>
                     <div class='flex-container-column'>
                         <div class='bold'>Password</div>
@@ -186,6 +189,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
         </div>
     </form>
     <?php include "../../assets/php/footer.php" ?>
+    <script src="../../scripts/profile_edit.js"></script>
 </body>
 
 </html>

@@ -48,7 +48,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
         <!-- photo -->
         <div class='profile-image-container'>
             <div class='image-container'>
-                <div class='circle width-192 height-192' style='background: url("../../assets/uploads/profile_pictures/1.jpg");'></div>
+                <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpeg");'></div>
             </div>
         </div>
         <!-- description -->
@@ -78,7 +78,8 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                 </div>
                 <div class='flex-container-column'>
                     <div class='bold'>Alamat</div>
-                    <div><?php echo $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '.$row["address"] ?></div>
+                    <div><?php echo $row["address"] ?></div>
+                    <!-- $row["province"].', '.$row["city"].', '.$row["district"].', '.$row["sub_district"].', '. -->
                 </div>
             </div>
 

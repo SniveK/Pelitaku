@@ -1,6 +1,8 @@
 .circle {
   border-radius: 50%;
-  background-position: top;
+  background-position: center;
+  background-size: 192px, 192px;
+  background-repeat: no-repeat;
 }
 
 /* profile page */

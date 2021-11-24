@@ -1,10 +1,11 @@
 
 <?php
-$path = "profile_pictures";
-$filename = "1";
+// $path = "profile_pictures";
+// $filename = "1";
 $imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 $target_dir = "../../assets/uploads/" . $path . "/";
 $target_file = $target_dir .$filename.".".$imageFileType;
+// $sourceProperties = getimagesize($fileName);
 $uploadOk = 1;
 $file_type=$_FILES['image']['type'];
 $extensions = array("jpeg", "jpg", "png");
