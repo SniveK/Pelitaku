@@ -130,14 +130,14 @@ $emailError = '';
                             </div>
                             <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
                                 <div class='flex-container-row name column-gap-20'>
-                                    <input required class='width-248' type='text' placeholder='Nama Depan' name='parent_first_name'>
-                                    <input required class='width-248' type='text' placeholder='Nama Belakang' name='parent_last_name'>
+                                    <input required class='width-248' type='text' placeholder='Nama Depan Orang Tua' name='parent_first_name'>
+                                    <input required class='width-248' type='text' placeholder='Nama Belakang Orang Tua' name='parent_last_name'>
                                 </div>
                                 <div class='flex-container-row phone-number column-gap-20'>
                                     <input required class='width-50 country-code' type='text' value='+62' disabled>
-                                    <input required class='width-440' type='text' placeholder='Nomor Ponsel' name='parent_phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
+                                    <input required class='width-440' type='text' placeholder='Nomor Ponsel Orang Tua' name='parent_phone_number' oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\">
                                 </div>
-                                <input required class='email width-504' type='email' placeholder='E-mail' name='parent_email'>
+                                <input required class='email width-504' type='email' placeholder='E-mail Orang Tua' name='parent_email'>
                                 <div class='flex-container-row flex-center column-gap-40'>
                                     <input class='button continue' type='submit' value='Selanjutnya' name='submit' id='next'>
                                     <a href='../../assets/php/logout.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
