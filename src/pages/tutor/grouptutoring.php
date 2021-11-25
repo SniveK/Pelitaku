@@ -15,7 +15,7 @@
 
 <body class="background">
         
-		<?php include './assets/php/header.php';?>
+		<?php include '../assets/php/header.php';?>
 		
 		<div class="maincontent" style="padding: 22px 10% 36px 10%">
 			<h2> Group Tutoring </h2>
@@ -73,7 +73,7 @@
 			</div>
 		</div>
 		
-		<?php include './assets/php/footer.php'; ?>
+		<?php include '../assets/php/footer.php'; ?>
 
 </body>
 

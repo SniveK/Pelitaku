@@ -87,6 +87,14 @@
 					</div>
 				</div>
 			</div>
+			
+			<div style="height: 20px"></div>
+			<button class="secondary push"> lihat semua </button>
+			
+			<div class = "nextcancel">
+				<button class="primary1 push"> Selanjutnya </button>
+				<button class="primary2"> Batal </button>
+			</div>
 		</div>
 		
 	</div>

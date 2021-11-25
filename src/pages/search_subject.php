@@ -18,7 +18,7 @@
 	<div class="background">
 		<div class="maincontent">
 			
-			<?php include './assets/php/searchbar.php';?>
+			<?php include '../assets/php/searchbar.php';?>
 			
 			<div style="height: 20px;"></div>
 
@@ -51,7 +51,7 @@
 		</div>
 	</div>
 
-    <?php include './assets/php/footer.php'; ?>
+    <?php include '../assets/php/footer.php'; ?>
 
     <script src="script.js" type="application/javascript"></script>
 </body>
