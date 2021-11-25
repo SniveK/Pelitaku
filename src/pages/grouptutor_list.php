@@ -20,7 +20,7 @@
 	<div class="background">
 		<div class="maincontent">
 			
-			<?php include './assets/php/searchbar.php';?>
+			<?php include '../assets/php/searchbar.php';?>
 			
 			<img src="../assets/png/banner3.png" alt="" width="100%">
 			<img src="../assets/png/banner3.png" alt="" width="100%">
@@ -40,7 +40,7 @@
 		
 	</div>
 		
-		<?php include './assets/php/footer.php'; ?>
+		<?php include '../assets/php/footer.php'; ?>
 		
     </body>
 

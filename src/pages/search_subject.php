@@ -38,16 +38,16 @@
                             echo "<div><b>" . $row['subject'] . "</b><p>" . $row['topic'] . "</p></div>";
                         }
                     } else {
-                        echo "DB ERROR: " . $conn ->error;
+                        echo "DB ERROR: " . $conn->error;
                     }
                     ?>
                 </div>
                 <div class="search-nav" align="right">
-                    <a href=""><img src="../assets/png/icon_left.png" alt="" ></a>
+                    <a href=""><img src="../assets/png/icon_left.png" alt=""></a>
                     <a href="">1</a>
                     <a href="">.</a>
                     <a href="">.</a>
-                    <a href=""><img src="../assets/png/icon_right.png" alt="" ></a>
+                    <a href=""><img src="../assets/png/icon_right.png" alt=""></a>
                 </div>
             </form>
             <div style="height: 20px;"></div>

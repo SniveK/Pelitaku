@@ -19,7 +19,7 @@
 	
 	<div class="background">
 		<div class="maincontent">
-			<?php include './assets/php/searchbar.php';?>
+			<?php include '../assets/php/searchbar.php';?>
 			
 			<div class="searchtitle">
                 <h2>
