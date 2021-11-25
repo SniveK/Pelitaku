@@ -21,9 +21,7 @@
         </form>
     </div>
     <div class="position-relative">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-            <input type="text" placeholder="Cari subjek...." class="input-subject" name="subject">
+            <input type="text" placeholder="Cari subjek...." class="input-subject" name="subject" <?php echo (isset($_GET["subject"])) ? "value=\"".$_GET["subject"]."\"":'';?>>
             <input src="../../assets/png/icon_search.png" alt="Icon magnifying glass" class="search-icon" type="image" style="border: none">
-        </form>
     </div>
 </div>
