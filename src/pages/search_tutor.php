@@ -30,6 +30,12 @@
                     <option value="penilaian">Penilaian</option>
                     <option value="tingkat">Tingkat</option>
                 </select>
+				<div class="position-relative">
+					<form action="">
+						<input type="text" placeholder="Cari lokasi" class="input-location">
+						<input src="../assets/png/icon_gps.png" alt="Icon magnifying glass" class="gps-icon" type="image" style="border: none">
+					</form>
+				</div>
             </div>
 			
 			<div class="specialpicks">
@@ -94,11 +100,11 @@
 			</div>
 			
 			<div class="search-nav" align="right">
-                <a href=""><img src="../assets/png/icon_left.png" alt=""></a>
-                <a href="">1</a>
-                <a href="">.</a>
-                <a href="">.</a>
-                <a href=""><img src="../assets/png/icon_right.png" alt=""></a>
+                <input class="navimage" type="submit" style="background-image: url(../assets/png/icon_left.png);" value="" href=""></input>
+                <input type="submit" href="" value="1"></input>
+                <input type="submit" href="" value="."></input>
+                <input type="submit" href="" value="."></input>
+                <input class="navimage" type="submit" style="background-image: url(../assets/png/icon_right.png)" value="" href=""></input>
             </div>
 			
 		</div>

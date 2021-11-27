@@ -79,12 +79,12 @@
 			</div>
 			
 			<div class="search-nav" align="right">
-				<a href=""><img src="../assets/png/icon_left.png" alt=""></a>
-				<a href="">1</a>
-				<a href="">.</a>
-				<a href="">.</a>
-				<a href=""><img src="../assets/png/icon_right.png" alt=""></a>
-			</div>
+                <input class="navimage" type="submit" style="background-image: url(../assets/png/icon_left.png);" value="" href=""></input>
+                <input type="submit" href="" value="1"></input>
+                <input type="submit" href="" value="."></input>
+                <input type="submit" href="" value="."></input>
+                <input class="navimage" type="submit" style="background-image: url(../assets/png/icon_right.png)" value="" href=""></input>
+            </div>
 			
 		</div>
 		

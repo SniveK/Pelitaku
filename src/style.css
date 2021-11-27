@@ -134,6 +134,7 @@ a:visited:active {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  
 }
 
 .searchbar > div {
@@ -153,19 +154,6 @@ input {
   border-radius: 7px;
 }
 
-.input-location {
-  width: 168px;
-  height: 32px;
-  margin-left: 15px;
-  margin-right: 5px;
-  padding-left: 20px;
-  background-image: url(./assets/svg/icon_location.svg);
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 14px 21px;
-  background-position-x: 2px;
-  background-position-y: 4px;
-}
 .input-subject {
   width: 472px;
   height: 32px;

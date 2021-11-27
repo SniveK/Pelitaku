@@ -106,10 +106,16 @@ body {
 .search-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  margin-top: 24px;
+  justify-content: right
 }
-.search-nav > a {
+.search-nav > input {
   padding: 0px 10px 0px 10px;
   color: #fd6a02;
+  border: none;
+  background-color: white;
+}
+
+.navimage {
+	background-repeat: no-repeat;
+	background-position: center;
 }
