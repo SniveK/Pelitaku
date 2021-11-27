@@ -5,13 +5,13 @@
 Frontend
 - [X] Homepage - Michelle 
 - [X] Group tutoring (Detail, make class) - Michelle
-- [ ] Profile + edit profile - Marcell
+- [X] Profile + edit profile - Marcell
 - [X] Class list (yg udah di book) - Michelle
 - [ ] Class detail - Michelle
 - [X] Available class - Kevin
-- [ ] Available Tutor - Marcell
-- [ ] Tutor detail (profile) - Michelle
-- [ ] Tutor Review
+- [X] Available Tutor - Marcell
+- [X] Tutor detail (profile) - Michelle
+- [X] Tutor Review - Michelle
 - [ ] Booking page + Choose date - **Bersama :)**
 - [ ] Tutor Schedule
 - [X] Sign in / Sign up - Marcel
@@ -20,8 +20,8 @@ Frontend
 Prioritas (Main flow)
 - [X] Login/Sign up
 - [X] Search subject
-- [ ] Search Tutor (lokasi abaikan dulu)
-- [ ] Profil Tutor (dari sisi tutee)
+- [X] Search Tutor (lokasi abaikan dulu)
+- [X] Profil Tutor (dari sisi tutee)
 - [ ] Form booking + choose date (tahap terakhir booking)
 - [X] Class list (abis udah booking)
 - [ ] Class detail (liat kelas berlangsung)
@@ -56,5 +56,5 @@ Pertemuan 19 Nov
 
 Next Meeting
 1. Admin page (Special pick, aprrove tutor, mata kuliah tren, group tutoring homepage)
-2. Button mulai kelas di footer
+2. Button mulai kelas di footer - button digantiii
 3. 

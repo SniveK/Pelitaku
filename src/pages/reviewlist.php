@@ -6,7 +6,7 @@
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../style.css">
-		<link rel="stylesheet" href="../css/tutordetail.css">
+		<link rel="stylesheet" href="../css/review.css">
 		
 		<title> Pelitaku </title>
 		<link rel="icon" href="logo.png">
@@ -20,25 +20,19 @@
 	<div class="background">
 		<div class="maincontent">
 			<div class="profile">
-				<img src="../assets/png/contoh_tutor.png" alt="Gambar Tutor" width="200px" height="270px">
+				<img src="../assets/png/contoh_tutor.png" alt="Gambar Tutor" class="profileimage">
 				<div class="profiledetail">
 					<div class="heading">
 						<div>
 							<p style="font-size:22px; font-weight:bold;"> Claresta Yuliana Halim, 19 </p>
-							<p style="font-size:18px;"> Desain produk 2019 </p>
+							<p style="font-size:20px;"> Desain produk 2019 </p>
 						</div>
 						<div class="rating">
                             <div class="star-grey"> <img src="../assets/png/starbar_grey.png" alt="grey stars" height="50px"> </div>
                             <div class="star-yellow"> <img src="../assets/png/starbar_yellow.png" alt="yellow stars" height="50px"> </div>
                         </div>
 					</div>
-					<hr width="100%">
-					<b> Tentang Claresta </b>
-					<p> Nama saya Claresta, saya lahir di Lampung pada tahun 2001. Saya adalah mahasiswi Desain Produk Universitas Pelita Harapan tahun 2019 </p>
-					<p> IPK: 3,70 </p>
-					<p> Alamat: Jl. BSD Raya Utama, Pagedangan, Kec. Pagedangan, Tangerang, Banten 15345 </p>
-					<p> CV: <a href=""> CV_Claresta.pdf </a> </p>
-					<p> Waktu respon: 2 jam </p>
+					<hr width="896px">
 				</div>
 			</div>
 			
@@ -89,17 +83,23 @@
 			</div>
 			
 			<div style="height: 20px"></div>
-			<button class="secondary push"> lihat semua </button>
+			
+			<div class="search-nav" align="right">
+				<input class="navimage" type="submit" style="background-image: url(../assets/png/icon_left.png);" value="" href=""></input>
+				<input type="submit" href="" value="1"></input>
+				<input type="submit" href="" value="."></input>
+				<input type="submit" href="" value="."></input>
+				<input class="navimage" type="submit" style="background-image: url(../assets/png/icon_right.png)" value="" href=""></input>
+			</div>
 			
 			<div class = "nextcancel">
-				<button class="primary1 push"> Selanjutnya </button>
-				<button class="primary2"> Batal </button>
+				<button class="primary2 push"> Kembali </button>
 			</div>
 		</div>
 		
 	</div>
 		
-		<?php include "../assets/php/footer.php"; ?>
+		<?php include '../assets/php/footer.php'; ?>
 		
     </body>
 
