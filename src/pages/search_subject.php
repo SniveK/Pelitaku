@@ -22,7 +22,7 @@
 
                 <div style="height: 20px;"></div>
 
-                <div class="search-result">
+                <div class="search-subject">
                     <?php
                     if (empty($_GET["subject"])) {
                         $_GET["subject"] = '';
