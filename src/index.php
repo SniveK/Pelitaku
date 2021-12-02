@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 // session_destroy();
 ?>
 <!DOCTYPE html>
@@ -22,8 +22,9 @@
 
     <div class="background">
         <div class="maincontent">
-            <?php include './assets/php/searchbar.php';
-            ?>
+            <form action="../../pages/search_subject.php" method="get">
+                <?php include './assets/php/searchbar.php'; ?>
+            </form>
             <img src="./assets/png/banner1.png" alt="Banner Yuk Belajar Bareng" width="100%">
 
             <div class="caption"> Kami memiliki puluhan tutor yang siap membimbingmu dalam belajar. </div>
@@ -77,40 +78,40 @@
                 <button class="primary2"> Ekonomi Mikro </button>
             </div>
             <button class="secondary push"> lihat semua kelas </button>
-            
-			<div class="slideshow-container">
-				<div class="mySlides fade">
-					<div class="numbertext">1 / 5</div> <!-- Biar keliatan pindah -->
-					<img src="./assets/png/banner3.png" style="width:100%">
-				</div>
-				<div class="mySlides fade">
-					<div class="numbertext">2 / 5</div>
-					<img src="./assets/png/banner3.png" style="width:100%">
-				</div>
-				<div class="mySlides fade">
-					<div class="numbertext">3 / 5</div>
-					<img src="./assets/png/banner3.png" style="width:100%">
-				</div>
-				<div class="mySlides fade">
-					<div class="numbertext">4 / 5</div>
-					<img src="./assets/png/banner3.png" style="width:100%">
-				</div>
-				<div class="mySlides fade">
-					<div class="numbertext">5 / 5</div>
-					<img src="./assets/png/banner3.png" style="width:100%">
-				</div>
-				<div class="dotgroup">
-					<span class="dot" onclick="currentSlide(1)"></span> 
-					<span class="dot" onclick="currentSlide(2)"></span> 
-					<span class="dot" onclick="currentSlide(3)"></span>
-					<span class="dot" onclick="currentSlide(4)"></span>
-					<span class="dot" onclick="currentSlide(5)"></span>
-				</div>
-			</div>
-			
-			<button class="secondary push"> lihat semua </button>
-			
-		</div>
+
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 5</div> <!-- Biar keliatan pindah -->
+                    <img src="./assets/png/banner3.png" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 5</div>
+                    <img src="./assets/png/banner3.png" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 5</div>
+                    <img src="./assets/png/banner3.png" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 5</div>
+                    <img src="./assets/png/banner3.png" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 5</div>
+                    <img src="./assets/png/banner3.png" style="width:100%">
+                </div>
+                <div class="dotgroup">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+
+            <button class="secondary push"> lihat semua </button>
+
+        </div>
     </div>
     <?php include './assets/php/footer.php'; ?>
 

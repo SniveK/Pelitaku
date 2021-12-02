@@ -1,5 +1,5 @@
 <?php
-$_SESSION['LAST_ACTIVITY'] = time();
+// $_SESSION['LAST_ACTIVITY'] = time();
 $root = $_SERVER["DOCUMENT_ROOT"];
 if (isset($_SESSION['is_tutor'])) {
 	if ($_SESSION['is_tutor']) {
@@ -39,12 +39,12 @@ if (isset($_SESSION['is_tutor'])) {
 	</div>
 	";
 }
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-	// request 30 minates ago
-	session_destroy();
-	session_unset();
-}
-$_SESSION['LAST_ACTIVITY'] = time();
+// if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+// 	// request 30 minates ago
+// 	session_destroy();
+// 	session_unset();
+// }
+// $_SESSION['LAST_ACTIVITY'] = time();
 
 /* Buat yg kosong headernya :)
 

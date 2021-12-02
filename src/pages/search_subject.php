@@ -31,14 +31,14 @@
                         $_GET["offset"] = 0;
                     }
                     include '../assets/php/dbcon.php';
-                    $sql = "SELECT subject,topic FROM class WHERE subject LIKE '%" . $_GET["subject"] . "%' OR topic LIKE '%" . $_GET["subject"] . "%' LIMIT 18 OFFSET " . $_GET["offset"] . "";
+                    $sql = "SELECT * FROM class WHERE subject LIKE '%" . $_GET["subject"] . "%' OR description LIKE '%" . $_GET["subject"] . "%' LIMIT 18 OFFSET " . $_GET["offset"] . "";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<div><b>" . $row['subject'] . "</b><p>" . $row['topic'] . "</p></div>";
+                            echo "<div><b>" . $row['subject'] . "</b><p>" . $row['description'] . "</p></div>";
                         }
                     } else {
-                        echo "DB ERROR: " . $conn->error;
+                        echo "No Results";
                     }
                     ?>
                 </div>

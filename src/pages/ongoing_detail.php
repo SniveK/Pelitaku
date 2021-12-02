@@ -15,7 +15,19 @@
 	
     <body>
 
-	<?php include '../assets/php/header.php'; ?>
+	<?php 
+	include '../assets/php/header.php'; 
+	include '../assets/php/dbcon.php';
+	$sql = "SELECT * FROM users JOIN tutee on users.id=tutee.id WHERE users.id=" . $_SESSION["id"];
+    $result = $conn->query($sql);
+    if ($result !== false && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+    } else {
+        echo "Error updating record: " . $conn->error;
+        echo "<br>";
+        echo $sql;
+    }
+	?>
 		
 	<div class="background">
 		<div class="maincontent">
