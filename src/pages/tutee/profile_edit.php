@@ -44,7 +44,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
         include "../../assets/php/dbcon.php";
         $sql = "UPDATE users JOIN tutee ON users.id = tutee.id SET email=\"" . $_POST["email"] . "\", first_name=\"" . $_POST["first_name"] . "\", last_name=\"" . $_POST["last_name"] . "\", 
         phone_number=\"" . $_POST["phone_number"] . "\", address=\"" . $_POST["address"] . "\", parent_email=\"" . $_POST["parent_email"] . "\", parent_first_name=\"" . $_POST["parent_first_name"] . "\", 
-        parent_last_name=\"" . $_POST["parent_last_name"] . "\", parent_phone_number=\"" . $_POST["parent_phone_number"] . "\", will_1=\"" . $_POST["will_1"] . "\" , will_2=\"" . $_POST["will_2"] . "\" , will_3=\"" . $_POST["will_3"] . "\" , will_4=\"" . $_POST["will_4"] . "\" , will_5=\"" . $_POST["will_5"] . "\" , will_not_2=\"" . $_POST["will_not_2"] . "\" , will_not_3=\"" . $_POST["will_not_3"] . "\" , will_not_4=\"" . $_POST["will_not_4"] . "\" , will_not_5=\"" . $_POST["will_not_5"] . "\" 
+        parent_last_name=\"" . $_POST["parent_last_name"] . "\", parent_phone_number=\"" . $_POST["parent_phone_number"] . "\", will_1=\"" . $_POST["will_1"] . "\" , will_2=\"" . $_POST["will_2"] . "\" , will_3=\"" . $_POST["will_3"] . "\" , will_4=\"" . $_POST["will_4"] . "\" , will_5=\"" . $_POST["will_5"] . "\" , will_not_2=\"" . $_POST["will_not_2"] . "\" , will_not_3=\"" . $_POST["will_not_3"] . "\" , will_not_4=\"" . $_POST["will_not_4"] . "\" , will_not_5=\"" . $_POST["will_not_5"] . "\" , profile_photo=\"$imageFileType\"
         WHERE users.id=" . $_SESSION["id"];
         if ($conn->query($sql) === TRUE && $uploadOk) {
             echo "<script type='text/javascript'>location.href = './profile.php';</script>";

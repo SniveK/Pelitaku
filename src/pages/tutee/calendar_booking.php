@@ -1,3 +1,21 @@
+<?php
+include "../../assets/php/dbcon.php";
+// var_dump($_SESSION);
+$sql = "SELECT * FROM class_session  WHERE class_session.tutor_id=" . $_GET['tutor-id'] . " AND class_session.class_subject=\"" . $_GET['subject-tutor'] . "\"";
+// echo $sql;
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    echo "<script>
+        var data =  [";
+    while ($row = $result->fetch_assoc()) {
+        echo $row["date"] . ",";
+    }
+    echo "]</script>";
+} else {
+    echo "No Results";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

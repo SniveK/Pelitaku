@@ -17,8 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $sql = "UPDATE users JOIN tutor ON users.id = tutor.id SET email=\"" . $_POST["email"] . "\", first_name=\"" . $_POST["first_name"] . "\", last_name=\"" . $_POST["last_name"] . "\", 
         phone_number=\"" . $_POST["phone_number"] . "\", address=\"" . $_POST["address"] . "\", bank=\"" . $_POST["bank"] . "\", bank_number=\"" . $_POST["bank_number"] . "\", 
-        about=\"" . $_POST["about"] . "\", ipk=\"" . $_POST["ipk"] . "\", cv=\"" . $_POST["cv"] . "\" 
+        about=\"" . $_POST["about"] . "\", ipk=\"" . $_POST["ipk"] . "\", cv=\"" . $_POST["cv"] . "\" , profile_photo=\"$imageFileType\"
         WHERE users.id=" . $_SESSION["id"];
+    echo $sql;
     if ($conn->query($sql) === TRUE) {
         echo "<script type='text/javascript'>location.href = './profile.php';</script>";
     } else {

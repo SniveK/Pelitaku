@@ -22,7 +22,7 @@
 
     <div class="background">
         <div class="maincontent">
-            <form action="../../pages/search_subject.php" method="get">
+            <form action="../../pages/tutee/search_subject.php" method="get">
                 <?php include './assets/php/searchbar.php'; ?>
             </form>
             <img src="./assets/png/banner1.png" alt="Banner Yuk Belajar Bareng" width="100%">

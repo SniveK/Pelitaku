@@ -204,8 +204,8 @@ $emailError = '';
                 $row = $result->fetch_assoc();
                 $_SESSION["id"] = $row["id"];
             }
-            $sql = "INSERT INTO `tutor` (`id`, `bank`, `bank_number`, `about`, `ipk`, `transcript`, `cv`) 
-                VALUES ( '" . $_SESSION["id"] . "', '" . $_SESSION["bank"] . "', '" . $_SESSION["bank_number"] . "', '" . $_SESSION["about"] . "', '" . $_SESSION["ipk"] . "', '" . $_SESSION["transcript"] . "', '" . $_SESSION["cv"] . "');
+            $sql = "INSERT INTO `tutor` (`id`, `bank`, `bank_number`, `about`, `ipk`, `transcript`, `cv`,`faculty`,`major`) 
+                VALUES ( '" . $_SESSION["id"] . "', '" . $_SESSION["bank"] . "', '" . $_SESSION["bank_number"] . "', '" . $_SESSION["about"] . "', '" . $_SESSION["ipk"] . "', '" . $_SESSION["transcript"] . "', '" . $_SESSION["cv"] . "', '" . $_SESSION["faculty"] . "', '" . $_SESSION["major"] . "');
                 ";
             echo $sql;
             if ($conn->query($sql) === TRUE) {

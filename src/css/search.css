@@ -23,7 +23,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: space-between; */
+  column-gap: 152px;
+  row-gap: 80px;
   width: 1024px;
 }
 .search-result > div {

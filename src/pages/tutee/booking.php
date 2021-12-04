@@ -14,21 +14,31 @@
     <?php include '../../assets/php/header.php'; ?>
     <div class="flex-container-row flex-center">
         <div class="flex-container-column flex-center width-1280 margin-top-82 margin-bottom-82 row-gap-40">
-            <select class="add-arrow-down width-650" name="" id="">
+            Buat Sesi Belajar 
+            <br>
+            <?php 
+                echo $_GET["subject-tutor"];
+            ?>
+            <br>
+            Dengan Tutor:
+            <?php 
+                echo $_GET["tutor-name"];
+            ?>
+            <!-- <select class="add-arrow-down width-650" name="" id="">
                 <option disabled selected value> -- Pilih Mata Kuliah -- </option>
-            </select>
+            </select> -->
             <select class="add-arrow-down width-650" name="" id="">
                 <option disabled selected value> -- Select Online/ Offline -- </option>
                 <option value="online"> Online </option>
                 <option value="offline"> Offline </option>
             </select>
-            <a href="../../pages/tutee/calendar_booking.php">
+            <a href="../../pages/tutee/calendar_booking.php?tutor-id=<?php echo $_GET["tutor-id"]?>&subject-tutor=<?php echo $_GET["subject-tutor"]?>">
                 <input class="background-transparent add-arrow-right width-650 text-align-left" type="button" value="Pilih Waktu">
             </a>
             <textarea class="width-650 height-300" name="" id="" placeholder="Ceritakan tujuan Anda di sesi ini"></textarea>
             <div class="flex-container-row flex-end column-gap-20 width-650">
                 <input class='button continue' type='submit' name='submit' value='Konfirmasi' id='next' onclick="showPopUp()">
-                <a href="../../assets/php/logout.php"><a href="../../assets/php/logout.php"><input class='button abort' type='button' value='Batal' id='cancel'></a></a>
+                <a href="../../assets/php/logout.php"><input class='button abort' type='button' value='Batal' id='cancel'></a>
             </div>
         </div>
         <div class="login-box flex-container-column hide flex-center width-650 login-border row-gap-20" id="confirmation">
