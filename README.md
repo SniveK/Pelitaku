@@ -7,12 +7,12 @@ Frontend
 - [X] Group tutoring (Detail, make class) - Michelle
 - [X] Profile + edit profile - Marcell
 - [X] Class list (yg udah di book) - Michelle
-- [ ] Class detail - Michelle
+- [X] Class detail - Michelle
 - [X] Available class - Kevin
 - [X] Available Tutor - Marcell
 - [X] Tutor detail (profile) - Michelle
 - [X] Tutor Review - Michelle
-- [ ] Booking page + Choose date - **Bersama :)**
+- [X] Booking page + Choose date - **Bersama :)**
 - [ ] Tutor Schedule
 - [X] Sign in / Sign up - Marcel
 - [X] Infographic (Tutor benefit) -Marcel
