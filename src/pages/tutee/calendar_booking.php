@@ -1,19 +1,23 @@
 <?php
 include "../../assets/php/dbcon.php";
 // var_dump($_SESSION);
-$sql = "SELECT * FROM class_session  WHERE class_session.tutor_id=" . $_GET['tutor-id'] . " AND class_session.class_subject=\"" . $_GET['subject-tutor'] . "\"";
+$sql = "SELECT * FROM class_session  WHERE class_session.tutor_id=" . $_POST['tutor-id'] . " AND class_session.class_subject=\"" . $_POST['subject-tutor'] . "\"";
 // echo $sql;
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<script>
         var data =  [";
     while ($row = $result->fetch_assoc()) {
-        echo $row["date"] . ",";
+        echo substr($row["date"], 8, 2) . ",";
     }
     echo "]</script>";
 } else {
     echo "No Results";
 }
+echo "<script>
+        var month = ".$_POST["month"].";
+        var year = ".$_POST["year"].";
+        </script>"
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +54,9 @@ if ($result->num_rows > 0) {
                         <span class="month-year" id="year"></span>
                     </p>
                 </div>
+                <form action="" method="get">
+                    <input type="sumbit">
+                </form>
                 <button class="button-next" id="next-month"> </button>
             </div>
             <div class="calendar-container" id='calendar'>
@@ -114,39 +121,42 @@ if ($result->num_rows > 0) {
                 <div class="flex-container-column flex-start width-80-percent row-gap-10">
                     <h1>Waktu Sesi Tutor</h1>
                     <div class="font-size-18">
-                        <span id="time-info">Selasa,</span>
+                        <span id="time-info">Selasa,</span> 
                     </div>
                 </div>
-                <form class="flex-container-column flex-center margin-bottom-82 width-full row-gap-40" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <form class="flex-container-column flex-center margin-bottom-82 width-full row-gap-40" method="post" action="./booking.php">
                     <div class="flex-container-row flex-center font-size-18 width-55-percent column-gap-20">
                         <div class=" width-20-percent">Dari</div>
-                        <select class="width-80-percent add-arrow-down" name="" id="">
+                        <select class="width-80-percent add-arrow-down" name="time_start" id="">
                             <option disabled selected value> -- Pilih Waktu Mulai -- </option>
-                            <option value="">13.00</option>
-                            <option value="">14.00</option>
-                            <option value="">15.00</option>
-                            <option value="">16.00</option>
-                            <option value="">17.00</option>
-                            <option value="">18.00</option>
-                            <option value="">19.00</option>
-                            <option value="">20.00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
                         </select>
                     </div>
                     <div class="flex-container-row flex-center font-size-18 width-55-percent column-gap-20">
                         <div class="font-size-18 width-20-percent">Sampai</div>
-                        <select class="width-80-percent add-arrow-down" name="" id="">
+                        <select class="width-80-percent add-arrow-down" name="time_end" id="">
                             <option disabled selected value> -- Pilih Waktu Selesai -- </option>
-                            <option value="">15.00</option>
-                            <option value="">16.00</option>
-                            <option value="">17.00</option>
-                            <option value="">18.00</option>
-                            <option value="">19.00</option>
-                            <option value="">20.00</option>
-                            <option value="">21.00</option>
-                            <option value="">22.00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
                         </select>
                     </div>
                     <input class="button continue" type="submit" value="Ok">
+                    <input type="text" name="subject-tutor" value="<?php echo $_POST["subject-tutor"]?>" hidden>
+                    <input type="text" name="tutor-id" value="<?php echo $_POST["tutor-id"]?>" hidden>
+                    <input type="text" name="tutor-name" value="<?php echo $_POST["tutor-name"]?>" hidden>
                 </form>
             </div>
         </div>

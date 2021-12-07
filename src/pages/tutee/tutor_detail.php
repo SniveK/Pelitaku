@@ -115,7 +115,7 @@
 
 			<div style="height: 20px"></div>
 			<button class="secondary push"> lihat semua </button>
-			<form action="./booking.php" method="get">
+			<form action="./booking.php" method="post">
 			<div class="nextcancel">
 				
 					<input type="text" name="subject-tutor" value="<?php echo $_GET["subject-tutor"] ?>" hidden>

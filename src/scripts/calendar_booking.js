@@ -136,6 +136,7 @@ function fillEmptyElementInCalendar() {
     }
   }
 }
+
 //   document.getElementById("month").innerHTML = months[currentMonth - 1];
 //   document.getElementById("year").innerHTML = currentYear;
 //   console.log(`month ${currentMonth - 1}, year ${currentYear}`);
@@ -157,7 +158,7 @@ function fillEmptyElementInCalendar() {
 //     }
 //   }
 // }
-
+// loadCalendar(month,year);
 loadCalendar(null, null);
 
 document.getElementById("next-month").addEventListener("click", () => {
@@ -198,3 +199,4 @@ function hidePopUp() {
   document.getElementById("set-time").classList.add("hide");
   console.log("masuk");
 }
+
