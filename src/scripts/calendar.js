@@ -6,6 +6,7 @@ let currentMonth = dt.getMonth(),
   currentYear = dt.getFullYear();
 
 let selectedDate;
+let extraIndex = 0;
 
 // set up dictionary with index as key and month as value
 let months = {
@@ -46,6 +47,8 @@ function resetCalendar() {
   for (let i = 1; i <= 5; i++) {
     for (let j = 1; j <= 7; j++) {
       document.getElementById(`row-${i}-col-${j}`).children[0].innerHTML = "";
+      document.getElementById(`row-${i}-col-${j}`).children[1].innerHTML = "";
+      document.getElementById(`row-${i}-col-${j}`).classList.remove("booked");
     }
   }
   fullTimeInfo = {};
@@ -59,9 +62,9 @@ function loadCalendar(month, year) {
     currentMonth = month;
     currentYear = year;
   }
-  document.getElementById("month").innerHTML = months[currentMonth];
-  document.getElementById("year").innerHTML = currentYear;
-  console.log(`month ${currentMonth}, year ${currentYear}`);
+  document.getElementById(
+    "month-year"
+  ).value = `${months[currentMonth]} ${currentYear}`;
 
   let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
   let row = 1;
@@ -115,7 +118,15 @@ function loadCalendar(month, year) {
       row += 1;
     }
   }
-  // fillEmptyElementInCalendar();
+  calendarElements = document.querySelectorAll(".calendar__date");
+  for (let i = 0; i < calendarElements.length; i++) {
+    if (calendarElements[i].children[0].innerText == "") {
+      extraIndex++;
+    } else {
+      break;
+    }
+  }
+  console.log(extraIndex);
 }
 
 function fillEmptyElementInCalendar() {
@@ -140,27 +151,6 @@ function fillEmptyElementInCalendar() {
     }
   }
 }
-//   document.getElementById("month").innerHTML = months[currentMonth - 1];
-//   document.getElementById("year").innerHTML = currentYear;
-//   console.log(`month ${currentMonth - 1}, year ${currentYear}`);
-
-//   let daysInMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
-//   let row = 1;
-
-//   for (let i = 1; i <= daysInMonth; i++) {
-//     let date = new Date(currentYear, currentMonth - 1, i);
-//     let element = document.getElementById(`row-${row}-col-${date.getDay()}`);
-//     if (element === null) {
-//       element.innerHTML = i;
-//       fullTimeInfo[i] = `b${day[date.getDay()]}, ${i} ${
-//         months[currentMonth - 1]
-//       } ${currentYear}`;
-//     }
-//     if (date.getDay() == 0) {
-//       row += 1;
-//     }
-//   }
-// }
 
 loadCalendar(null, null);
 
@@ -208,6 +198,7 @@ document
   .addEventListener("click", function (event) {
     // Prevent page from refreshing
     event.preventDefault();
+    console.log(selectedDate);
     // Get select element from html page
     startTime = document.getElementById("start").value;
     finishTime = document.getElementById("finish").value;
@@ -219,13 +210,17 @@ document
       document.getElementById("warning-message").innerHTML =
         "Waktu mulai lebih besar dari waktu selesai".fontcolor("red");
     } else {
+      index = parseInt(selectedDate) + extraIndex;
+      console.log(`test ${index}`);
+
       document.getElementById("warning-message").innerHTML = "";
       document
         .querySelectorAll(".calendar__date")
-        [selectedDate - 1].classList.add("booked");
+        [index - 1].classList.add("booked");
       document.querySelectorAll(".calendar__date")[
-        selectedDate - 1
-      ].children[1].innerHTML = `${startTime}.00-${finishTime}.00`;
+        index - 1
+      ].children[1].innerHTML = `${startTime}-${finishTime}`;
+      console.log(this);
       hidePopUp();
     }
     document.getElementById("start").selectedIndex = "default";

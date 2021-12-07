@@ -47,12 +47,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] == "FINAL") {
                 <option disabled selected value> -- Pilih Mata Kuliah -- </option>
             </select> -->
             <!-- PINDAH FORM KESINI -->
+            <form class="flex-container-column flex-center margin-bottom-82 width-full row-gap-40" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-            <select class="add-arrow-down width-650" name="" id="">
-                <option disabled selected value> -- Select Online/ Offline -- </option>
-                <option value="online"> Online </option>
-                <option value="offline"> Offline </option>
-            </select>
+                <!-- <input type="text" name="date" value="<?php //echo $_POST["date"] 
+                                                            ?>" hidden> -->
+                <input type="text" name="time_start" value="<?php echo $_POST["time_start"] ?>" hidden>
+                <input type="text" name="time_end" value="<?php echo $_POST["time_end"] ?>" hidden>
+                <input type="text" name="subject-tutor" value="<?php echo $_POST["subject-tutor"] ?>" hidden>
+                <input type="text" name="tutor-id" value="<?php echo $_POST["tutor-id"] ?>" hidden>
+                <input class="button continue" type="submit" value="FINAL">
+                <select class="add-arrow-down width-650" name="" id="">
+                    <option disabled selected value> -- Select Online/ Offline -- </option>
+                    <option value="online"> Online </option>
+                    <option value="offline"> Offline </option>
+                </select>
+            </form>
+
             <!-- <a href="../../pages/tutee/calendar_booking.php?tutor-id=<?php echo $_POST["tutor-id"] ?>&subject-tutor=<?php echo $_POST["subject-tutor"] ?>&tutor-name=<?php echo $_POST["tutor-name"] ?>"> -->
 
             <!-- </a> -->
@@ -74,16 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] == "FINAL") {
                 </div>
             </div>
             <!-- FORM YANG DIPINDAH -->
-            <form class="flex-container-column flex-center margin-bottom-82 width-full row-gap-40" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-
-                <!-- <input type="text" name="date" value="<?php //echo $_POST["date"] 
-                                                            ?>" hidden> -->
-                <input type="text" name="time_start" value="<?php echo $_POST["time_start"] ?>" hidden>
-                <input type="text" name="time_end" value="<?php echo $_POST["time_end"] ?>" hidden>
-                <input type="text" name="subject-tutor" value="<?php echo $_POST["subject-tutor"] ?>" hidden>
-                <input type="text" name="tutor-id" value="<?php echo $_POST["tutor-id"] ?>" hidden>
-                <input class="button continue" type="submit" value="FINAL">
-            </form>
         </div>
     </div>
     <?php include '../../assets/php/footer.php' ?>

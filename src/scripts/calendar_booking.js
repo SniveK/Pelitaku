@@ -44,6 +44,7 @@ function resetCalendar() {
   for (let i = 1; i <= 5; i++) {
     for (let j = 1; j <= 7; j++) {
       document.getElementById(`row-${i}-col-${j}`).innerHTML = "";
+      document.getElementById(`row-${i}-col-${j}`).classList.remove("booked");
     }
   }
   fullTimeInfo = {};
@@ -57,9 +58,9 @@ function loadCalendar(month, year) {
     currentMonth = month;
     currentYear = year;
   }
-  document.getElementById("month").innerHTML = months[currentMonth];
-  document.getElementById("year").innerHTML = currentYear;
-  console.log(`month ${currentMonth}, year ${currentYear}`);
+  document.getElementById(
+    "month-year"
+  ).value = `${months[currentMonth]} ${currentYear}`;
 
   let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
   let row = 1;
@@ -102,6 +103,9 @@ function loadCalendar(month, year) {
       }
 
       element.innerHTML = i;
+      if (data.includes(i)) {
+        element.classList.add("booked");
+      }
       fullTimeInfo[i] = `${day[date.getDay()]}, ${i} ${
         months[currentMonth]
       } ${currentYear}`;
@@ -111,55 +115,17 @@ function loadCalendar(month, year) {
       row += 1;
     }
   }
-  // fillEmptyElementInCalendar();
 }
 
-function fillEmptyElementInCalendar() {
-  console.log("prev " + prevFirstIndex["col"]);
-  console.log("last " + nextLastIndex["col"]);
-
-  if (prevFirstIndex["col"] >= 0) {
-    let daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-    for (let i = prevFirstIndex["col"]; 0 < i; i--) {
-      // let date = new Date(currentYear, currentMonth - 1, i);
-      let element = document.getElementById(`row-1-col-${i}`);
-      element.innerHTML = `${daysInMonth}`.fontcolor("grey");
-      daysInMonth -= 1;
-    }
-  }
-  if (nextLastIndex["col"] <= 6) {
-    startIndex = 1;
-    for (let i = nextLastIndex["col"]; i <= 7; i++) {
-      let element = document.getElementById(`row-5-col-${i}`);
-      element.innerHTML = `${startIndex}`.fontcolor("grey");
-      startIndex += 1;
-    }
-  }
-}
-
-//   document.getElementById("month").innerHTML = months[currentMonth - 1];
-//   document.getElementById("year").innerHTML = currentYear;
-//   console.log(`month ${currentMonth - 1}, year ${currentYear}`);
-
-//   let daysInMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
-//   let row = 1;
-
-//   for (let i = 1; i <= daysInMonth; i++) {
-//     let date = new Date(currentYear, currentMonth - 1, i);
-//     let element = document.getElementById(`row-${row}-col-${date.getDay()}`);
-//     if (element === null) {
-//       element.innerHTML = i;
-//       fullTimeInfo[i] = `b${day[date.getDay()]}, ${i} ${
-//         months[currentMonth - 1]
-//       } ${currentYear}`;
-//     }
-//     if (date.getDay() == 0) {
-//       row += 1;
-//     }
-//   }
+// function fillCalendar(month, year) {
+//   data.forEach((element) => {
+//     // for()
+//   });
 // }
-// loadCalendar(month,year);
-loadCalendar(null, null);
+
+loadCalendar(month_php - 1, year_php);
+// loadCalendar(null, null);
+// fillCalendar();
 
 document.getElementById("next-month").addEventListener("click", () => {
   resetCalendar();
@@ -183,7 +149,7 @@ document.getElementById("prev-month").addEventListener("click", () => {
 
 calendarElements = document.querySelectorAll(".calendar__date");
 for (let i = 0; i < calendarElements.length; i++) {
-  if (calendarElements[i].innerHTML !== "") {
+  if (!calendarElements[i].classList.toString().includes("booked")) {
     calendarElements[i].addEventListener("click", () => {
       showPopUp(calendarElements[i].innerHTML);
     });
@@ -199,4 +165,3 @@ function hidePopUp() {
   document.getElementById("set-time").classList.add("hide");
   console.log("masuk");
 }
-

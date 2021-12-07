@@ -28,14 +28,15 @@
                 </div>
             </div>
             <div class="flex-container-row flex-start width-1032 column-gap-20">
-                <button class="button-prev" id="prev-month"> </button>
-                <div class="flex-container-row flex-center width-175">
-                    <p style="line-height: 0px;">
-                        <span class="month-year" id="month"></span>
-                        <span class="month-year" id="year"></span>
-                    </p>
-                </div>
-                <button class="button-next" id="next-month"> </button>
+                <form action="">
+                    <input class="button-prev" type="button" id="prev-month">
+                </form>
+                <form class="flex-container-row flex-center" action="" method="get">
+                    <input class="remove-input-design" type="sumbit" id="month-year" value="" disabled>
+                </form>
+                <form action="">
+                    <input class="button-next" type="button" id="next-month">
+                </form>
             </div>
             <div class="calendar-container" id='calendar'>
                 <!-- header -->
@@ -194,7 +195,9 @@
                 </div>
             </div>
             <div class="flex-container-row flex-end width-1032">
-                <a href='../tutee/booking.php'><input class='button abort' type='button' value='Batal' id='cancel'></a>
+                <!-- <a href='../tutee/booking.php'> -->
+                <input class='button abort' type='button' value='Batal' id='cancel'>
+                <!-- </a> -->
             </div>
         </div>
     </div>

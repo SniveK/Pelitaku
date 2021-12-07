@@ -6,7 +6,7 @@ if (isset($_SESSION['is_tutor'])) {
 		echo "
 			<div class='header'>
 				<div class='headercontent'>
-					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon'></a>
+					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon' alt='logo Pelitaku'></a>
 					<div>
 						<a href=''>pembelajaran</a>
 						<a href=''>jadwal</a>
@@ -19,7 +19,7 @@ if (isset($_SESSION['is_tutor'])) {
 		echo "
 			<div class='header'>
 				<div class='headercontent'>
-					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon'></a>
+					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon' alt='logo Pelitaku'></a>
 					<div>
 						<a href=''>pembelajaran</a>
 						<a href=''>inbox</a>
@@ -33,7 +33,7 @@ if (isset($_SESSION['is_tutor'])) {
 	echo "
 	<div class='header'>
 		<div class='headercontent'>
-			<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon'></a>
+			<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon' alt='logo Pelitaku'></a>
 			<a href='../../pages/login.php' class='push'>masuk</a>
 		</div>
 	</div>

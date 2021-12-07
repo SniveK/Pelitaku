@@ -47,6 +47,8 @@
   background-image: url("../../assets/png/icon_left.png");
   background-repeat: no-repeat;
   background-color: transparent;
+  background-position: center;
+  height: fit-content;
   width: 20px;
   border: none;
 }
@@ -55,6 +57,8 @@
   background-image: url("../../assets/png/icon_right.png");
   background-color: transparent;
   background-repeat: no-repeat;
+  background-position: center;
+  height: fit-content;
   width: 20px;
   border: none;
 }
@@ -79,6 +83,22 @@
 }
 
 /* tutor */
+.booked {
+  background-color: #3c8a94;
+}
+
+.remove-input-design {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  height: fit-content;
+  color: #fd6a02;
+}
+
 .booked {
   background-color: #3c8a94;
 }

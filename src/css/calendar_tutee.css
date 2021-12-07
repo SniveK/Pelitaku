@@ -46,7 +46,9 @@ textarea {
   background-image: url("../../assets/png/icon_left.png");
   background-repeat: no-repeat;
   background-color: transparent;
+  background-position: center;
   width: 20px;
+  height: fit-content;
   border: none;
 }
 
@@ -54,7 +56,9 @@ textarea {
   background-image: url("../../assets/png/icon_right.png");
   background-color: transparent;
   background-repeat: no-repeat;
+  background-position: center;
   width: 20px;
+  height: fit-content;
   border: none;
 }
 
@@ -75,4 +79,20 @@ textarea {
   background-image: url("../assets/png/icon_right.png");
   background-repeat: no-repeat;
   background-position: 98% 50%;
+}
+
+.remove-input-design {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  height: fit-content;
+  color: #fd6a02;
+}
+
+.booked {
+  background-color: #959595;
 }

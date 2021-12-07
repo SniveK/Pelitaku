@@ -13,7 +13,7 @@
 </div> -->
 
 <div class="flex-container-row flex-center column-gap-20">
-    <object data="../../assets/svg/logo_pelitaku.svg" type="" width="204px" height="67.14px"></object>
+    <object data="../../assets/svg/logo_pelitaku.svg" type="" width="204px" height="67.14px">Logo Pelitaku</object>
     <!--<div class="position-relative">
         <form action="">
             <input type="text" placeholder="Cari lokasi" class="input-location">

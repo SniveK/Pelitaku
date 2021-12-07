@@ -25,14 +25,15 @@
                 </div>
             </div>
             <div class="flex-container-row flex-start width-1032 column-gap-20">
-                <button class="button-prev" id="prev-month"> </button>
-                <div class="flex-container-row flex-center width-175">
-                    <p style="line-height: 0px;">
-                        <span class="month-year" id="month"></span>
-                        <span class="month-year" id="year"></span>
-                    </p>
-                </div>
-                <button class="button-next" id="next-month"> </button>
+                <form action="">
+                    <input class="button-prev" type="button" id="prev-month">
+                </form>
+                <form class="flex-container-row flex-center" action="" method="get">
+                    <input class="remove-input-design" type="sumbit" id="month-year" value="" disabled>
+                </form>
+                <form action="">
+                    <input class="button-next" type="button" id="next-month">
+                </form>
             </div>
             <div class="calendar-container" id='calendar'>
                 <!-- header -->
@@ -209,36 +210,36 @@
                         <div class=" width-20-percent">Dari</div>
                         <select class="width-80-percent add-arrow-down" name="" id="start">
                             <option value="default" disabled selected value> -- Pilih Waktu Mulai -- </option>
-                            <option value="09">09.00</option>
-                            <option value="10">10.00</option>
-                            <option value="11">11.00</option>
-                            <option value="12">12.00</option>
-                            <option value="13">13.00</option>
-                            <option value="14">14.00</option>
-                            <option value="15">15.00</option>
-                            <option value="16">16.00</option>
-                            <option value="17">17.00</option>
-                            <option value="18">18.00</option>
-                            <option value="19">19.00</option>
-                            <option value="20">20.00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
                         </select>
                     </div>
                     <div class="flex-container-row flex-center font-size-18 width-55-percent column-gap-20">
                         <div class="font-size-18 width-20-percent">Sampai</div>
                         <select class="width-80-percent add-arrow-down" name="" id="finish">
                             <option value="default" disabled selected value> -- Pilih Waktu Selesai -- </option>
-                            <option value="11">11.00</option>
-                            <option value="12">12.00</option>
-                            <option value="13">13.00</option>
-                            <option value="14">14.00</option>
-                            <option value="15">15.00</option>
-                            <option value="16">16.00</option>
-                            <option value="17">17.00</option>
-                            <option value="18">18.00</option>
-                            <option value="19">19.00</option>
-                            <option value="20">20.00</option>
-                            <option value="21">21.00</option>
-                            <option value="22">22.00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
                         </select>
                     </div>
                     <div class="font-size-18" id="warning-message">
