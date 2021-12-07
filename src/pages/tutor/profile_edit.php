@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include "../../assets/php/upload.php";
     }
 
-    
+
     $sql = "UPDATE users JOIN tutor ON users.id = tutor.id SET email=\"" . $_POST["email"] . "\", first_name=\"" . $_POST["first_name"] . "\", last_name=\"" . $_POST["last_name"] . "\", 
         phone_number=\"" . $_POST["phone_number"] . "\", address=\"" . $_POST["address"] . "\", bank=\"" . $_POST["bank"] . "\", bank_number=\"" . $_POST["bank_number"] . "\", 
         about=\"" . $_POST["about"] . "\", ipk=\"" . $_POST["ipk"] . "\", cv=\"" . $_POST["cv"] . "\" , profile_photo=\"$imageFileType\"
@@ -79,7 +79,7 @@ if ($result !== false && $result->num_rows > 0) {
 
                 <div class="flex-container-column flex-start width-30-percent row-gap-20">
                     <div class="image-edit-button">
-                        <input class="button abort" type="file" name="image" value="ubah foto profil" onchange="loadFile(event)">
+                        <input class="file-button abort" type="file" name="image" value="ubah foto profil" onchange="loadFile(event)">
                     </div>
                     <div class="flex-container-column width-full">
                         <div class="bold">Email</div>

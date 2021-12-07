@@ -19,12 +19,13 @@
   align-self: center;
 }
 
-.search-subject, .search-result {
+.search-subject,
+.search-result {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   /* justify-content: space-between; */
-  column-gap: 152px;
+  column-gap: 120px;
   row-gap: 80px;
   width: 1024px;
 }
@@ -32,7 +33,6 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  
   background: #e5f3fb;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -40,26 +40,28 @@
   height: 176px;
   padding: 15px;
 }
-.search-result > div > div > p, b {
+.search-result > div > div > p,
+b {
   margin: 0 auto 0 5px;
   font-size: 14px;
 }
 
 .search-subject > div {
-	background-color: #E5F3FB;
-	border-radius: 10px;
-	padding: 20px 15px 20px 15px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	margin: 10px;
-	text-align: left;
-	width: 240px;
-	height: 105px;
+  background-color: #e5f3fb;
+  border-radius: 10px;
+  padding: 20px 15px 20px 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px;
+  text-align: left;
+  width: 240px;
+  height: 105px;
+  overflow: hidden;
 }
 
 .search-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right
+  justify-content: right;
 }
 .search-nav > input {
   padding: 0px 10px 0px 10px;
@@ -69,8 +71,8 @@
 }
 
 .navimage {
-	background-repeat: no-repeat;
-	background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .search-filter {
@@ -131,20 +133,20 @@ select {
 }
 
 .searchtitle {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	column-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
 }
 
 .specialpicks {
-	display: flex;
-	flex-direction: column;
-	column-gap: 20;
-	background-color: #e5f3fb;
-	padding: 20px 50px 20px 50px;
-	border-radius: 7px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  column-gap: 20;
+  background-color: #e5f3fb;
+  padding: 20px 50px 20px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .gps-icon {

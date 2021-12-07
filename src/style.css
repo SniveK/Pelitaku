@@ -788,11 +788,6 @@ select {
   font-size: 16px;
 } */
 
-.search-subject {
-  background: url("../assets/png/icon_search.png") left top no-repeat;
-  padding-left: 15px;
-}
-
 /* position relative */
 .position-relative {
   position: relative;

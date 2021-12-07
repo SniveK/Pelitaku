@@ -35,7 +35,6 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
 
     <?php
     include "../../assets/php/dbcon.php";
-    var_dump($_SESSION);
     $sql = "SELECT * FROM users JOIN tutee on users.id=tutee.id WHERE users.id=" . $_SESSION["id"];
     $result = $conn->query($sql);
     if ($result !== false && $result->num_rows > 0) {
@@ -50,7 +49,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
         <!-- photo -->
         <div class='profile-image-container'>
             <div class='image-container'>
-                <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"]?>.jpeg");'></div>
+                <div class='circle width-192 height-192' style='background-image: url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"] ?>.jpg"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"] ?>.png"),url("../../assets/uploads/profile_pictures/<?php echo $_SESSION["id"] ?>.jpeg");'></div>
             </div>
         </div>
         <!-- description -->
@@ -93,7 +92,7 @@ if (isset($_SESSION['is_tutor']) && $_SESSION["is_tutor"] == 1) {
                 <!-- <div class='flex-container-column'>
                     <div class='bold'>Nama Orang Tua/Wali</div>
                     php yang ini nanti diubah buat nama orang tua
-                    <div><?php echo $row["parent_first_name"] . ' ' .$row["parent_last_name"]  ?></div>
+                    <div><?php echo $row["parent_first_name"] . ' ' . $row["parent_last_name"]  ?></div>
                 </div> -->
                 <div class='flex-container-row column-gap-40'>
                     <div class='flex-container-column width-175'>
