@@ -1,30 +1,34 @@
 <?php
 include "../../assets/php/dbcon.php";
 // var_dump($_SESSION);
-$sql = "SELECT * FROM class_session  WHERE class_session.tutor_id=" . $_POST['tutor-id'] . " AND class_session.class_subject=\"" . $_POST['subject-tutor'] . "\"";
+$sql = "SELECT * FROM class_session  WHERE class_session.tutor_id=" . $_POST['tutor-id'];
 // echo $sql;
 $result = $conn->query($sql);
-// if ($result->num_rows > 0) {
-echo "<script>
+if ($result !== false && $result->num_rows > 0) {
+    echo "<script>
         var data =  [";
-// while ($row = $result->fetch_assoc()) {
-//     echo substr($row["date"], 8, 2) . ",";
-// }
-echo "1, 14, 20";
-echo "]</script>";
-// } else {
-//     echo "No Results";
-// }
+    while ($row = $result->fetch_assoc()) {
+        echo substr($row["date"], 8, 2) . ",";
+    }
+    // echo "1, 14, 20";
+    echo "]</script>";
+}
+ else {
+    echo "<script>var data=[]; </script>";
+}
 if (isset($_POST["month"])) {
     echo "<script>
         var month_php = " . $_POST["month"] . ";
         var year_php = " . $_POST["year"] . ";
         </script>";
 } else {
+    $month=date('m');
+    $year=date('Y');
     echo "<script>
-        var month_php = " . date('m') . ";
-        var year_php = " . date('Y') . ";
+        var month_php = " . $month . ";
+        var year_php = " . $year . ";
         </script>";
+    
 }
 ?>
 
@@ -56,18 +60,36 @@ if (isset($_POST["month"])) {
             </div>
             <div class="flex-container-row flex-start width-1032 column-gap-20">
                 <!-- <div class="flex-container-row flex-center width-175">
-                    <p style="line-height: 0px;">
-                        <span class="month-year" id="month"></span>
-                        <span class="month-year" id="year"></span>
-                    </p>
-                </div> -->
-                <form action="">
+                        <p style="line-height: 0px;">
+                            <span class="month-year" id="month"></span>
+                            <span class="month-year" id="year"></span>
+                        </p>
+                    </div> -->
+                <form action="" method="POST">
+                <?php 
+                        $month-=1;
+                        if($month<1){
+                            $month=12;
+                            $year-=1;
+                        }
+                    ?>
+                    <input type="text" name="month" value=<?php echo $month?> hidden>
+                    <input type="text" name="year" value=<?php echo $year?> hidden>
                     <input class="button-prev" type="button" id="prev-month">
                 </form>
                 <form class="flex-container-row flex-center" action="" method="get">
                     <input class="remove-input-design" type="sumbit" id="month-year" value="" disabled>
                 </form>
-                <form action="">
+                <form action="" method="POST">
+                    <?php 
+                        $month+=1;
+                        if($month>12){
+                            $month=1;
+                            $year+=1;
+                        }
+                    ?>
+                    <input type="text" name="month" value=<?php echo $month?> hidden>
+                    <input type="text" name="year" value=<?php echo $year?> hidden>
                     <input class="button-next" type="button" id="next-month">
                 </form>
             </div>
@@ -130,13 +152,15 @@ if (isset($_POST["month"])) {
                 <div class="flex-container-row flex-end width-full margin-top-15 margin-right-30">
                     <img class="width-30" src="../../assets/png/icon_x.png" alt="" onclick="hidePopUp()">
                 </div>
-                <div class="flex-container-column flex-start width-80-percent row-gap-10">
-                    <h1>Waktu Sesi Tutor</h1>
-                    <div class="font-size-18">
-                        <span id="time-info">Selasa,</span>
-                    </div>
-                </div>
                 <form class="flex-container-column flex-center margin-bottom-82 width-full row-gap-40" method="post" action="./booking.php">
+                    <div class="flex-container-column flex-start width-80-percent row-gap-10">
+                        <h1>Waktu Sesi Tutor</h1>
+                        <div class="font-size-18">
+                            <span id="time-info"></span>
+                            <input type="text" id="time-info2" name="date"hidden>
+                            <input type="text" id="time-info3" name="fulldate"hidden>
+                        </div>
+                    </div>
                     <div class="flex-container-row flex-center font-size-18 width-55-percent column-gap-20">
                         <div class=" width-20-percent">Dari</div>
                         <select class="width-80-percent add-arrow-down" name="time_start" id="">

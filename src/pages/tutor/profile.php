@@ -54,7 +54,7 @@ if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
                 <div style='position: absolute;bottom: 35px;  width:<?php echo (round($row["rating"])*36) ?>px; overflow: hidden;'>
                     <img src='../../assets/png/starbar_big_yellow.png' alt='yellow stars'>
                 </div>
-                <input class='button abort right' type='button' value='lihat review'>
+                <input class='button abort right' type='button' value='lihat review' onclick='window.location.href = "./reviewlist.php"'>
             </div>
         </div>
         <div class='flex-container-row flex-center width-1280'>

@@ -21,7 +21,7 @@ if (isset($_SESSION['is_tutor'])) {
 				<div class='headercontent'>
 					<a href='../../index.php'><img src='../../assets/png/icon_pelitaku.png' class='header-icon' alt='logo Pelitaku'></a>
 					<div>
-						<a href=''>pembelajaran</a>
+						<a href='../../pages/ongoing_class.php'>pembelajaran</a>
 						<a href=''>inbox</a>
 						<a href='../../pages/tutee/profile.php'>profil</a>
 					</div>

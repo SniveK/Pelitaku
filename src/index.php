@@ -1,4 +1,8 @@
 <?php session_start();
+if(isset($_SESSION["is_tutor"]) && $_SESSION["is_tutor"]==1){
+    // header("./pages/tutor/index.php");
+    echo "<script type='text/javascript'>location.href='./pages/tutor/index.php'</script>";
+}
 // session_destroy();
 ?>
 <!DOCTYPE html>

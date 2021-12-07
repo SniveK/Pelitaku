@@ -34,6 +34,7 @@ let day = {
 
 // dictionary to store fill time information e.g. "Selasa, 5 November 2021"
 let fullTimeInfo = {};
+let fullTimeInfo2 = {};
 
 // get last element that is empty
 let prevFirstIndex = {},
@@ -109,6 +110,7 @@ function loadCalendar(month, year) {
       fullTimeInfo[i] = `${day[date.getDay()]}, ${i} ${
         months[currentMonth]
       } ${currentYear}`;
+      fullTimeInfo2[i] = currentYear+"-"+(currentMonth+1)+"-"+i;
     }
 
     if (date.getDay() == 0) {
@@ -159,6 +161,8 @@ for (let i = 0; i < calendarElements.length; i++) {
 function showPopUp(index) {
   document.getElementById("set-time").classList.remove("hide");
   document.getElementById("time-info").innerHTML = fullTimeInfo[index];
+  document.getElementById("time-info2").value = fullTimeInfo2[index];
+  document.getElementById("time-info3").value = fullTimeInfo[index];
 }
 
 function hidePopUp() {

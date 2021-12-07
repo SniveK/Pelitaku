@@ -13,6 +13,17 @@
     <link rel="icon" href="logo.png">
 
 </head>
+<?php
+include '../../assets/php/dbcon.php';
+$sql = "SELECT * FROM class_session JOIN users ON class_session.tutee_id=users.id JOIN tutee ON class_session.tutee_id=tutee.id WHERE class_session_id=" . $_GET["class_session_id"];
+$result = $conn->query($sql);
+if ($result !== false && $result->num_rows > 0) {
+    // echo $sql;
+    $row = $result->fetch_assoc();
+} else {
+    // echo $sql;
+}
+?>
 
 <body class="background-white">
 
@@ -35,18 +46,18 @@
                 <div class="flex-container-column flex-start width-70-percent row-gap-10">
                     <div class="font-size-20">
                         <b>
-                            Studio Design Pasar
+                            <?php echo $row["class_subject"] ?>
                         </b>
                     </div>
                     <div class="font-size-18">
-                        15 Oktober 2021/13.00-14.00
+                        <?php echo date_format(date_create($row["date"]), "j F Y") . "/" . $row["time_start"] . "-" . $row["time_end"] ?>
                     </div>
                     <div class="flex-container-row flex-between">
                         <!-- Student Name -->
                         <div class="secondary text-align-center">
-                            Angela Narissa
+                            <?php echo $row["first_name"] . " " . $row["last_name"] ?>
                         </div>
-                        <input class='button abort' type='button' value='Kirim Pesan'>
+                        <!-- <input class='button abort' type='button' value='Kirim Pesan'> -->
                     </div>
                     <div>
                         <hr class="line-separate">
@@ -60,7 +71,7 @@
                         Tujuan sesi ini
                     </div>
                     <div class="font-size-18">
-                        Tujuan saya di sesi ini adalah untuk belajar membuat garis, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        <?php echo $row["purpose"] ?>
                     </div>
                 </div>
             </div>
