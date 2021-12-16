@@ -54,6 +54,7 @@
 	text-align: left;
 	width: 240px;
 	height: 105px;
+  overflow: hidden;
 }
 
 .search-nav {
