@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -13,7 +16,8 @@
 
 <body>
 
-    <?php include '../../assets/php/header.php';
+    <?php 
+    include '../../assets/php/header.php';
     if (empty($_GET["subject"])) {
         $_GET["subject"] = '';
     }

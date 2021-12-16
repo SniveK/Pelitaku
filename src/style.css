@@ -789,7 +789,7 @@ select {
 } */
 
 .search-subject {
-  background: url("../assets/png/icon_search.png") left top no-repeat;
+  /* background: url("../assets/png/icon_search.png") left top no-repeat; */
   padding-left: 15px;
 }
 

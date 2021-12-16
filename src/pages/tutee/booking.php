@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../../assets/php/dbcon.php";
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit-final"] == "FINAL") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit-final"])) {
     $sql = "INSERT INTO `class_session` (`class_subject`, `tutor_id`, `tutee_id`, `date`, `time_start`, `time_end`, `completed`,`type`,`purpose`)VALUES (\"" . $_POST["subject-tutor"] . "\", \"" . $_POST["tutor-id"] . "\", \"" . $_SESSION["id"] . "\", \"" . $_POST["date"] . "\", \"" . $_POST["time_start"] . "\", \"" . $_POST["time_end"] . "\", \"0\" , \"" . $_POST["type"] . "\", \"" . $_POST["purpose"] . "\")";
     echo $sql;
     if ($conn->query($sql) === TRUE) {

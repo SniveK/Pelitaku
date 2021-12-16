@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$result = $conn->query($sql);
 	// echo $sql;
 	if ($conn->query($sql) === TRUE) {
-		// echo "<script type='text/javascript'>location.href = './index.php';</script>";
+		echo "<script type='text/javascript'>location.href = './index.php';</script>";
 	} else {
 		echo "Error updating record: " . $conn->error;
 	}
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<button class="primary push"> Kirim Pesan </button>
 				</div>
 				<p> <?php echo date_format(date_create($row["date"]), "j F Y") . "/" . $row["time_start"] . "-" . $row["time_end"] ?> </p>
-				<button class="secondary"> <?php echo $row["first_name"] . " " . $row["last_name"] ?> </button>
+				<button class="secondary" disabled> <?php echo $row["first_name"] . " " . $row["last_name"] ?> </button>
 				<b style="margin-top: 20px;"> Tujuan Sesi Kelas </b>
 				<p>
 					<?php echo $row["purpose"] ?>

@@ -28,7 +28,7 @@ session_start();
 					<p class="title"> Kelas yang akan Datang </p>
 					<?php
 					include '../../assets/php/dbcon.php';
-					$sql = "SELECT * FROM class_session JOIN users ON class_session.tutor_id=users.id  WHERE completed=0 AND tutor_id=" . $_SESSION["id"];
+					$sql = "SELECT * FROM class_session JOIN users ON class_session.tutee_id=users.id  WHERE completed=0 AND tutor_id=" . $_SESSION["id"];
 					$result = $conn->query($sql);
 					if ($result !== false && $result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) {
@@ -76,7 +76,7 @@ session_start();
 					<p class="title"> Beri Tugas </p>
 					<?php
 					include '../../assets/php/dbcon.php';
-					$sql = "SELECT * FROM class_session JOIN users ON class_session.tutor_id=users.id  WHERE completed=1 AND tutor_id=" . $_SESSION["id"];
+					$sql = "SELECT * FROM class_session JOIN users ON class_session.tutee_id=users.id  WHERE completed=1 AND tutor_id=" . $_SESSION["id"];
 					$result = $conn->query($sql);
 					if ($result !== false && $result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) {
@@ -133,7 +133,7 @@ session_start();
 					<p class="title"> Cek Tugas </p>
 					<?php
 					include '../../assets/php/dbcon.php';
-					$sql = "SELECT * FROM class_session JOIN users ON class_session.tutor_id=users.id  WHERE completed=2 AND tutor_id=" . $_SESSION["id"];
+					$sql = "SELECT * FROM class_session JOIN users ON class_session.tutee_id=users.id  WHERE completed=2 AND tutor_id=" . $_SESSION["id"];
 					$result = $conn->query($sql);
 					if ($result !== false && $result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) {

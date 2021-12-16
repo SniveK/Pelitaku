@@ -1,5 +1,5 @@
+<!-- // $_SESSION['LAST_ACTIVITY'] = time(); -->
 <?php
-// $_SESSION['LAST_ACTIVITY'] = time();
 $root = $_SERVER["DOCUMENT_ROOT"];
 if (isset($_SESSION['is_tutor'])) {
 	if ($_SESSION['is_tutor']) {

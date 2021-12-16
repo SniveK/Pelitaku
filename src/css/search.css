@@ -24,7 +24,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   /* justify-content: space-between; */
-  column-gap: 152px;
+  column-gap: 100px;
   row-gap: 80px;
   width: 1024px;
 }

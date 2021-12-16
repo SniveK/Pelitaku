@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../../assets/php/dbcon.php";
 // var_dump($_SESSION);
 $sql = "SELECT * FROM class_session  WHERE class_session.tutor_id=" . $_POST['tutor-id'];

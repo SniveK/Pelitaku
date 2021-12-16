@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($emailErr == "" && $passwordErr == "") {
         include("../assets/php/dbcon.php");
         $sql = "SELECT id,is_tutor FROM users WHERE email = '$email' AND password = '$password'";
-        // $sql = "SELECT * FROM users";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();

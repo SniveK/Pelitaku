@@ -1,15 +1,11 @@
 
 <?php
-// $path = "profile_pictures";
-// $filename = "1";
 $imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 $target_dir = "../../assets/uploads/" . $path . "/";
 $target_file = $target_dir . $filename . "." . $imageFileType;
-// $sourceProperties = getimagesize($fileName);
 $uploadOk = 1;
 $file_type = $_FILES['image']['type'];
 $extensions = array("jpeg", "jpg", "png");
-// $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
 
 //checking if file exsists
 foreach ($extensions as $ext) {
@@ -17,7 +13,6 @@ foreach ($extensions as $ext) {
     unlink($target_dir . $filename . "." . $ext);
   }
 }
-
 
 // Check file size
 if ($_FILES["image"]["size"] > 500000) {
@@ -32,13 +27,6 @@ if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpe
   $uploadOk = 0;
 }
 
-
-
-// if (in_array($file_ext, $extensions) === false) {
-//   echo "extension not allowed, please choose a JPEG or PNG file.";
-//   $uploadOk = 0;
-// }
-
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
   echo "Sorry, your file was not uploaded.";
@@ -50,11 +38,5 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-// include "./dbcon.php";
-// $sql = "UPDATE users SET users.profile_photo = " . $imageFileType . " WHERE users.id =" . $_SESSION["id"];
-// if ($conn->query($sql) === TRUE) {
-// } else {
-//   echo "Error 1 updating record: " . $conn->error;
-// }
 ?>
 

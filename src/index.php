@@ -22,8 +22,7 @@ if(isset($_SESSION["is_tutor"]) && $_SESSION["is_tutor"]==1){
 </head>
 
 <body>
-    <?php include './assets/php/header.php';
-    ?>
+    <?php include './assets/php/header.php';?>
 
     <div class="background">
         <div class="maincontent">

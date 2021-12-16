@@ -35,7 +35,6 @@ if (empty($_SESSION['is_tutor']) || $_SESSION["is_tutor"] == 0) {
 
     <?php
     include "../../assets/php/dbcon.php";
-    // var_dump($_SESSION);
     $sql = "SELECT * FROM users JOIN tutor on users.id=tutor.id WHERE users.id=" . $_SESSION["id"];
     $result = $conn->query($sql);
     if ($result !== false && $result->num_rows > 0) {
