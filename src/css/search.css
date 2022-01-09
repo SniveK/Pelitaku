@@ -154,6 +154,7 @@ select {
   right: 8px;
   width: 32px;
   height: 32px;
+  padding-left: 0;
 }
 
 .input-location {

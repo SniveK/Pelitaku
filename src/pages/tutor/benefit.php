@@ -8,7 +8,8 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pelitaku</title>
+	<link rel="icon" type="image/png" href="../../assets/png/icon_pelitaku1.png" />
     <link rel="stylesheet" href="../../style.css">
 </head>
 
@@ -17,14 +18,20 @@ session_start();
     include "../../assets/php/header.php";
     ?>
 
-    <div class="flex-container-row flex-center margin-top-82">
+    <div class="flex-container-column flex-center">
+	<div class="flex-container-row margin-top-82">
         <div class="title">
-            <h2>Buat Akun Pelitaku</h2>
+            <h2>Daftar Menjadi Tutor</h2>
         </div>
     </div>
+	
+	<div class="flex-container-row width-1024">
+		<hr class="line">
+	</div>
+	</div>
 
-    <div class="flex-container-column flex-center margin-bottom-82 margin-top-82">
-        <div class="width-1280">
+    <div class="flex-container-column flex-center margin-bottom-82 margin-top-30">
+        <div class="width-1024">
             <div class="card">
                 <div class="flex-container-row flex-center column-gap-40">
                     <img class="benefit-image" src="../../assets/png/signup_tutor_why_1.png" alt="">
@@ -65,8 +72,8 @@ session_start();
             <div class="card">
                 <div class="flex-container-row flex-center column-gap-40">
                     <img class="benefit-image" src="../../assets/png/signup_tutor_why_5.png" alt="">
-                    <div class="card__text text-align-right font-size-25">
-                        <h2>Apa saha tugas menjadi tutor?</h2>
+                    <div class="card__text text-align-left font-size-25">
+                        <h2>Apa saja tugas menjadi tutor?</h2>
                         <p>Pelitaku adalah sebuah platform untuk membantu teman-teman Slow Learner. Jadi kalian bertugas untuk membantu mereka mencapai target pembelajaran mereka</p>
                     </div>
                 </div>

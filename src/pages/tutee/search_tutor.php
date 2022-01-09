@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (!isset($_GET["subject-tutor"])) {
 	echo "<script type='text/javascript'>window.history.go(-1)</script>";
 }

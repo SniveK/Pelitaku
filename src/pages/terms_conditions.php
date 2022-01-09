@@ -9,7 +9,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpg" href="../assets/png/icon_pelitaku.png" />
+    <link rel="icon" type="image/jpg" href="../assets/png/icon_pelitaku1.png" />
     <link rel="stylesheet" href="../style.css">
     <title>Pelitaku - Syarat dan Ketentuan</title>
 </head>
@@ -29,11 +29,11 @@ session_start();
             </div>
         </div>
 
-        <div class="flex-container-row width-1280">
+        <div class="flex-container-row width-1024">
             <hr class="line">
         </div>
 
-        <div class="flex-container-column width-1280 margin-bottom-82 line-height-30 row-gap-20 font-size-18 text-align-justify">
+        <div class="flex-container-column width-1024 margin-bottom-82 line-height-30 row-gap-20 font-size-18 text-align-justify">
             <div>
                 Selamat datang di Pelitaku!
             </div>

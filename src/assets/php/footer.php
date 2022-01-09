@@ -10,7 +10,7 @@
 		<div>
 			<b>Kelas</b> </br>
 			<a href=''>Mulai Kelas</a> </br>
-			<a href=''>Lihat subjek kami</a> </br>
+			<a href='../../pages/tutee/search_subject.php'>Lihat subjek kami</a> </br>
 		</div>
 		<div align="right"> 
 			<b>Menjadi tutor</b> </br>

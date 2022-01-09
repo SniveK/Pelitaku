@@ -15,8 +15,9 @@ $emailError = '';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../../style.css">
+	<title> Pelitaku </title>
+    <link rel="icon" href="../../assets/png/icon_pelitaku1.png">
 </head>
 
 <body class="flex-container-columns">
@@ -97,16 +98,19 @@ $emailError = '';
                                 </div>
                                 <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
                                     <select required class='width-504' name='provinsi' id='province'>
-                                    <option disabled selected value> -- select an option -- </option>
+                                    <option disabled selected value> Provinsi </option>
 
                                     </select>
                                     <select required class='width-504' name='kota/kabupaten' id='city'>
+									<option disabled selected value> Kota/Kabupaten </option>
 
                                     </select>
                                     <select required class='width-504' name='kecamatan' id='district'>
+									<option disabled selected value> Kecamatan </option>
 
                                     </select>
                                     <select required class='width-504' name='kelurahan' id='sub-district'>
+									<option disabled selected value> Kelurahan </option>
 
                                     </select>
                                     <textarea required class='width-504 address-text-area' placeholder='Alamat' name='address' name='address'></textarea>
@@ -151,8 +155,8 @@ $emailError = '';
         case '4':
             echo "
                     <div class='flex-container-column flex-center margin-bottom-82 margin-top-82'>
-                        <div class='width-1280'>
-                            <div class='flex-container-column margin-left-150'>
+                        <div class='width-1024'>
+                            <div class='flex-container-column'>
                                 <div class='flex-start commitment-image'>
                                     <object data='../../assets/svg/signup_tutee_roadmap_4.svg' type=''></object>
                                 </div>

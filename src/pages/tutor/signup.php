@@ -15,9 +15,10 @@ $emailError = '';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../css/signup_tutor.css">
+	<title> Pelitaku </title>
+    <link rel="icon" href="../../assets/png/icon_pelitaku1.png">
 </head>
 
 <body class="flex-container-columns">
@@ -98,15 +99,18 @@ $emailError = '';
                     </div>
                     <form class='form flex-container-column flex-center max-width-600 min-width-550 row-gap-20' action='' method='POST'>
                         <select required class='width-504' name='provinsi' id='province'>
-                            <option disabled selected value> -- select an option -- </option>
+                            <option disabled selected value> Provinsi </option>
                         </select>
                         <select required class='width-504' name='kota/kabupaten' id='city'>
+						<option disabled selected value> Kota/Kabupaten </option>
         
                         </select>
                         <select required class='width-504' name='kecamatan' id='district'>
+						<option disabled selected value> Kecamatan </option>
         
                         </select>
                         <select required class='width-504' name='kelurahan' id='sub-district'>
+						<option disabled selected value> Kelurahan </option>
         
                         </select>
                         <textarea required class='width-504 address-text-area' placeholder='Alamat' id='address' name='address'></textarea>
@@ -131,6 +135,7 @@ $emailError = '';
                     <form class='form flex-container-column max-width-600 min-width-550 row-gap-20' action='' method='POST'>
                         <div class='flex-container-row bank column-gap-20'>
                             <select required class='width-175' name='bank' name='bank' id='bank'>
+							<option disabled selected value> Bank </option>
                                 <option value='BCA'>BCA</option>
                                 <option value='Mandiri'>Mandiri</option>
                                 <option value='BNI'>BNI</option>
@@ -140,9 +145,10 @@ $emailError = '';
                         </div>
                         <div class='flex-container-row major column-gap-20'>
                             <select class='width-175' name='faculty' id='faculty'>
-                                <option disabled selected value> -- select an option -- </option>
+                                <option disabled selected value> Fakultas </option>
                             </select>
                             <select class='width-320' name='major' id='major'>
+							<option disabled selected value> Jurusan </option>
                             
                             </select>
                         </div>
@@ -153,6 +159,7 @@ $emailError = '';
                         <div class='flex-container-column row-gap-20' id='tutorSubjects'>
                             <div class='flex-container-row mastered-course column-gap-20'>
                                 <select class='subject width-465' name='subject_1' id='subject'>
+								<option disabled selected value> Mata kuliah yang dikuasai </option>
         
                                 </select>
                                 <button class='button-email plus-subject' id='tutorSubjectAppend'></button>

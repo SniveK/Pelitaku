@@ -9,7 +9,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpg" href="../assets/png/icon_pelitaku.png" />
+    <link rel="icon" type="image/jpg" href="../assets/png/icon_pelitaku1.png" />
     <link rel="stylesheet" href="../style.css">
     <title>Pelitaku - Siapa Kami?</title>
 </head>
@@ -27,10 +27,10 @@ session_start();
             </div>
         </div>
 
-        <div class="flex-container-row width-1280">
+        <div class="flex-container-row width-1024">
             <hr class="line">
         </div>
-        <div class="flex-container-column width-1280 margin-bottom-82 line-height-30 row-gap-20 font-size-18 text-align-justify">
+        <div class="flex-container-column width-1024 margin-bottom-82 line-height-30 row-gap-20 font-size-18 text-align-justify">
             <div>Pelitaku adalah WebApp Peer Tutoring untuk pelajar Indonesia yang memiliki keterbatasan kognitif seperti Slow Learner untuk mengulang kembali pembelajaran materi yang sudah dibahas di kelas. </div>
 
             <div>Pelitaku menyediakan berbagai macam kelas dengan tutor yang ramah dan beragam. Teman-teman bisa mengulang kembali materi di kelas dengan kecepatan dan target pembelajaran yang disesuaikan setiap orangnya. </div>
